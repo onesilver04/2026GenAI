@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "input": {
     "product_category": "sunscreen",
     "brand_values": "High-Effect Naturalism Sensibly Communicating Nature's Active Energy",
@@ -91,5 +92,109 @@
     ],
     "image_prompt_for_sdxl": "A minimalist, high-end commercial product photograph of a sleek frosted glass bottle with a matte white pump, resting on a smooth, wet volcanic stone surrounded by soft green marine algae and calm turquoise water. Soft, diffused natural daylight illuminates the clear, modern label displaying precise botanical ingredient percentages and a verified reef-safe certification badge. Clean, airy composition with a calming blue and green color palette, realistic water droplet textures, professional commercial lighting, shallow depth of field focusing on the bottle, ample negative space at the top for text overlay, photorealistic, 8k resolution.",
     "negative_prompt_for_sdxl": "orange or pink color palette, heavy perfume bottles, floral or overly feminine motifs, visible white cast on skin, cluttered background, glossy plastic packaging, unverified eco-icons or leafy greenwashing graphics, cartoonish illustrations, neon colors, harsh studio lighting, text overlay, blurry details, dirty or murky water, artificial seaweed, cluttered composition, overly saturated colors, low resolution, messy layout"
+=======
+  "agent_models": {
+    "product_concept_agent": "mlx-community/Dolphin3.0-Llama3.1-8B-MLX-6bit",
+    "persona_agent": "mlx-community/Dolphin3.0-Llama3.1-8B-MLX-6bit",
+    "strategy_agent": "mlx-community/gemma-4-e2b-it-8bit",
+    "strategy_fallback_agent": "mlx-community/gemma-2-2b-it-4bit",
+    "sns_copy_agent": "mlx-community/Dolphin3.0-Llama3.1-8B-MLX-6bit",
+    "related_content_agent": "stabilityai/stable-diffusion-xl-base-1.0"
+  },
+  "input": {
+    "product_category": "sunscreen",
+    "brand_values": "clean beauty",
+    "product_name": "ClearGuard",
+    "product_description": "ClearGuard is a clean beauty sunscreen designed for sensitive skin. Formulated with gentle, non-toxic ingredients, it provides broad-spectrum protection without irritating your skin. Perfect for skincare-conscious women and men in their 20s and 30s seeking comfort and peace of mind in their daily sun protection routine.",
+    "target_group": "Skincare-conscious women and men in their 20s and 30s with sensitive skin",
+    "brand_tone": "comfort",
+    "platform": "instagram"
+  },
+  "virtual_customer_feedbacks": [
+    {
+      "persona_name": "Eco-Conscious Emily",
+      "persona_profile": "28, freelance graphic designer, passionate about sustainability and skincare, values eco-friendly products, makes purchases based on product ingredients and brand values.",
+      "positive_reaction": "Emily appreciates the non-toxic and gentle ingredients of ClearGuard, aligning with her eco-conscious lifestyle and skincare routine.",
+      "negative_reaction": "Emily is hesitant due to the higher price point compared to other sunscreens.",
+      "purchase_intent": 4,
+      "improvement_suggestion": "Consider offering a more affordable travel-sized option for on-the-go use."
+    },
+    {
+      "persona_name": "Active Alex",
+      "persona_profile": "25, personal trainer, enjoys outdoor activities, prioritizes skincare but is skeptical of new products, often seeks recommendations from peers.",
+      "positive_reaction": "Alex is impressed by the broad-spectrum protection and the suitability for sensitive skin, which aligns with his skincare needs and active lifestyle.",
+      "negative_reaction": "Alex is initially concerned about the effectiveness of a 'clean beauty' sunscreen.",
+      "purchase_intent": 3,
+      "improvement_suggestion": "Provide testimonials or reviews from active individuals who have used ClearGuard."
+    },
+    {
+      "persona_name": "Skincare Savvy Sarah",
+      "persona_profile": "30, dermatology nurse, always researching new skincare products, values scientific evidence, makes purchases based on product benefits and dermatologist recommendations.",
+      "positive_reaction": "Sarah is pleased with the scientific backing and non-toxic ingredients of ClearGuard, which aligns with her professional knowledge and personal skincare routine.",
+      "negative_reaction": "Sarah is skeptical about the brand's claims of 'comfort' and seeks more detailed information on the formulation.",
+      "purchase_intent": 5,
+      "improvement_suggestion": "Include more detailed scientific information about the ingredients and their benefits on the product packaging."
+    },
+    {
+      "persona_name": "Budget-Conscious Ben",
+      "persona_profile": "29, software developer, prioritizes affordability, makes purchases based on price and value, values simplicity in product offerings.",
+      "positive_reaction": "Ben appreciates the gentle ingredients and suitability for sensitive skin, which aligns with his skincare needs and budget.",
+      "negative_reaction": "Ben is deterred by the higher price compared to other sunscreens in the market.",
+      "purchase_intent": 2,
+      "improvement_suggestion": "Offer a discount for first-time buyers or a loyalty program to incentivize purchase."
+    },
+    {
+      "persona_name": "Health-Obsessed Hannah",
+      "persona_profile": "26, nutritionist, prioritizes holistic health and wellness, makes purchases based on product benefits and holistic approach to skincare.",
+      "positive_reaction": "Hannah is impressed by the non-toxic and gentle ingredients of ClearGuard, aligning with her holistic approach to skincare and health.",
+      "negative_reaction": "Hannah is initially skeptical about the effectiveness of a sunscreen designed specifically for sensitive skin.",
+      "purchase_intent": 4,
+      "improvement_suggestion": "Highlight the holistic benefits of using ClearGuard, such as the protection it offers against environmental stressors."
+    }
+  ],
+  "marketing_strategy": {
+    "main_insight": "Customers express a strong preference for ClearGuard's gentle, non-toxic ingredients and broad-spectrum protection, but are hesitant about the price point and need reassurance regarding product effectiveness and scientific backing.",
+    "customer_pain_points": [
+      "Price point",
+      "Lack of scientific evidence and product effectiveness",
+      "Skepticism about 'clean beauty' sunscreen claims"
+    ],
+    "selling_points": [
+      "Gentle, non-toxic ingredients",
+      "Broad-spectrum protection",
+      "Scientifically backed formulation",
+      "Suitable for sensitive skin"
+    ],
+    "marketing_direction": "Focus on building trust and addressing price concerns through targeted messaging and promotions.",
+    "message_strategy": "Highlight the scientific backing of the ingredients, showcase testimonials from active individuals, and offer a discount for first-time buyers.",
+    "recommended_tone": "Informative, empathetic, and confident.",
+    "risk_to_avoid": [
+      "Ignoring price concerns",
+      "Not addressing customer skepticism about 'clean beauty' sunscreen claims"
+    ]
+  },
+  "sns_content": {
+    "post_title": "ClearGuard: Your Safe & Gentle Sunscreen Solution!",
+    "main_copy": "Experience the perfect balance of protection and comfort with ClearGuard. Our scientifically-backed, non-toxic formula ensures broad-spectrum protection without compromising on your skin's well-being. Perfect for sensitive skin and trusted by sun-seekers worldwide. Don't let the price concern you - feel the difference with our special offer for first-time buyers!",
+    "short_hook": "ClearGuard: Gentle, Effective, & Now More Affordable!",
+    "hashtags": [
+      "#ClearGuard",
+      "#SafeSunscreen",
+      "#GentleProtection",
+      "#ScientificallyBacked",
+      "#SensitiveSkinFriendly"
+    ],
+    "image_prompt_for_sdxl": "Generate an image showcasing a person enjoying outdoor activities under the sun, with ClearGuard sunscreen applied, highlighting the product's gentle and effective formula.",
+    "negative_prompt_for_sdxl": "Avoid showing close-ups of the product alone; focus on the user experience and outdoor setting.",
+    "image_width": 640,
+    "image_height": 640
+  },
+  "sdxl_content": {
+    "model": "stabilityai/stable-diffusion-xl-base-1.0",
+    "status": "generated",
+    "width": 640,
+    "height": 640,
+    "image_path": "generated_content/sdxl_content_20260523_231203.png"
+>>>>>>> 20e15bec348ad1cbc4b2c1079ccc627391846302
   }
 }
