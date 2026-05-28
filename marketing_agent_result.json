@@ -1,200 +1,103 @@
 {
-<<<<<<< HEAD
-  "input": {
-    "product_category": "sunscreen",
-    "brand_values": "High-Effect Naturalism Sensibly Communicating Nature's Active Energy",
-    "product_name": "VitalTide",
-    "product_description": "VitalTide delivers high-effect, reef-safe protection powered by nature's active energy, formulated exclusively for sensitive skin. This clean, ocean-inspired sunscreen combines mineral UV filters with soothing sea botanicals to shield and nourish, offering weightless, broad-spectrum coverage that eliminates irritation. Perfect for skincare-conscious men and women seeking a pure, green defense that harmonizes potent skin benefits with the calming essence of the sea.",
-    "target_group": "Skincare-conscious women and men in their 20s and 30s with sensitive skin",
-    "brand_tone": "clean, green, blue, ocean, nature  ",
-    "platform": "Instagram"
-  },
-  "virtual_customer_feedbacks": [
-    {
-      "persona_name": "Maya Lin",
-      "persona_profile": "28, Environmental consultant, yoga enthusiast, purchases exclusively based on sustainability and ethical sourcing, meticulously reads ingredient lists, highly sensitive skin prone to redness.",
-      "positive_reaction": "The reef-safe certification and mineral UV filters are immediate deal-makers, aligning perfectly with her eco-activism. The promise of eliminating irritation resonates deeply with her struggle to find safe products, and the ocean-inspired branding feels authentic to her lifestyle.",
-      "negative_reaction": "The phrase 'nature's active energy' feels vague and potentially pseudoscientific. She worries the product might contain hidden synthetic stabilizers and questions if the packaging is truly zero-waste as implied by the 'clean' tone.",
-      "purchase_intent": 5,
-      "improvement_suggestion": "Display third-party reef-safe certifications prominently and provide detailed information about recyclable or compostable packaging to validate the sustainability claims."
-    },
-    {
-      "persona_name": "Marcus Thorne",
-      "persona_profile": "32, Personal trainer and outdoor runner, values functionality and performance, hates sticky or heavy skincare, sensitive skin that reacts with breakouts to chemical sunscreens.",
-      "positive_reaction": "The 'weightless' and 'broad-spectrum' attributes are perfect for his active lifestyle, ensuring protection without clogging pores or feeling greasy during workouts. The 'shield and nourish' benefit suggests efficiency, allowing him to skip extra moisturizers.",
-      "negative_reaction": "The 'soothing sea botanicals' and 'clean, green' tone might make the product feel too feminine or perfumey for him. He is skeptical about whether the mineral filters will leave a white cast on his complexion.",
-      "purchase_intent": 4,
-      "improvement_suggestion": "Emphasize the unisex nature of the formula in marketing and provide before-and-after photos showing no white cast to reassure users about the mineral finish."
-    },
-    {
-      "persona_name": "Elena Rossi",
-      "persona_profile": "25, Freelance graphic designer, follows clean beauty trends closely, aesthetic-driven consumer, sensitive reactive skin that flares up with new products, prefers minimalist routines.",
-      "positive_reaction": "The ocean-inspired aesthetic and 'clean, blue' branding appeal to her desire for a photogenic, harmonious skincare routine. She appreciates the focus on sensitive skin, hoping the sea botanicals will calm her reactive complexion.",
-      "negative_reaction": "She finds the marketing language 'nature's active energy' fluff and lacks transparency regarding specific active ingredients. She worries the product might be too expensive for the amount of soothing botanicals actually included.",
-      "purchase_intent": 3,
-      "improvement_suggestion": "Increase ingredient transparency by listing the percentage of sea botanicals and offer a small sample size for sensitive skin testing to build trust before committing to a full purchase."
-    },
-    {
-      "persona_name": "Jordan Kim",
-      "persona_profile": "30, Software engineer, pragmatic and data-oriented, sensitive skin exacerbated by urban pollution and screen time, seeks efficient, no-fuss solutions, digital-first shopper.",
-      "positive_reaction": "The claim 'formulated exclusively for sensitive skin' gives him confidence in the safety profile. He values the dual benefit of UV protection and nourishment as a time-efficient solution for his busy schedule, and the 'green defense' concept appeals to his interest in clean tech.",
-      "negative_reaction": "He questions the efficacy of 'high-effect' mineral filters compared to modern chemical hybrids. He is concerned that 'broad-spectrum coverage' might require reapplication that disrupts his workflow.",
-      "purchase_intent": 4,
-      "improvement_suggestion": "Provide clinical data or dermatologist endorsements supporting the SPF efficacy and suggest a pump dispenser format for easy, mess-free reapplication during the workday."
-    },
-    {
-      "persona_name": "Aisha Patel",
-      "persona_profile": "34, Holistic wellness coach, eczema-prone sensitive skin, values natural ingredients and brand ethos, willing to invest in premium care, active on social media.",
-      "positive_reaction": "The emphasis on 'reef-safe' and 'nature's active energy' resonates with her holistic values. She is drawn to the 'soothing sea botanicals' which she hopes will manage her eczema flare-ups, and the calming essence aligns with her wellness routine.",
-      "negative_reaction": "The term 'high-effect' gives her pause, as she associates high potency with potential irritation for sensitive skin. She wonders if the mineral filters might feel heavy or leave a residue on her skin.",
-      "purchase_intent": 5,
-      "improvement_suggestion": "Include testimonials from users with eczema or highly reactive skin and clarify that 'high-effect' refers to protection strength rather than harshness, ensuring the formula remains ultra-gentle."
-    }
-  ],
-  "marketing_strategy": {
-    "main_insight": "Customers are highly drawn to VitalTide’s reef-safe, mineral-based formula, weightless finish, and ocean-inspired aesthetic, but are deterred by vague marketing language, lack of packaging/ingredient transparency, concerns over white cast, and fear that 'high-effect' implies irritation. Trust must be built through scientific validation, clear eco-certifications, and inclusive, unisex positioning.",
-    "customer_pain_points": [
-      "Vague or pseudo-scientific marketing terms that lack concrete evidence",
-      "Insufficient transparency regarding recyclable packaging, ingredient percentages, and clinical SPF efficacy",
-      "Fear of visible white cast from mineral filters and marketing that feels too feminine or perfumed",
-      "Concern that 'high-effect' suggests harsh potency unsuitable for highly reactive or eczema-prone skin"
-    ],
-    "selling_points": [
-      "Clinically validated, reef-safe mineral UV filters designed exclusively for sensitive and eczema-prone skin",
-      "Weightless, non-greasy broad-spectrum protection that doubles as a nourishing skincare step",
-      "Transparent, eco-conscious branding with certified sustainable packaging and clear botanical ingredient breakdowns"
-    ],
-    "marketing_direction": "Pivot from mystical wellness language to science-backed sustainability and inclusive unisex positioning. Emphasize dermatological trust, zero-waste transparency, and performance-driven efficiency for active, data-savvy consumers while maintaining a calming, ocean-inspired aesthetic.",
-    "message_strategy": "Deploy educational short-form video and carousel content highlighting third-party reef certifications, ingredient transparency, and real-user finish results without white cast. Feature dermatologist endorsements and eczema-prone testimonials, offer interactive sample trials, and leverage micro-influencers in sustainability, fitness, and clean-tech niches to validate efficacy and eco-claims.",
-    "recommended_tone": "Transparent, scientifically grounded, inclusive, and calming yet modern. Prioritize clarity, authenticity, and performance over hyperbolic wellness fluff.",
-    "risk_to_avoid": [
-      "Greenwashing or unverified eco-claims that could trigger skepticism among conscious consumers",
-      "Alienating male or unisex demographics through overly feminine, perfumed, or wellness-heavy marketing"
-    ]
-  },
-  "sns_content": {
-    "post_title": "Clear Sun. Clear Conscience.",
-    "main_copy": "Sun protection that doesn’t ask you to choose between your skin and the ocean. VitalTide is clinically validated with reef-safe mineral filters, specifically engineered for sensitive and eczema-prone skin. Zero white cast. Zero heavy grease. Just a weightless, broad-spectrum shield that works as a nourishing daily skincare step. We believe transparency isn’t optional—it’s essential. That’s why every bottle features clear botanical ingredient breakdowns, verified third-party reef certifications, and fully recyclable packaging. Unisex formulation. Dermatologist-backed. Performance-driven. Your sun care, decoded.",
-    "short_hook": "Reef-safe sun protection that actually checks every box.",
-    "hashtags": [
-      "#VitalTide",
-      "#ReefSafeSPF",
-      "#MineralSunscreen",
-      "#SensitiveSkinCare",
-      "#EczemaFriendly",
-      "#CleanBeautyScience",
-      "#WeightlessSunscreen",
-      "#DermatologistApproved",
-      "#SustainablePackaging",
-      "#UnisexSkincare",
-      "#TransparentBeauty",
-      "#OceanSafeSun"
-    ],
-    "image_prompt_for_sdxl": "A minimalist, high-end commercial product photograph of a sleek frosted glass bottle with a matte white pump, resting on a smooth, wet volcanic stone surrounded by soft green marine algae and calm turquoise water. Soft, diffused natural daylight illuminates the clear, modern label displaying precise botanical ingredient percentages and a verified reef-safe certification badge. Clean, airy composition with a calming blue and green color palette, realistic water droplet textures, professional commercial lighting, shallow depth of field focusing on the bottle, ample negative space at the top for text overlay, photorealistic, 8k resolution.",
-    "negative_prompt_for_sdxl": "orange or pink color palette, heavy perfume bottles, floral or overly feminine motifs, visible white cast on skin, cluttered background, glossy plastic packaging, unverified eco-icons or leafy greenwashing graphics, cartoonish illustrations, neon colors, harsh studio lighting, text overlay, blurry details, dirty or murky water, artificial seaweed, cluttered composition, overly saturated colors, low resolution, messy layout"
-=======
   "agent_models": {
-    "product_concept_agent": "mlx-community/Dolphin3.0-Llama3.1-8B-MLX-6bit",
-    "persona_agent": "mlx-community/Dolphin3.0-Llama3.1-8B-MLX-6bit",
-    "strategy_agent": "mlx-community/gemma-4-e2b-it-8bit",
-    "strategy_fallback_agent": "mlx-community/gemma-2-2b-it-4bit",
-    "sns_copy_agent": "mlx-community/Dolphin3.0-Llama3.1-8B-MLX-6bit",
+    "product_concept_agent": "llama3.1:8b",
+    "persona_agent": "llama3.1:8b",
+    "strategy_agent": "gemma2:9b",
+    "strategy_fallback_agent": "llama3.1:8b",
+    "sns_copy_agent": "llama3.1:8b",
     "related_content_agent": "stabilityai/stable-diffusion-xl-base-1.0"
   },
   "input": {
     "product_category": "sunscreen",
-    "brand_values": "clean beauty",
-    "product_name": "ClearGuard",
-    "product_description": "ClearGuard is a clean beauty sunscreen designed for sensitive skin. Formulated with gentle, non-toxic ingredients, it provides broad-spectrum protection without irritating your skin. Perfect for skincare-conscious women and men in their 20s and 30s seeking comfort and peace of mind in their daily sun protection routine.",
+    "brand_values": "고객 신뢰와 투명한 정보 제공, 민감한 고객 정보를 보호하는 책임감, 법규 준수와 안전한 품질 관리, ,환경 보호와 지속가능한 경영, 과장 없는 정직한 커뮤니케이션",
+    "product_name": "Purezza",
+    "product_description": "Protect your skin with Purezza, a transparent and responsible sunscreen that prioritizes safety and sustainability. Formulated with eco-friendly ingredients and free from harsh chemicals, our gentle formula is designed for sensitive skin. We're committed to protecting your personal data and providing accurate information about our products. With Purezza, you can trust that you're getting a high-quality product that aligns with your values.",
     "target_group": "Skincare-conscious women and men in their 20s and 30s with sensitive skin",
-    "brand_tone": "comfort",
-    "platform": "instagram"
+    "brand_tone": "Clean, modern, minimalist, trustworthy",
+    "platform": "Instagram"
   },
   "virtual_customer_feedbacks": [
     {
-      "persona_name": "Eco-Conscious Emily",
-      "persona_profile": "28, freelance graphic designer, passionate about sustainability and skincare, values eco-friendly products, makes purchases based on product ingredients and brand values.",
-      "positive_reaction": "Emily appreciates the non-toxic and gentle ingredients of ClearGuard, aligning with her eco-conscious lifestyle and skincare routine.",
-      "negative_reaction": "Emily is hesitant due to the higher price point compared to other sunscreens.",
+      "persona_name": "Eco-Warrior Emma",
+      "persona_profile": "28, Environmental Scientist, passionate about sustainability, reads labels carefully, prioritizes eco-friendly products",
+      "positive_reaction": "I love that Purezza is transparent about their ingredients and manufacturing process. It's clear they prioritize the environment and customer safety.",
+      "negative_reaction": "I'm disappointed to see some of the same chemicals I've been trying to avoid in other sunscreens still present in Purezza.",
       "purchase_intent": 4,
-      "improvement_suggestion": "Consider offering a more affordable travel-sized option for on-the-go use."
+      "improvement_suggestion": "Consider using even more natural ingredients or exploring alternative packaging options."
     },
     {
-      "persona_name": "Active Alex",
-      "persona_profile": "25, personal trainer, enjoys outdoor activities, prioritizes skincare but is skeptical of new products, often seeks recommendations from peers.",
-      "positive_reaction": "Alex is impressed by the broad-spectrum protection and the suitability for sensitive skin, which aligns with his skincare needs and active lifestyle.",
-      "negative_reaction": "Alex is initially concerned about the effectiveness of a 'clean beauty' sunscreen.",
+      "persona_name": "Sensitive Sally",
+      "persona_profile": "32, Stay-at-Home Mom, struggles with skin allergies, seeks gentle products, reads reviews extensively",
+      "positive_reaction": "I'm so relieved to have found a sunscreen that's gentle on my skin. The fact that it's free from harsh chemicals gives me peace of mind.",
+      "negative_reaction": "The price point is a bit steep for me, but I'll consider purchasing if I see more reviews confirming its effectiveness.",
       "purchase_intent": 3,
-      "improvement_suggestion": "Provide testimonials or reviews from active individuals who have used ClearGuard."
+      "improvement_suggestion": "Offer a smaller size or trial option to make it more accessible to customers like me who are hesitant to commit."
     },
     {
-      "persona_name": "Skincare Savvy Sarah",
-      "persona_profile": "30, dermatology nurse, always researching new skincare products, values scientific evidence, makes purchases based on product benefits and dermatologist recommendations.",
-      "positive_reaction": "Sarah is pleased with the scientific backing and non-toxic ingredients of ClearGuard, which aligns with her professional knowledge and personal skincare routine.",
-      "negative_reaction": "Sarah is skeptical about the brand's claims of 'comfort' and seeks more detailed information on the formulation.",
-      "purchase_intent": 5,
-      "improvement_suggestion": "Include more detailed scientific information about the ingredients and their benefits on the product packaging."
-    },
-    {
-      "persona_name": "Budget-Conscious Ben",
-      "persona_profile": "29, software developer, prioritizes affordability, makes purchases based on price and value, values simplicity in product offerings.",
-      "positive_reaction": "Ben appreciates the gentle ingredients and suitability for sensitive skin, which aligns with his skincare needs and budget.",
-      "negative_reaction": "Ben is deterred by the higher price compared to other sunscreens in the market.",
+      "persona_name": "Health-Conscious Harry",
+      "persona_profile": "29, Fitness Enthusiast, prioritizes natural health products, reads labels carefully, seeks out certifications",
+      "positive_reaction": "I appreciate that Purezza is committed to transparency and safety. The fact that it's free from harsh chemicals aligns with my values.",
+      "negative_reaction": "I'm not sure about the price point; I'd like to see more value for what I'm paying.",
       "purchase_intent": 2,
-      "improvement_suggestion": "Offer a discount for first-time buyers or a loyalty program to incentivize purchase."
+      "improvement_suggestion": "Consider offering a loyalty program or rewards scheme to incentivize repeat purchases."
     },
     {
-      "persona_name": "Health-Obsessed Hannah",
-      "persona_profile": "26, nutritionist, prioritizes holistic health and wellness, makes purchases based on product benefits and holistic approach to skincare.",
-      "positive_reaction": "Hannah is impressed by the non-toxic and gentle ingredients of ClearGuard, aligning with her holistic approach to skincare and health.",
-      "negative_reaction": "Hannah is initially skeptical about the effectiveness of a sunscreen designed specifically for sensitive skin.",
-      "purchase_intent": 4,
-      "improvement_suggestion": "Highlight the holistic benefits of using ClearGuard, such as the protection it offers against environmental stressors."
+      "persona_name": "Budget-Bound Beth",
+      "persona_profile": "25, Student, on a tight budget, prioritizes affordability over eco-friendliness",
+      "positive_reaction": "I like that Purezza is gentle on my skin, but the price point is a bit out of my range.",
+      "negative_reaction": "I'm not sure I can justify spending this much on sunscreen when there are cheaper options available.",
+      "purchase_intent": 1,
+      "improvement_suggestion": "Consider offering discounts or promotions to make it more accessible to customers like me who are budget-conscious."
+    },
+    {
+      "persona_name": "Informed Investor Ivy",
+      "persona_profile": "35, Financial Advisor, prioritizes long-term investments, seeks out companies with strong ESG practices",
+      "positive_reaction": "I'm impressed by Purezza's commitment to transparency and sustainability. It's clear they're a company that values both people and the planet.",
+      "negative_reaction": "While I appreciate their efforts, I'd like to see more concrete evidence of their environmental impact and social responsibility initiatives.",
+      "purchase_intent": 5,
+      "improvement_suggestion": "Consider publishing an annual sustainability report or providing more detailed information on your ESG practices."
     }
   ],
   "marketing_strategy": {
-    "main_insight": "Customers express a strong preference for ClearGuard's gentle, non-toxic ingredients and broad-spectrum protection, but are hesitant about the price point and need reassurance regarding product effectiveness and scientific backing.",
+    "main_insight": "Customers appreciate Purezza's commitment to safety, transparency, and sustainability but express concerns about price, ingredient composition, and a lack of concrete evidence regarding environmental impact.",
     "customer_pain_points": [
-      "Price point",
-      "Lack of scientific evidence and product effectiveness",
-      "Skepticism about 'clean beauty' sunscreen claims"
+      "Price point perceived as high",
+      "Presence of some potentially undesirable chemicals",
+      "Desire for more tangible proof of environmental impact"
     ],
     "selling_points": [
-      "Gentle, non-toxic ingredients",
-      "Broad-spectrum protection",
-      "Scientifically backed formulation",
-      "Suitable for sensitive skin"
+      "Gentle formula suitable for sensitive skin",
+      "Transparent ingredient list and manufacturing process",
+      "Commitment to ethical sourcing and sustainable practices"
     ],
-    "marketing_direction": "Focus on building trust and addressing price concerns through targeted messaging and promotions.",
-    "message_strategy": "Highlight the scientific backing of the ingredients, showcase testimonials from active individuals, and offer a discount for first-time buyers.",
-    "recommended_tone": "Informative, empathetic, and confident.",
+    "marketing_direction": "Emphasize Purezza's unique selling points while addressing customer concerns through transparent communication, product education, and showcasing real-world impact.",
+    "message_strategy": "Highlight the benefits of Purezza for sensitive skin, showcase ingredient transparency with clear explanations, and share stories about sustainable practices and partnerships. Utilize user-generated content and influencer collaborations to build trust and authenticity.",
+    "recommended_tone": "Honest, informative, and approachable. Build a sense of community by engaging with customers and addressing their concerns directly.",
     "risk_to_avoid": [
-      "Ignoring price concerns",
-      "Not addressing customer skepticism about 'clean beauty' sunscreen claims"
+      "Making unsubstantiated claims about environmental impact",
+      "Ignoring customer feedback or appearing dismissive of concerns"
     ]
   },
   "sns_content": {
-    "post_title": "ClearGuard: Your Safe & Gentle Sunscreen Solution!",
-    "main_copy": "Experience the perfect balance of protection and comfort with ClearGuard. Our scientifically-backed, non-toxic formula ensures broad-spectrum protection without compromising on your skin's well-being. Perfect for sensitive skin and trusted by sun-seekers worldwide. Don't let the price concern you - feel the difference with our special offer for first-time buyers!",
-    "short_hook": "ClearGuard: Gentle, Effective, & Now More Affordable!",
+    "post_title": "Protect Your Skin with Love",
+    "main_copy": "Say goodbye to harsh chemicals and hello to gentle, effective sun protection. Our Purezza sunscreen is designed for sensitive skin, so you can feel confident in your daily routine. We believe in honest communication and transparency - that's why we're committed to using eco-friendly ingredients and sustainable practices.",
+    "short_hook": "Sensitive skin? No problem!",
     "hashtags": [
-      "#ClearGuard",
-      "#SafeSunscreen",
-      "#GentleProtection",
-      "#ScientificallyBacked",
-      "#SensitiveSkinFriendly"
+      "#sensitiveSkin",
+      "#naturalSunscreen",
+      "#ecofriendly",
+      "#transparencymatters",
+      "#gentleprotection"
     ],
-    "image_prompt_for_sdxl": "Generate an image showcasing a person enjoying outdoor activities under the sun, with ClearGuard sunscreen applied, highlighting the product's gentle and effective formula.",
-    "negative_prompt_for_sdxl": "Avoid showing close-ups of the product alone; focus on the user experience and outdoor setting.",
+    "image_prompt_for_sdxl": "A serene and modern bathroom scene with a large window on the left side, letting in soft natural light. In the center of the image, a sleek and minimalist glass bottle of Purezza sunscreen sits atop a white marble countertop, surrounded by a few carefully placed green plants. The background is a clean and neutral color, with a subtle texture that resembles a high-end bathroom tile.",
+    "negative_prompt_for_sdxl": "Blurry, low quality, distorted bottle, cluttered background, text, logo, watermark, deformed packaging",
     "image_width": 640,
-    "image_height": 640
+    "image_height": 960
   },
   "sdxl_content": {
     "model": "stabilityai/stable-diffusion-xl-base-1.0",
-    "status": "generated",
-    "width": 640,
-    "height": 640,
-    "image_path": "generated_content/sdxl_content_20260523_231203.png"
->>>>>>> 20e15bec348ad1cbc4b2c1079ccc627391846302
+    "status": "skipped",
+    "reason": "Skipped to reduce runtime.",
+    "image_path": null
   }
 }
