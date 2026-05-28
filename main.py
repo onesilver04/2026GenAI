@@ -247,6 +247,9 @@ Rules:
 - The product name should reflect the brand values.
 - The product description must explain how the product embodies the brand values
   in concrete product-level choices.
+  - Convert abstract corporate values into product-relevant benefits.
+- Do not mention personal data protection unless the product is a digital service.
+- For physical consumer goods, translate customer trust and data protection into product safety, ingredient transparency, quality control, and responsible communication.
 - Do not use generic category names such as "Sunscreen" or "Keyboard".
 - Return JSON only.
 - Do not include markdown.
@@ -386,7 +389,8 @@ def generate_image_prompt(
     prompt = f"""
 You are a visual prompt engineer for SDXL product advertising images.
 
-Create an image prompt for a skincare product advertisement.
+Create an image prompt for a product advertisement.
+The image must visually match the product category: {user_input.product_category}.
 
 [Product Name]
 {user_input.product_name}
@@ -419,9 +423,12 @@ Rules:
 - Reflect a clean, modern, minimalist, trustworthy skincare brand.
 - Do not create vague nature-only scenes.
 - Do not include text, readable letters, logo, or watermark.
-- The negative prompt should include visual problems: blurry, low quality, distorted bottle, cluttered background, text, logo, watermark, deformed packaging.
-- Use SDXL-friendly dimensions.
-- Return JSON only.
+- The negative prompt must include category-mismatch objects to avoid.
+- For sunscreen, include: serum bottle, transparent liquid bottle, dropper bottle, perfume bottle, toner bottle, essence bottle, watery cosmetic bottle.- The product packaging must clearly match the product category.
+- If the product category is sunscreen, describe it as a sunscreen tube, sun care cream tube, or matte sunscreen bottle, not as a serum, toner, perfume, mist, or transparent liquid bottle.
+- If the product category is sunscreen, include visual cues such as SPF, UV protection, sun care, outdoor sunlight, beach, sports, summer, or active lifestyle.
+- Avoid transparent glass serum bottles unless the product category specifically requires that packaging.
+- Do not describe watery liquid, dropper bottles, perfume bottles, toner bottles, or essence containers for sunscreen products.
 """
     result = call_llm(prompt, SNS_COPY_MODEL, DEFAULT_LLM_MODEL)
     image_content = safe_json_loads(result, dict)
@@ -657,10 +664,10 @@ def run_pipeline():
         "sdxl_content": sdxl_content
     }
 
-    with open("marketing_agent_result2.json", "w", encoding="utf-8") as f:
+    with open("marketing_agent_result.json", "w", encoding="utf-8") as f:
         json.dump(final_result, f, ensure_ascii=False, indent=2)
 
-    print("\nCompleted: marketing_agent_result2.json saved.")
+    print("\nCompleted: marketing_agent_result.json saved.")
     print(json.dumps(final_result, ensure_ascii=False, indent=2))
 
 if __name__ == "__main__":

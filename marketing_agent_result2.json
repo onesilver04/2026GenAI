@@ -1,0 +1,106 @@
+{
+  "agent_models": {
+    "product_concept_agent": "llama3.1:8b",
+    "persona_agent": "llama3.1:8b",
+    "strategy_agent": "gemma2:9b",
+    "strategy_fallback_agent": "llama3.1:8b",
+    "sns_copy_agent": "llama3.1:8b",
+    "related_content_agent": "stabilityai/stable-diffusion-xl-base-1.0"
+  },
+  "input": {
+    "product_category": "sunscreen",
+    "brand_values": "고객 신뢰와 투명한 정보 제공, 민감한 고객 정보를 보호하는 책임감, 법규 준수와 안전한 품질 관리, ,환경 보호와 지속가능한 경영, 과장 없는 정직한 커뮤니케이션",
+    "product_name": "Protego",
+    "product_description": "Protect your active lifestyle with Protego, a high-performance sunscreen designed for outdoor enthusiasts. Our formula is crafted with transparency in mind, clearly labeling every ingredient and ensuring compliance with the strictest regulations. We prioritize customer trust by protecting sensitive information and providing honest communication about our products. With Protego, you can enjoy the great outdoors while safeguarding your skin from harsh UV rays. Our commitment to environmental protection and sustainable practices means that not only will you be protected, but also the planet.",
+    "target_group": "Outdoor sports enthusiasts who need high-performance UV protection during intense activities",
+    "brand_tone": "Clean, modern, minimalist, trustworthy",
+    "platform": "Instagram"
+  },
+  "virtual_customer_feedbacks": [
+    {
+      "persona_name": "Alex Chen",
+      "persona_profile": "28, Marketing Manager, Rock climbing, Hiking, Environmentally conscious consumer, Researches products before purchase",
+      "positive_reaction": "I appreciate the transparent labeling and commitment to environmental protection. It aligns with my values.",
+      "negative_reaction": "I'm concerned about the price point being too high for a sunscreen product.",
+      "purchase_intent": 4,
+      "improvement_suggestion": "Consider offering a discount or loyalty program for frequent customers"
+    },
+    {
+      "persona_name": "Maya Patel",
+      "persona_profile": "35, Doctor, Yoga, Swimming, Health-conscious consumer, Prioritizes product safety and efficacy",
+      "positive_reaction": "I'm impressed by the strict regulations compliance and honest communication about ingredients.",
+      "negative_reaction": "I wish there was more information on the specific SPF levels and protection offered.",
+      "purchase_intent": 3,
+      "improvement_suggestion": "Provide more detailed product specifications and testing results"
+    },
+    {
+      "persona_name": "Ethan Kim",
+      "persona_profile": "42, Entrepreneur, Surfing, Cycling, Values convenience and effectiveness",
+      "positive_reaction": "I like the modern packaging and easy-to-use application.",
+      "negative_reaction": "I'm not sure if it's worth the investment for a sunscreen product.",
+      "purchase_intent": 2,
+      "improvement_suggestion": "Offer a free trial or sample size to test the product"
+    },
+    {
+      "persona_name": "Lily Tran",
+      "persona_profile": "29, Student, Hiking, Camping, Budget-conscious consumer, Prioritizes affordability and value",
+      "positive_reaction": "I appreciate the affordable price point and commitment to customer trust.",
+      "negative_reaction": "I wish there were more options for different skin types and tones.",
+      "purchase_intent": 1,
+      "improvement_suggestion": "Consider offering a range of products tailored to specific skin needs"
+    },
+    {
+      "persona_name": "Ryan Brooks",
+      "persona_profile": "38, Engineer, Rock climbing, Mountain biking, Values innovation and technology",
+      "positive_reaction": "I'm impressed by the high-performance formula and commitment to environmental protection.",
+      "negative_reaction": "I wish there was more information on the scientific research behind the product's effectiveness.",
+      "purchase_intent": 5,
+      "improvement_suggestion": "Provide more detailed technical specifications and testing results"
+    }
+  ],
+  "marketing_strategy": {
+    "main_insight": "Customers value transparency, environmental responsibility, and product efficacy but express concerns about price, specific product information, and limited options.",
+    "customer_pain_points": [
+      "High price point",
+      "Lack of detailed SPF and protection information",
+      "Limited product variations for different skin types",
+      "Uncertainty about product effectiveness"
+    ],
+    "selling_points": [
+      "Transparent ingredient labeling",
+      "Commitment to environmental sustainability",
+      "High-performance formula for outdoor activities",
+      "Strict regulatory compliance and safety standards"
+    ],
+    "marketing_direction": "Emphasize Protego's unique selling points while addressing customer concerns through targeted messaging and product development.",
+    "message_strategy": "Highlight the value proposition of transparency, performance, and environmental responsibility. Showcase customer testimonials and scientific evidence to build trust and demonstrate efficacy. Offer promotions and incentives to overcome price sensitivity.",
+    "recommended_tone": "Confident, informative, and authentic. Use clear and concise language that resonates with outdoor enthusiasts. Emphasize ethical practices and genuine commitment to customer satisfaction.",
+    "risk_to_avoid": [
+      "Greenwashing or making unsubstantiated environmental claims",
+      "Overpromising product performance without sufficient evidence",
+      "Ignoring customer feedback and failing to address pain points"
+    ]
+  },
+  "sns_content": {
+    "post_title": "Protect Your Adventure with Protego",
+    "main_copy": "Say goodbye to sunburns and hello to clear skin. Our high-performance sunscreen is designed for outdoor enthusiasts like you, with a commitment to transparency and gentle protection.",
+    "short_hook": "Get protected without compromise",
+    "hashtags": [
+      "#sunscreensofig",
+      "#outdoorbeauty",
+      "#transparencymatters",
+      "#gentleprotection",
+      "#adventureready"
+    ],
+    "image_prompt_for_sdxl": "A serene outdoor scene with a Protego sunscreen bottle placed on a natural rock in the foreground. The bottle is wrapped in a minimalist design with clean lines and a transparent label showcasing the ingredients. Soft, warm sunlight filters through the trees behind, casting dappled shadows on the ground. A subtle gradient of blue hues in the background evokes a sense of trust and reliability.",
+    "negative_prompt_for_sdxl": "Blurry bottle, low-quality packaging, distorted shape, cluttered background with visible text or logo, watermark, deformed packaging, unclean or dirty product",
+    "image_width": 640,
+    "image_height": 960
+  },
+  "sdxl_content": {
+    "model": "stabilityai/stable-diffusion-xl-base-1.0",
+    "status": "skipped",
+    "reason": "Skipped to reduce runtime.",
+    "image_path": null
+  }
+}

@@ -9,88 +9,88 @@
   },
   "input": {
     "product_category": "sunscreen",
-    "brand_values": "고객 신뢰와 투명한 정보 제공, 민감한 고객 정보를 보호하는 책임감, 법규 준수와 안전한 품질 관리, ,환경 보호와 지속가능한 경영, 과장 없는 정직한 커뮤니케이션",
+    "brand_values": "고객 신뢰와 투명한 정보 제공, 민감한 고객 정보를 보호하는 책임감, 법규 준수와 안전한 품질 관리, 환경 보호와 지속가능한 경영, 과장 없는 정직한 커뮤니케이션",
     "product_name": "Purezza",
-    "product_description": "Protect your skin with Purezza, a transparent and responsible sunscreen that prioritizes safety and sustainability. Formulated with eco-friendly ingredients and free from harsh chemicals, our gentle formula is designed for sensitive skin. We're committed to protecting your personal data and providing accurate information about our products. With Purezza, you can trust that you're getting a high-quality product that aligns with your values.",
-    "target_group": "Skincare-conscious women and men in their 20s and 30s with sensitive skin",
+    "product_description": "Purezza offers a range of sunscreens that prioritize skin safety and environmental responsibility. Our formulas are free from harsh chemicals, artificial fragrances, and dyes, ensuring gentle protection for sensitive skin. We adhere to strict quality control measures, sourcing ingredients from sustainable suppliers whenever possible. With transparent labeling and honest communication about our products' benefits and limitations, we empower you to make informed choices about your skincare routine.",
+    "target_group": "Skincare-conscious women and men in their 20s with sensitive skin",
     "brand_tone": "Clean, modern, minimalist, trustworthy",
     "platform": "Instagram"
   },
   "virtual_customer_feedbacks": [
     {
       "persona_name": "Eco-Warrior Emma",
-      "persona_profile": "28, Environmental Scientist, passionate about sustainability, reads labels carefully, prioritizes eco-friendly products",
-      "positive_reaction": "I love that Purezza is transparent about their ingredients and manufacturing process. It's clear they prioritize the environment and customer safety.",
-      "negative_reaction": "I'm disappointed to see some of the same chemicals I've been trying to avoid in other sunscreens still present in Purezza.",
-      "purchase_intent": 4,
-      "improvement_suggestion": "Consider using even more natural ingredients or exploring alternative packaging options."
+      "persona_profile": "28, environmental scientist, passionate about sustainable living, reads labels carefully, prioritizes natural products",
+      "positive_reaction": "I love that Purezza is transparent about their ingredients and sourcing! It's so refreshing to see a brand that truly cares about the environment.",
+      "negative_reaction": "I'm disappointed that some of your products still contain some artificial fragrances. Can you please reformulate them?",
+      "purchase_intent": 5,
+      "improvement_suggestion": "Consider using only plant-based ingredients and eliminating all artificial additives."
     },
     {
       "persona_name": "Sensitive Sally",
-      "persona_profile": "32, Stay-at-Home Mom, struggles with skin allergies, seeks gentle products, reads reviews extensively",
-      "positive_reaction": "I'm so relieved to have found a sunscreen that's gentle on my skin. The fact that it's free from harsh chemicals gives me peace of mind.",
-      "negative_reaction": "The price point is a bit steep for me, but I'll consider purchasing if I see more reviews confirming its effectiveness.",
-      "purchase_intent": 3,
-      "improvement_suggestion": "Offer a smaller size or trial option to make it more accessible to customers like me who are hesitant to commit."
+      "persona_profile": "25, student, suffers from eczema, has tried many products for sensitive skin, prioritizes gentle formulas",
+      "positive_reaction": "I've been searching for a sunscreen that won't irritate my skin, and Purezza's formula is amazing! It's so gentle and non-irritating.",
+      "negative_reaction": "I wish you had more fragrance-free options. Some of your products still have a strong scent that bothers me.",
+      "purchase_intent": 4,
+      "improvement_suggestion": "Offer more fragrance-free options or clearly label which products are suitable for sensitive skin."
     },
     {
       "persona_name": "Health-Conscious Harry",
-      "persona_profile": "29, Fitness Enthusiast, prioritizes natural health products, reads labels carefully, seeks out certifications",
-      "positive_reaction": "I appreciate that Purezza is committed to transparency and safety. The fact that it's free from harsh chemicals aligns with my values.",
-      "negative_reaction": "I'm not sure about the price point; I'd like to see more value for what I'm paying.",
+      "persona_profile": "29, personal trainer, prioritizes natural health and wellness, reads reviews online",
+      "positive_reaction": "I appreciate that Purezza is committed to using sustainable suppliers. It's great to see a brand that cares about the environment.",
+      "negative_reaction": "Some of your products are a bit pricey for my budget. I wish you had more affordable options without compromising on quality.",
+      "purchase_intent": 3,
+      "improvement_suggestion": "Consider offering more affordable options or loyalty programs to reward repeat customers."
+    },
+    {
+      "persona_name": "Beauty Blogger Bella",
+      "persona_profile": "26, beauty blogger, has tried many skincare products, prioritizes effective formulas and good packaging",
+      "positive_reaction": "I love the minimalist packaging of Purezza's products! It's so chic and Instagram-worthy.",
+      "negative_reaction": "Some of your products don't quite live up to their claims. I've had mixed results with the moisturizing properties.",
       "purchase_intent": 2,
-      "improvement_suggestion": "Consider offering a loyalty program or rewards scheme to incentivize repeat purchases."
+      "improvement_suggestion": "Improve product efficacy or provide more detailed instructions for use."
     },
     {
-      "persona_name": "Budget-Bound Beth",
-      "persona_profile": "25, Student, on a tight budget, prioritizes affordability over eco-friendliness",
-      "positive_reaction": "I like that Purezza is gentle on my skin, but the price point is a bit out of my range.",
-      "negative_reaction": "I'm not sure I can justify spending this much on sunscreen when there are cheaper options available.",
+      "persona_name": "Frugal Frank",
+      "persona_profile": "30, accountant, prioritizes budget-friendly options, reads reviews online",
+      "positive_reaction": "I appreciate that Purezza is transparent about their ingredients and pricing. It's refreshing to see a brand that's honest.",
+      "negative_reaction": "Some of your products are still a bit pricey for my budget. I wish you had more affordable options or discounts for loyal customers.",
       "purchase_intent": 1,
-      "improvement_suggestion": "Consider offering discounts or promotions to make it more accessible to customers like me who are budget-conscious."
-    },
-    {
-      "persona_name": "Informed Investor Ivy",
-      "persona_profile": "35, Financial Advisor, prioritizes long-term investments, seeks out companies with strong ESG practices",
-      "positive_reaction": "I'm impressed by Purezza's commitment to transparency and sustainability. It's clear they're a company that values both people and the planet.",
-      "negative_reaction": "While I appreciate their efforts, I'd like to see more concrete evidence of their environmental impact and social responsibility initiatives.",
-      "purchase_intent": 5,
-      "improvement_suggestion": "Consider publishing an annual sustainability report or providing more detailed information on your ESG practices."
+      "improvement_suggestion": "Consider offering loyalty programs, discounts, or bundle deals to make your products more accessible."
     }
   ],
   "marketing_strategy": {
-    "main_insight": "Customers appreciate Purezza's commitment to safety, transparency, and sustainability but express concerns about price, ingredient composition, and a lack of concrete evidence regarding environmental impact.",
+    "main_insight": "Customers appreciate Purezza's commitment to sustainability and gentle formulas but desire more fragrance-free options, affordability, and improved product efficacy.",
     "customer_pain_points": [
-      "Price point perceived as high",
-      "Presence of some potentially undesirable chemicals",
-      "Desire for more tangible proof of environmental impact"
+      "Limited fragrance-free options",
+      "High price point",
+      "Inconsistent product performance"
     ],
     "selling_points": [
-      "Gentle formula suitable for sensitive skin",
-      "Transparent ingredient list and manufacturing process",
-      "Commitment to ethical sourcing and sustainable practices"
+      "Natural and sustainable ingredients",
+      "Gentle formulas suitable for sensitive skin",
+      "Transparent labeling and honest communication"
     ],
-    "marketing_direction": "Emphasize Purezza's unique selling points while addressing customer concerns through transparent communication, product education, and showcasing real-world impact.",
-    "message_strategy": "Highlight the benefits of Purezza for sensitive skin, showcase ingredient transparency with clear explanations, and share stories about sustainable practices and partnerships. Utilize user-generated content and influencer collaborations to build trust and authenticity.",
-    "recommended_tone": "Honest, informative, and approachable. Build a sense of community by engaging with customers and addressing their concerns directly.",
+    "marketing_direction": "Focus on highlighting Purezza's commitment to sustainability, transparency, and customer well-being while addressing customer pain points through product development and targeted messaging.",
+    "message_strategy": "Emphasize the benefits of Purezza's natural ingredients and gentle formulas for sensitive skin. Showcase customer testimonials and highlight the brand's sustainable practices. Address concerns about price and product performance with transparent communication and value-driven promotions.",
+    "recommended_tone": "Authentic, informative, and empathetic. Build trust by being transparent about product limitations and actively engaging with customer feedback.",
     "risk_to_avoid": [
-      "Making unsubstantiated claims about environmental impact",
-      "Ignoring customer feedback or appearing dismissive of concerns"
+      "Greenwashing claims without substantiation",
+      "Overpromising product efficacy without evidence"
     ]
   },
   "sns_content": {
     "post_title": "Protect Your Skin with Love",
-    "main_copy": "Say goodbye to harsh chemicals and hello to gentle, effective sun protection. Our Purezza sunscreen is designed for sensitive skin, so you can feel confident in your daily routine. We believe in honest communication and transparency - that's why we're committed to using eco-friendly ingredients and sustainable practices.",
-    "short_hook": "Sensitive skin? No problem!",
+    "main_copy": "Say goodbye to harsh chemicals and artificial fragrances! Our sunscreens are carefully crafted for sensitive skin, providing gentle protection without compromising on effectiveness. We believe in honest communication - our labels are transparent, so you know exactly what you're putting on your skin.",
+    "short_hook": "Sensitive skin? We've got you covered!",
     "hashtags": [
       "#sensitiveSkin",
-      "#naturalSunscreen",
-      "#ecofriendly",
-      "#transparencymatters",
-      "#gentleprotection"
+      "#gentleProtection",
+      "#honestSkincare",
+      "#transparencyMatters",
+      "#naturalSunscreens"
     ],
-    "image_prompt_for_sdxl": "A serene and modern bathroom scene with a large window on the left side, letting in soft natural light. In the center of the image, a sleek and minimalist glass bottle of Purezza sunscreen sits atop a white marble countertop, surrounded by a few carefully placed green plants. The background is a clean and neutral color, with a subtle texture that resembles a high-end bathroom tile.",
-    "negative_prompt_for_sdxl": "Blurry, low quality, distorted bottle, cluttered background, text, logo, watermark, deformed packaging",
+    "image_prompt_for_sdxl": "A clean and modern bathroom counter with a matte-finish sunscreen tube in the center. The tube is a calming shade of blue and has a minimalist design with a subtle texture. Next to it lies a soft, white towel and a pair of sunglasses on a small table. The background is a gentle, gradient sky with a few wispy clouds, evoking a sense of serenity and protection from the sun.",
+    "negative_prompt_for_sdxl": "serum bottle, transparent liquid bottle, perfume bottle, toner bottle, essence bottle, watery cosmetic bottle",
     "image_width": 640,
     "image_height": 960
   },
