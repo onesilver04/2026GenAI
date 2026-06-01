@@ -1,7 +1,6 @@
 from __future__ import annotations
 import json
 import os
-from urllib import error, request
 from dataclasses import dataclass, asdict
 from functools import lru_cache
 from pathlib import Path
@@ -29,73 +28,77 @@ class PersonaFeedback:
     improvement_suggestion: str
 
 
-OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434/api/generate")
-OLLAMA_TIMEOUT_SECONDS = int(os.getenv("OLLAMA_TIMEOUT_SECONDS", "300"))
-
-DEFAULT_LLM_MODEL = os.getenv("LLM_MODEL", "llama3.1:8b")
-PERSONA_MODEL = os.getenv("PERSONA_MODEL", DEFAULT_LLM_MODEL)
-STRATEGY_MODEL = os.getenv("STRATEGY_MODEL", "gemma2:9b")
-STRATEGY_FALLBACK_MODEL = os.getenv("STRATEGY_FALLBACK_MODEL", DEFAULT_LLM_MODEL)
-SNS_COPY_MODEL = os.getenv("SNS_COPY_MODEL", DEFAULT_LLM_MODEL)
-
+DEFAULT_MLX_MODEL = os.getenv("MLX_MODEL", "mlx-community/Dolphin3.0-Llama3.1-8B-MLX-6bit")
+PERSONA_MODEL = os.getenv("PERSONA_MODEL", "mlx-community/Dolphin3.0-Llama3.1-8B-MLX-6bit")
+STRATEGY_MODEL = os.getenv("STRATEGY_MODEL", "mlx-community/gemma-4-e2b-it-8bit")
+STRATEGY_FALLBACK_MODEL = os.getenv("STRATEGY_FALLBACK_MODEL", DEFAULT_MLX_MODEL)
+SNS_COPY_MODEL = os.getenv("SNS_COPY_MODEL", DEFAULT_MLX_MODEL)
 SDXL_MODEL = os.getenv("SDXL_MODEL", "stabilityai/stable-diffusion-xl-base-1.0")
-LLM_MAX_TOKENS = int(os.getenv("LLM_MAX_TOKENS", "2048"))
+MLX_MAX_TOKENS = int(os.getenv("MLX_MAX_TOKENS", "2048"))
 SDXL_OUTPUT_DIR = Path(os.getenv("SDXL_OUTPUT_DIR", "generated_content"))
 
 
-def normalize_ollama_model_name(model_name: str) -> str:
-    model_name = model_name.strip()
+@lru_cache(maxsize=4)
+def load_mlx_model(model_name: str = DEFAULT_MLX_MODEL):
+    from mlx_lm import load
 
-    if "/" in model_name:
-        model_name = model_name.rsplit("/", 1)[-1]
-
-    return model_name.lower()
+    return load(model_name)
 
 
-def call_llm(
+def build_mlx_prompt(tokenizer, prompt: str):
+    messages = [{"role": "user", "content": prompt}]
+
+    if getattr(tokenizer, "has_chat_template", False):
+        try:
+            return tokenizer.apply_chat_template(
+                messages,
+                add_generation_prompt=True,
+                tokenize=True,
+                enable_thinking=False,
+            )
+        except TypeError:
+            return tokenizer.apply_chat_template(
+                messages,
+                add_generation_prompt=True,
+                tokenize=True,
+            )
+
+    return prompt
+
+
+def call_mlx(
     prompt: str,
-    model_name: str = DEFAULT_LLM_MODEL,
+    model_name: str = DEFAULT_MLX_MODEL,
     fallback_model_name: str | None = None,
-    max_tokens: int = LLM_MAX_TOKENS,
+    max_tokens: int = MLX_MAX_TOKENS,
 ) -> str:
-    model_name = normalize_ollama_model_name(model_name)
-    payload = {
-        "model": model_name,
-        "prompt": prompt,
-        "stream": False,
-        "options": {
-            "num_predict": max_tokens,
-            "temperature": 0,
-        },
-    }
-
-    data = json.dumps(payload).encode("utf-8")
-    http_request = request.Request(
-        OLLAMA_URL,
-        data=data,
-        headers={"Content-Type": "application/json"},
-        method="POST",
-    )
+    from mlx_lm import generate
+    from mlx_lm.sample_utils import make_sampler
 
     try:
-        with request.urlopen(http_request, timeout=OLLAMA_TIMEOUT_SECONDS) as response:
-            response_body = response.read().decode("utf-8")
-            return json.loads(response_body)["response"].strip()
-    except (error.URLError, error.HTTPError, TimeoutError, KeyError, json.JSONDecodeError) as exc:
+        model, tokenizer = load_mlx_model(model_name)
+    except (OSError, ValueError) as exc:
         if fallback_model_name is None:
-            raise RuntimeError(
-                f"Ollama request failed for model '{model_name}' at {OLLAMA_URL}: {exc}"
-            ) from exc
+            raise
 
-        fallback_model_name = normalize_ollama_model_name(fallback_model_name)
-        if fallback_model_name == model_name:
-            raise RuntimeError(
-                f"Ollama request failed for model '{model_name}' at {OLLAMA_URL}: {exc}"
-            ) from exc
+        reason = str(exc).splitlines()[0]
+        print(
+            f"\nMLX model load failed for {model_name}. "
+            f"Falling back to {fallback_model_name}.\nReason: {reason}\n"
+        )
+        model, tokenizer = load_mlx_model(fallback_model_name)
 
-        print(f"\nOllama request failed for {model_name}. Falling back to {fallback_model_name}.")
-        print(f"Reason: {str(exc).splitlines()[0]}\n")
-        return call_llm(prompt, fallback_model_name, None, max_tokens)
+    mlx_prompt = build_mlx_prompt(tokenizer, prompt)
+    sampler = make_sampler(temp=0.0)
+
+    return generate(
+        model,
+        tokenizer,
+        prompt=mlx_prompt,
+        max_tokens=max_tokens,
+        sampler=sampler,
+        verbose=False,
+    ).strip()
 
 
 def generate_customer_feedback(user_input: CampaignInput, num_personas: int = 5) -> List[Dict]:
@@ -143,7 +146,7 @@ Rules:
 - Do not include explanations outside JSON.
 """
 
-    result = call_llm(prompt, PERSONA_MODEL)
+    result = call_mlx(prompt, PERSONA_MODEL)
     return safe_json_loads(result, list)
 
 
@@ -199,7 +202,7 @@ Rules:
 - Do not include explanations outside JSON.
 """
 
-    result = call_llm(prompt, STRATEGY_MODEL, STRATEGY_FALLBACK_MODEL)
+    result = call_mlx(prompt, STRATEGY_MODEL, STRATEGY_FALLBACK_MODEL)
     return safe_json_loads(result, dict)
 
 def generate_product_concept(
@@ -256,7 +259,7 @@ Rules:
 - Do not include explanations outside JSON.
 """
 
-    result = call_llm(prompt)
+    result = call_mlx(prompt)
     return safe_json_loads(result, dict)
 
 # def generate_sns_content(user_input: CampaignInput, strategy: Dict) -> Dict:
@@ -312,7 +315,7 @@ Rules:
 # - Do not include explanations outside JSON.
 # """
 
-#     result = call_llm(prompt, SNS_COPY_MODEL, DEFAULT_LLM_MODEL)
+#     result = call_mlx(prompt, SNS_COPY_MODEL, DEFAULT_MLX_MODEL)
 #     try:
 #         sns_content = safe_json_loads(result, dict)
 #     except ValueError:
@@ -377,7 +380,7 @@ Rules:
 - Avoid unsupported claims.
 - Return JSON only.
 """
-    result = call_llm(prompt, SNS_COPY_MODEL, DEFAULT_LLM_MODEL)
+    result = call_mlx(prompt, SNS_COPY_MODEL, DEFAULT_MLX_MODEL)
     return safe_json_loads(result, dict)
 
 # image prompt
@@ -430,7 +433,7 @@ Rules:
 - Avoid transparent glass serum bottles unless the product category specifically requires that packaging.
 - Do not describe watery liquid, dropper bottles, perfume bottles, toner bottles, or essence containers for sunscreen products.
 """
-    result = call_llm(prompt, SNS_COPY_MODEL, DEFAULT_LLM_MODEL)
+    result = call_mlx(prompt, SNS_COPY_MODEL, DEFAULT_MLX_MODEL)
     image_content = safe_json_loads(result, dict)
 
     image_content["image_width"] = normalize_sdxl_dimension(image_content["image_width"])
@@ -465,7 +468,7 @@ Return ONLY this JSON object. No markdown, no code fences.
   "image_height": 640
 }}
 """
-    repaired = call_llm(repair_prompt, DEFAULT_LLM_MODEL, max_tokens=640)
+    repaired = call_mlx(repair_prompt, DEFAULT_MLX_MODEL, max_tokens=640)
     return safe_json_loads(repaired, dict)
 
 
@@ -506,16 +509,19 @@ def load_sdxl_pipeline(model_name: str = SDXL_MODEL):
             "SDXL image generation requires diffusers and torch. "
         ) from exc
         
-    if not torch.cuda.is_available():
-        raise RuntimeError("CUDA is not available. SDXL requires the WSL 4090 CUDA environment.")
-
     pipe = StableDiffusionXLPipeline.from_pretrained(
         model_name,
         torch_dtype=torch.float16,
         use_safetensors=True,
     )
-    
-    pipe = pipe.to("cuda")
+
+    if torch.backends.mps.is_available():
+        pipe = pipe.to("mps")
+    elif torch.cuda.is_available():
+        pipe = pipe.to("cuda")
+    else:
+        pipe = pipe.to("cpu")
+
     pipe.enable_attention_slicing()
 
     return pipe
@@ -633,24 +639,19 @@ def run_pipeline():
     print("\n[3] Generating SNS content...")
     sns_copy = generate_sns_copy(user_input, strategy)
 
-    print("\n[4] Skipping related visual content with SDXL...")
+    print("\n[4] Generating image prompt for SDXL...")
     image_prompt = generate_image_prompt(user_input, strategy, sns_copy)
 
     sns_content = {
         **sns_copy,
         **image_prompt,
     }
-    print("\n[5] Skipping related visual content with SDXL...")
-    sdxl_content = {
-        "model": SDXL_MODEL,
-        "status": "skipped",
-        "reason": "Skipped to reduce runtime.",
-        "image_path": None,
-    }
+    print("\n[5] Generating related visual content with SDXL...")
+    sdxl_content = generate_sdxl_content(sns_content)
 
     final_result = {
         "agent_models": {
-            "product_concept_agent": DEFAULT_LLM_MODEL,
+            "product_concept_agent": DEFAULT_MLX_MODEL,
             "persona_agent": PERSONA_MODEL,
             "strategy_agent": STRATEGY_MODEL,
             "strategy_fallback_agent": STRATEGY_FALLBACK_MODEL,

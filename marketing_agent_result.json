@@ -4,102 +4,185 @@
     "persona_agent": "mlx-community/Dolphin3.0-Llama3.1-8B-MLX-6bit",
     "strategy_agent": "mlx-community/gemma-4-e2b-it-8bit",
     "strategy_fallback_agent": "mlx-community/gemma-2-2b-it-4bit",
-    "sns_copy_agent": "mlx-community/Dolphin3.0-Llama3.1-8B-MLX-6bit",
-    "related_content_agent": "stabilityai/stable-diffusion-xl-base-1.0"
+    "sns_copy_and_image_prompt_agent": "mlx-community/Dolphin3.0-Llama3.1-8B-MLX-6bit"
   },
   "input": {
     "product_category": "sunscreen",
-    "brand_values": "clean beauty",
-    "product_name": "ClearGuard",
-    "product_description": "ClearGuard is a clean beauty sunscreen designed for sensitive skin. Formulated with gentle, non-toxic ingredients, it provides broad-spectrum protection without irritating your skin. Perfect for skincare-conscious women and men in their 20s and 30s seeking comfort and peace of mind in their daily sun protection routine.",
-    "target_group": "Skincare-conscious women and men in their 20s and 30s with sensitive skin",
-    "brand_tone": "comfort",
+    "brand_values": "자연과 사람, 기업이 조화롭게 공존하는 아름다운 세상을 만들고자 합니다. 지속적인 성장의 튼튼한 기초를 쌓아 놓고자, 지속가능경영 체계를 정립하고 다양한 활동을 추진하고 있습니다. 또한 고객이 안심할 수 있는 품질을 최우선 가치로 여기며 고객의 만족을 위해 항상 노력하고 있습니다.",
+    "product_name": "Harmonia Sun Shield",
+    "product_description": "Crafted with the finest natural ingredients, Harmonia Sun Shield offers a luxurious sunscreen experience that respects and protects the environment. Our commitment to sustainability is reflected in the eco-friendly packaging and the use of biodegradable materials. Designed for discerning professionals in their 40s and 50s, this sunscreen not only provides broad-spectrum protection but also nourishes the skin with antioxidants and vitamins. Harmonia's dedication to quality and customer satisfaction ensures a smooth, non-greasy finish that enhances your natural beauty while promoting a harmonious coexistence with nature.",
+    "target_group": "Affluent professionals in their 40s and 50s who seek premium skincare and luxury beauty experiences",
+    "brand_tone": "clean",
     "platform": "instagram"
   },
   "virtual_customer_feedbacks": [
     {
-      "persona_name": "Eco-Conscious Emily",
-      "persona_profile": "28, freelance graphic designer, passionate about sustainability and skincare, values eco-friendly products, makes purchases based on product ingredients and brand values.",
-      "positive_reaction": "Emily appreciates the non-toxic and gentle ingredients of ClearGuard, aligning with her eco-conscious lifestyle and skincare routine.",
-      "negative_reaction": "Emily is hesitant due to the higher price point compared to other sunscreens.",
+      "persona_name": "Eco-Conscious Executive",
+      "persona_profile": "45-year-old CEO of a renewable energy company, passionate about sustainability, enjoys hiking, values high-quality products that align with her eco-friendly lifestyle.",
+      "positive_reaction": "Appreciates the eco-friendly packaging and the use of biodegradable materials.",
+      "negative_reaction": "Concerned about the price point, but willing to invest in quality.",
       "purchase_intent": 4,
-      "improvement_suggestion": "Consider offering a more affordable travel-sized option for on-the-go use."
+      "improvement_suggestion": "Consider offering a more affordable travel-sized option."
     },
     {
-      "persona_name": "Active Alex",
-      "persona_profile": "25, personal trainer, enjoys outdoor activities, prioritizes skincare but is skeptical of new products, often seeks recommendations from peers.",
-      "positive_reaction": "Alex is impressed by the broad-spectrum protection and the suitability for sensitive skin, which aligns with his skincare needs and active lifestyle.",
-      "negative_reaction": "Alex is initially concerned about the effectiveness of a 'clean beauty' sunscreen.",
-      "purchase_intent": 3,
-      "improvement_suggestion": "Provide testimonials or reviews from active individuals who have used ClearGuard."
-    },
-    {
-      "persona_name": "Skincare Savvy Sarah",
-      "persona_profile": "30, dermatology nurse, always researching new skincare products, values scientific evidence, makes purchases based on product benefits and dermatologist recommendations.",
-      "positive_reaction": "Sarah is pleased with the scientific backing and non-toxic ingredients of ClearGuard, which aligns with her professional knowledge and personal skincare routine.",
-      "negative_reaction": "Sarah is skeptical about the brand's claims of 'comfort' and seeks more detailed information on the formulation.",
+      "persona_name": "Discerning Dermatologist",
+      "persona_profile": "50-year-old dermatologist, interested in innovative skincare solutions, enjoys reading scientific literature, prioritizes products backed by scientific evidence.",
+      "positive_reaction": "Impressed by the inclusion of antioxidants and vitamins.",
+      "negative_reaction": "Wants more information on the SPF rating and protection levels.",
       "purchase_intent": 5,
-      "improvement_suggestion": "Include more detailed scientific information about the ingredients and their benefits on the product packaging."
+      "improvement_suggestion": "Provide more details on the SPF protection and clinical studies."
     },
     {
-      "persona_name": "Budget-Conscious Ben",
-      "persona_profile": "29, software developer, prioritizes affordability, makes purchases based on price and value, values simplicity in product offerings.",
-      "positive_reaction": "Ben appreciates the gentle ingredients and suitability for sensitive skin, which aligns with his skincare needs and budget.",
-      "negative_reaction": "Ben is deterred by the higher price compared to other sunscreens in the market.",
-      "purchase_intent": 2,
-      "improvement_suggestion": "Offer a discount for first-time buyers or a loyalty program to incentivize purchase."
+      "persona_name": "Luxury Lifestyle Aficionado",
+      "persona_profile": "48-year-old marketing consultant, enjoys luxury brands, collects designer items, values aesthetics and status symbols.",
+      "positive_reaction": "Attracted by the luxurious feel and the brand's commitment to sustainability.",
+      "negative_reaction": "Prefers well-known brands with a longer history.",
+      "purchase_intent": 3,
+      "improvement_suggestion": "Build brand recognition through celebrity endorsements or advertising."
     },
     {
-      "persona_name": "Health-Obsessed Hannah",
-      "persona_profile": "26, nutritionist, prioritizes holistic health and wellness, makes purchases based on product benefits and holistic approach to skincare.",
-      "positive_reaction": "Hannah is impressed by the non-toxic and gentle ingredients of ClearGuard, aligning with her holistic approach to skincare and health.",
-      "negative_reaction": "Hannah is initially skeptical about the effectiveness of a sunscreen designed specifically for sensitive skin.",
+      "persona_name": "Health-Conscious Homemaker",
+      "persona_profile": "46-year-old stay-at-home parent, prioritizes family health, enjoys organic gardening, seeks products that are safe and natural.",
+      "positive_reaction": "Likes the natural ingredients and the emphasis on environmental harmony.",
+      "negative_reaction": "Concerned about the price, but willing to pay for quality.",
       "purchase_intent": 4,
-      "improvement_suggestion": "Highlight the holistic benefits of using ClearGuard, such as the protection it offers against environmental stressors."
+      "improvement_suggestion": "Offer a family or multi-pack discount."
+    },
+    {
+      "persona_name": "Aspiring Entrepreneur",
+      "persona_profile": "49-year-old startup founder, interested in sustainable business practices, enjoys networking events, values products that reflect his professional image.",
+      "positive_reaction": "Respects the brand's commitment to sustainability and quality.",
+      "negative_reaction": "Wants to see more social proof and customer testimonials.",
+      "purchase_intent": 5,
+      "improvement_suggestion": "Highlight customer reviews and success stories in marketing materials."
     }
   ],
   "marketing_strategy": {
-    "main_insight": "Customers express a strong preference for ClearGuard's gentle, non-toxic ingredients and broad-spectrum protection, but are hesitant about the price point and need reassurance regarding product effectiveness and scientific backing.",
+    "main_insight": "Customers value Harmonia Sun Shield's commitment to sustainability, quality, and luxurious experience, but are concerned about price and lack of information on SPF rating and protection levels.",
     "customer_pain_points": [
       "Price point",
-      "Lack of scientific evidence and product effectiveness",
-      "Skepticism about 'clean beauty' sunscreen claims"
+      "Lack of information on SPF rating and protection levels"
     ],
     "selling_points": [
-      "Gentle, non-toxic ingredients",
-      "Broad-spectrum protection",
-      "Scientifically backed formulation",
-      "Suitable for sensitive skin"
+      "Eco-friendly packaging and biodegradable materials",
+      "Inclusion of antioxidants and vitamins",
+      "Luxury experience and commitment to quality"
     ],
-    "marketing_direction": "Focus on building trust and addressing price concerns through targeted messaging and promotions.",
-    "message_strategy": "Highlight the scientific backing of the ingredients, showcase testimonials from active individuals, and offer a discount for first-time buyers.",
-    "recommended_tone": "Informative, empathetic, and confident.",
+    "marketing_direction": "Focus on building brand awareness and trust through targeted marketing campaigns that highlight the brand's values and resonate with the target audience.",
+    "message_strategy": "Emphasize the brand's commitment to sustainability, quality, and luxurious experience through social media campaigns featuring: \n- Testimonials from customers who appreciate the product's quality and eco-friendly features.\n- Images and videos showcasing the product's luxurious feel and packaging.\n- Partnerships with influencers who align with the brand's values and target audience.\n- Educational content about the product's ingredients and benefits.\n-  Highlighting the brand's commitment to sustainability through initiatives like carbon offsetting or partnerships with environmental organizations.",
+    "recommended_tone": "Sophisticated, elegant, and informative.",
     "risk_to_avoid": [
-      "Ignoring price concerns",
-      "Not addressing customer skepticism about 'clean beauty' sunscreen claims"
+      "Greenwashing claims",
+      "Lack of transparency about product ingredients and benefits"
+    ]
+  },
+  "sns_copy": {
+    "post_title": "Harmonia Sun Shield: Where Luxury Meets Nature",
+    "main_copy": "Protect your skin and the planet with Harmonia Sun Shield. Our eco-friendly sunscreen not only shields you from the sun's harsh rays but also nourishes your skin with antioxidants and vitamins. Embrace the luxury of clean beauty and join us in creating a harmonious world where nature and people thrive.",
+    "short_hook": "Experience the perfect balance of luxury and sustainability.",
+    "hashtags": [
+      "#CleanBeauty",
+      "#LuxurySunscreen",
+      "#EcoFriendly",
+      "#HarmoniaBeauty",
+      "#SustainableSkincare",
+      "#NaturalProtection"
+    ]
+  },
+  "campaign_concept": {
+    "campaign_big_idea": "Harmonia Sun Shield: Protect Your Skin, Respect the Planet",
+    "campaign_message": "Experience the luxury of sun protection that respects both your skin and the environment.",
+    "primary_persona_insight": "Customers value Harmonia Sun Shield's commitment to sustainability, quality, and luxurious experience, but are concerned about price and lack of information on SPF rating and protection levels.",
+    "customer_concerns_to_address": [
+      "Price point",
+      "Lack of information on SPF rating and protection levels"
+    ],
+    "selling_points_to_visualize": [
+      "Eco-friendly packaging and biodegradable materials",
+      "Inclusion of antioxidants and vitamins"
+    ],
+    "visual_story": "A high-end lifestyle shot showcasing the Harmonia Sun Shield bottle in an eco-friendly setting, with a subtle background of nature and a touch of luxury, such as a designer towel or a high-end sun lounger.",
+    "emotional_keywords": [
+      "luxury",
+      "sustainability",
+      "protection",
+      "nature",
+      "harmony"
+    ],
+    "trust_signals": [
+      "Scientifically backed ingredients",
+      "Transparent SPF information",
+      "Customer testimonials"
+    ]
+  },
+  "creative_direction": {
+    "visual_concept": "A high-end lifestyle shot showcasing the Harmonia Sun Shield bottle in an eco-friendly setting, with a subtle background of nature and a touch of luxury.",
+    "campaign_story": "The visual communicates the campaign message by featuring a person enjoying the outdoors, with the Harmonia Sun Shield bottle visible and the eco-friendly packaging and luxurious texture highlighted.",
+    "hero_subject": "A 45-year-old Eco-Conscious Executive, wearing a designer sun hat, applying Harmonia Sun Shield on their face while sitting on a high-end sun lounger, with a lush green garden in the background.",
+    "scene_type": "Instagram campaign hero shot",
+    "composition": "The Eco-Conscious Executive is positioned in the center of the frame, with the sun lounger and garden on either side, creating a balanced and harmonious composition.",
+    "product_visibility": "The Harmonia Sun Shield bottle is placed on a small table next to the sun lounger, with a cream smear on the edge of the bottle to show the texture.",
+    "texture_visualization": "The cream smear on the edge of the bottle showcases the luxurious and non-greasy formula.",
+    "customer_insight_visualization": [
+      {
+        "insight": "Concerned about the price point",
+        "visual_solution": "The high-end sun lounger and designer sun hat convey a sense of luxury and premium quality, reassuring the customer of the value for money."
+      },
+      {
+        "insight": "Wants more information on SPF rating and protection levels",
+        "visual_solution": "The Eco-Conscious Executive's confident and healthy-looking skin, thanks to the product's protection, reassures the customer about the product's effectiveness."
+      }
+    ],
+    "brand_value_visualization": [
+      {
+        "brand_value": "Eco-friendly packaging and biodegradable materials",
+        "visual_solution": "The lush green garden in the background and the eco-friendly packaging of the Harmonia Sun Shield bottle emphasize the brand's commitment to sustainability."
+      },
+      {
+        "brand_value": "Inclusion of antioxidants and vitamins",
+        "visual_solution": "The healthy and radiant skin of the Eco-Conscious Executive showcases the nourishing benefits of the product's ingredients."
+      }
+    ],
+    "target_audience_visualization": [
+      "A subtle background of nature and a touch of luxury, such as a designer towel or a high-end sun lounger.",
+      "A sophisticated and elegant atmosphere, reflecting the target audience's preferences."
+    ],
+    "background": "A lush green garden with a few blooming flowers, creating a serene and eco-friendly environment.",
+    "lighting": "Soft, natural sunlight filtering through the trees, creating a warm and inviting atmosphere.",
+    "color_palette": [
+      "green",
+      "beige",
+      "gold"
+    ],
+    "material_and_props": [
+      "Harmonia Sun Shield bottle",
+      "designer sun hat",
+      "high-end sun lounger",
+      "lush green garden"
+    ],
+    "mood": "Luxurious, eco-friendly, and harmonious.",
+    "things_to_avoid": [
+      "Serum bottles",
+      "droppers",
+      "toner bottles",
+      "transparent liquid bottles"
     ]
   },
   "sns_content": {
-    "post_title": "ClearGuard: Your Safe & Gentle Sunscreen Solution!",
-    "main_copy": "Experience the perfect balance of protection and comfort with ClearGuard. Our scientifically-backed, non-toxic formula ensures broad-spectrum protection without compromising on your skin's well-being. Perfect for sensitive skin and trusted by sun-seekers worldwide. Don't let the price concern you - feel the difference with our special offer for first-time buyers!",
-    "short_hook": "ClearGuard: Gentle, Effective, & Now More Affordable!",
+    "post_title": "Harmonia Sun Shield: Where Luxury Meets Nature",
+    "main_copy": "Protect your skin and the planet with Harmonia Sun Shield. Our eco-friendly sunscreen not only shields you from the sun's harsh rays but also nourishes your skin with antioxidants and vitamins. Embrace the luxury of clean beauty and join us in creating a harmonious world where nature and people thrive.",
+    "short_hook": "Experience the perfect balance of luxury and sustainability.",
     "hashtags": [
-      "#ClearGuard",
-      "#SafeSunscreen",
-      "#GentleProtection",
-      "#ScientificallyBacked",
-      "#SensitiveSkinFriendly"
+      "#CleanBeauty",
+      "#LuxurySunscreen",
+      "#EcoFriendly",
+      "#HarmoniaBeauty",
+      "#SustainableSkincare",
+      "#NaturalProtection"
     ],
-    "image_prompt_for_sdxl": "Generate an image showcasing a person enjoying outdoor activities under the sun, with ClearGuard sunscreen applied, highlighting the product's gentle and effective formula.",
-    "negative_prompt_for_sdxl": "Avoid showing close-ups of the product alone; focus on the user experience and outdoor setting.",
+    "image_prompt_for_sdxl": "A 45-year-old Eco-Conscious Executive, wearing a designer sun hat, applies Harmonia Sun Shield sunscreen on their face while sitting on a high-end sun lounger, with a lush green garden in the background. The soft, natural sunlight filters through the trees, creating a warm and inviting atmosphere. The composition is balanced, with the Executive positioned in the center, surrounded by the sun lounger and garden, while the Harmonia Sun Shield bottle is placed on a small table next to the sun lounger, showcasing its eco-friendly packaging and luxurious texture.",
+    "negative_prompt_for_sdxl": "Serum bottle, dropper bottle, toner bottle, transparent liquid bottle, perfume bottle, plain floating product render, white studio background, crowded flat lay, fake readable text, brand logo, watermark, unreadable characters.",
     "image_width": 640,
-    "image_height": 640
-  },
-  "sdxl_content": {
-    "model": "stabilityai/stable-diffusion-xl-base-1.0",
-    "status": "generated",
-    "width": 640,
-    "height": 640,
-    "image_path": "generated_content/sdxl_content_20260523_231203.png"
+    "image_height": 960
   }
 }
