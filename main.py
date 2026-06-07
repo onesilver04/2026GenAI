@@ -562,7 +562,6 @@ def safe_json_loads(text: str, expected_type: Type[dict] | Type[list] | None = N
         if expected_type is None or isinstance(value, expected_type):
             return value
     except json.JSONDecodeError:
-        pass
 
     decoder = json.JSONDecoder()
     for index, char in enumerate(text):
