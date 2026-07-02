@@ -40,28 +40,28 @@
 User Input (Streamlit Web UI)
         │
         ▼
-Product Concept Agent   ── Llama 3.1 8B (Groq)
+Product Concept Agent   
         │
         ▼
-Virtual Customer Agent  ── Llama 3.1 8B (Groq)
+Virtual Customer Agent  
         │
         ▼
-Marketing Strategy Agent ── Llama 3.3 70B (Groq)
+Marketing Strategy Agent
         │
         ▼
-SNS Copy Agent          ── Llama 3.1 8B (Groq)
+SNS Copy Agent      
         │
         ▼
-Campaign Concept Agent  ── Llama 3.1 8B (Groq)
+Campaign Concept Agent  
         │
         ▼
-Creative Director Agent ── Llama 3.1 8B (Groq)
+Creative Director Agent 
         │
         ▼
-Image Prompt Agent      ── Llama 3.1 8B (Groq)
+Image Prompt Agent    
         │
         ▼
-Image Generation        ── Gemini 2.5 Flash Image
+Image Generation    
         │
         ▼
 Final Marketing Content (Web UI + 다운로드)
@@ -126,7 +126,7 @@ pip install -r requirements.txt
 | API | 발급 경로 | 비용 |
 |-----|-----------|------|
 | **Groq API Key** | [console.groq.com](https://console.groq.com) → API Keys | 무료 |
-| **SMU API Key** | 이미지 생성 게이트웨이 키 | 별도 문의 |
+| **SMU API Key** | 이미지 생성 게이트웨이 키 | 별도 문의 | 이미지 생성을 위한 API 키로 설정 |
 
 ### 5. `.env` 파일 생성
 
@@ -207,13 +207,14 @@ AI가 생성한 Instagram 마케팅 비주얼 — 페르소나 피드백과 브�
 
 | 에이전트 | 모델 | 제공 |
 |---------|------|------|
-| Product Concept | `llama-3.1-8b-instant` | Groq |
-| Persona Generation | `llama-3.1-8b-instant` | Groq |
-| Marketing Strategy | `llama-3.3-70b-versatile` | Groq |
-| SNS Copy | `llama-3.1-8b-instant` | Groq |
-| Campaign Concept | `llama-3.1-8b-instant` | Groq |
-| Creative Direction | `llama-3.1-8b-instant` | Groq |
-| Image Prompt | `llama-3.1-8b-instant` | Groq |
+| Product Concept | `llama-3.3-70b-versatile` | Groq |
+| Persona Generation | `llama-3.3-70b-versatile` | Groq |
+| Marketing Strategy | `openai/gpt-oss-120b` | Groq |
+| Strategy Fallback | `openai/gpt-oss-120b` | Groq |
+| SNS Copy | `llama-3.3-70b-versatile` | Groq |
+| Campaign Concept | `llama-3.3-70b-versatile` | Groq |
+| Creative Direction | `llama-3.3-70b-versatile` | Groq |
+| Image Prompt | `llama-3.3-70b-versatile` | Groq |
 | Image Generation | `gemini-2.5-flash-image` | Google |
 
 ---
