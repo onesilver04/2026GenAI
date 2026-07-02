@@ -10,177 +10,176 @@
     "product_category": "sunscreen",
     "brand_values": "자연과 사람, 기업이 조화롭게 공존하는 아름다운 세상을 만들고자 합니다. 지속적인 성장의 튼튼한 기초를 쌓아 놓고자, 지속가능경영 체계를 정립하고 다양한 활동을 추진하고 있습니다. 또한 고객이 안심할 수 있는 품질을 최우선 가치로 여기며 고객의 만족을 위해 항상 노력하고 있습니다.",
     "product_name": "Harmonia Sun Shield",
-    "product_description": "Crafted with the finest natural ingredients, Harmonia Sun Shield offers a luxurious sunscreen experience that respects and protects the environment. Our commitment to sustainability is reflected in the eco-friendly packaging and the use of biodegradable materials. Designed for discerning professionals in their 40s and 50s, this sunscreen not only provides broad-spectrum protection but also nourishes the skin with antioxidants and vitamins. Harmonia's dedication to quality and customer satisfaction ensures a smooth, non-greasy finish that enhances your natural beauty while promoting a harmonious coexistence with nature.",
+    "product_description": "Crafted with the finest natural ingredients, Harmonia Sun Shield offers a luxurious, broad-spectrum sunscreen that protects your skin while respecting the environment. Our commitment to sustainability and customer satisfaction is reflected in every bottle, ensuring a high-performance product that aligns with the pursuit of a harmonious world where nature and humanity coexist in beauty. Designed for discerning individuals seeking premium skincare, Harmonia Sun Shield provides a clean, modern, and minimalist solution to your sun protection needs, backed by our dedication to quality and the well-being of our customers.",
     "target_group": "Affluent professionals in their 40s and 50s who seek premium skincare and luxury beauty experiences",
-    "brand_tone": "clean",
-    "platform": "instagram"
+    "brand_tone": "Clean, modern, minimalist, trustworthy",
+    "platform": "Instagram"
   },
   "virtual_customer_feedbacks": [
     {
       "persona_name": "Eco-Conscious Executive",
-      "persona_profile": "45-year-old CEO of a renewable energy company, passionate about sustainability, enjoys hiking, values high-quality products that align with her eco-friendly lifestyle.",
-      "positive_reaction": "Appreciates the eco-friendly packaging and the use of biodegradable materials.",
-      "negative_reaction": "Concerned about the price point, but willing to invest in quality.",
+      "persona_profile": "45, CEO of a green tech company, passionate about sustainability, values high-quality products with eco-friendly packaging, makes purchases based on product values alignment",
+      "positive_reaction": "Appreciates the commitment to sustainability and the use of natural ingredients.",
+      "negative_reaction": "Concerned about the price point, but willing to invest if the product meets expectations.",
       "purchase_intent": 4,
-      "improvement_suggestion": "Consider offering a more affordable travel-sized option."
+      "improvement_suggestion": "Consider offering a more affordable travel size option."
     },
     {
-      "persona_name": "Discerning Dermatologist",
-      "persona_profile": "50-year-old dermatologist, interested in innovative skincare solutions, enjoys reading scientific literature, prioritizes products backed by scientific evidence.",
-      "positive_reaction": "Impressed by the inclusion of antioxidants and vitamins.",
-      "negative_reaction": "Wants more information on the SPF rating and protection levels.",
+      "persona_name": "Health-Conscious Professional",
+      "persona_profile": "50, dermatologist, interested in skincare science, prioritizes products with scientific backing, makes purchases based on product efficacy and brand reputation",
+      "positive_reaction": "Impressed by the product's scientific formulation and the emphasis on natural ingredients.",
+      "negative_reaction": "Skeptical about the minimalist packaging, prefers more detailed product information.",
       "purchase_intent": 5,
-      "improvement_suggestion": "Provide more details on the SPF protection and clinical studies."
+      "improvement_suggestion": "Provide more information about the scientific research behind the product."
     },
     {
-      "persona_name": "Luxury Lifestyle Aficionado",
-      "persona_profile": "48-year-old marketing consultant, enjoys luxury brands, collects designer items, values aesthetics and status symbols.",
-      "positive_reaction": "Attracted by the luxurious feel and the brand's commitment to sustainability.",
-      "negative_reaction": "Prefers well-known brands with a longer history.",
+      "persona_name": "Luxury Lifestyle Enthusiast",
+      "persona_profile": "48, entrepreneur, enjoys premium brands, values aesthetics and luxury experiences, makes purchases based on product design and brand image",
+      "positive_reaction": "Attracted by the sleek design and the promise of luxury protection.",
+      "negative_reaction": "Disappointed by the lack of a luxurious feel in the packaging.",
       "purchase_intent": 3,
-      "improvement_suggestion": "Build brand recognition through celebrity endorsements or advertising."
+      "improvement_suggestion": "Enhance the packaging to reflect a more luxurious feel."
     },
     {
-      "persona_name": "Health-Conscious Homemaker",
-      "persona_profile": "46-year-old stay-at-home parent, prioritizes family health, enjoys organic gardening, seeks products that are safe and natural.",
-      "positive_reaction": "Likes the natural ingredients and the emphasis on environmental harmony.",
-      "negative_reaction": "Concerned about the price, but willing to pay for quality.",
+      "persona_name": "Environmentally Aware Consumer",
+      "persona_profile": "46, environmental consultant, prioritizes eco-friendly products, makes purchases based on environmental impact and brand values",
+      "positive_reaction": "Respects the brand's commitment to sustainability and the environment.",
+      "negative_reaction": "Concerned about the carbon footprint of the product distribution.",
       "purchase_intent": 4,
-      "improvement_suggestion": "Offer a family or multi-pack discount."
+      "improvement_suggestion": "Explore more sustainable packaging options or carbon offset initiatives."
     },
     {
-      "persona_name": "Aspiring Entrepreneur",
-      "persona_profile": "49-year-old startup founder, interested in sustainable business practices, enjoys networking events, values products that reflect his professional image.",
-      "positive_reaction": "Respects the brand's commitment to sustainability and quality.",
-      "negative_reaction": "Wants to see more social proof and customer testimonials.",
+      "persona_name": "Quality-Oriented Skincare Aficionado",
+      "persona_profile": "49, pharmacist, seeks high-quality skincare products, makes purchases based on product ingredients and performance",
+      "positive_reaction": "Excited about the natural ingredients and the product's performance.",
+      "negative_reaction": "Worried about the effectiveness of the sunscreen against harmful UV rays.",
       "purchase_intent": 5,
-      "improvement_suggestion": "Highlight customer reviews and success stories in marketing materials."
+      "improvement_suggestion": "Provide more data on the product's SPF rating and protection levels."
     }
   ],
   "marketing_strategy": {
-    "main_insight": "Customers value Harmonia Sun Shield's commitment to sustainability, quality, and luxurious experience, but are concerned about price and lack of information on SPF rating and protection levels.",
+    "main_insight": "Customers value Harmonia Sun Shield's commitment to sustainability, natural ingredients, and premium quality, but express concerns about price, packaging, and product efficacy.",
     "customer_pain_points": [
       "Price point",
-      "Lack of information on SPF rating and protection levels"
+      "Packaging aesthetics",
+      "Product efficacy and scientific backing"
     ],
     "selling_points": [
-      "Eco-friendly packaging and biodegradable materials",
-      "Inclusion of antioxidants and vitamins",
-      "Luxury experience and commitment to quality"
+      "Commitment to sustainability and eco-friendly practices",
+      "High-quality, natural ingredients",
+      "Luxury experience and premium skincare benefits"
     ],
-    "marketing_direction": "Focus on building brand awareness and trust through targeted marketing campaigns that highlight the brand's values and resonate with the target audience.",
-    "message_strategy": "Emphasize the brand's commitment to sustainability, quality, and luxurious experience through social media campaigns featuring: \n- Testimonials from customers who appreciate the product's quality and eco-friendly features.\n- Images and videos showcasing the product's luxurious feel and packaging.\n- Partnerships with influencers who align with the brand's values and target audience.\n- Educational content about the product's ingredients and benefits.\n-  Highlighting the brand's commitment to sustainability through initiatives like carbon offsetting or partnerships with environmental organizations.",
-    "recommended_tone": "Sophisticated, elegant, and informative.",
+    "marketing_direction": "Focus on premium positioning and targeted messaging that emphasizes the product's unique value proposition and aligns with the brand's values.",
+    "message_strategy": "Highlight the product's natural ingredients, eco-friendly packaging, and scientific formulation. Showcase the product's effectiveness through testimonials and scientific data. Emphasize the brand's commitment to sustainability and its dedication to providing a luxurious and premium skincare experience.",
+    "recommended_tone": "Sophisticated, elegant, and informative.  Use a tone that reflects the brand's premium positioning and its commitment to quality and sustainability.",
     "risk_to_avoid": [
       "Greenwashing claims",
-      "Lack of transparency about product ingredients and benefits"
+      "Overly focusing on luxury branding without addressing customer concerns about efficacy"
     ]
   },
   "sns_copy": {
-    "post_title": "Harmonia Sun Shield: Where Luxury Meets Nature",
-    "main_copy": "Protect your skin and the planet with Harmonia Sun Shield. Our eco-friendly sunscreen not only shields you from the sun's harsh rays but also nourishes your skin with antioxidants and vitamins. Embrace the luxury of clean beauty and join us in creating a harmonious world where nature and people thrive.",
-    "short_hook": "Experience the perfect balance of luxury and sustainability.",
+    "post_title": "Unveil the Radiance Within 🌞",
+    "main_copy": "Dive into the essence of sun protection with Harmonia Sun Shield. Crafted from nature's finest, our sunscreen shields your skin while nurturing the planet. Embrace the luxury of clean beauty, where every application whispers promises of a harmonious world. 🌿✨",
+    "short_hook": "Elevate your sun care with Harmonia Sun Shield.",
     "hashtags": [
       "#CleanBeauty",
-      "#LuxurySunscreen",
-      "#EcoFriendly",
-      "#HarmoniaBeauty",
       "#SustainableSkincare",
-      "#NaturalProtection"
+      "#LuxurySunCare",
+      "#HarmoniaSunShield",
+      "#NaturalSunscreen"
     ]
   },
   "campaign_concept": {
-    "campaign_big_idea": "Harmonia Sun Shield: Protect Your Skin, Respect the Planet",
-    "campaign_message": "Experience the luxury of sun protection that respects both your skin and the environment.",
-    "primary_persona_insight": "Customers value Harmonia Sun Shield's commitment to sustainability, quality, and luxurious experience, but are concerned about price and lack of information on SPF rating and protection levels.",
+    "campaign_big_idea": "Harmonia Sun Shield: Protect Your Skin, Respect the Environment",
+    "campaign_message": "Experience the perfect blend of luxury and sustainability with Harmonia Sun Shield, crafted for those who value both their skin's health and the planet's well-being.",
+    "primary_persona_insight": "Customers value Harmonia Sun Shield's commitment to sustainability, natural ingredients, and premium quality, but express concerns about price, packaging, and product efficacy.",
     "customer_concerns_to_address": [
       "Price point",
-      "Lack of information on SPF rating and protection levels"
+      "Packaging aesthetics",
+      "Product efficacy and scientific backing"
     ],
     "selling_points_to_visualize": [
-      "Eco-friendly packaging and biodegradable materials",
-      "Inclusion of antioxidants and vitamins"
+      "Commitment to sustainability and eco-friendly practices",
+      "High-quality, natural ingredients",
+      "Luxury experience and premium skincare benefits"
     ],
-    "visual_story": "A high-end lifestyle shot showcasing the Harmonia Sun Shield bottle in an eco-friendly setting, with a subtle background of nature and a touch of luxury, such as a designer towel or a high-end sun lounger.",
+    "visual_story": "A serene, eco-friendly landscape with a person enjoying the outdoors, showcasing the product's natural ingredients and eco-conscious packaging. The image should convey a sense of luxury and premium quality.",
     "emotional_keywords": [
-      "luxury",
-      "sustainability",
-      "protection",
-      "nature",
-      "harmony"
+      "Sustainability",
+      "Luxury",
+      "Natural Ingredients"
     ],
     "trust_signals": [
-      "Scientifically backed ingredients",
-      "Transparent SPF information",
-      "Customer testimonials"
+      "Scientific formulation",
+      "SPF rating and protection levels",
+      "Brand's commitment to quality and sustainability"
     ]
   },
   "creative_direction": {
-    "visual_concept": "A high-end lifestyle shot showcasing the Harmonia Sun Shield bottle in an eco-friendly setting, with a subtle background of nature and a touch of luxury.",
-    "campaign_story": "The visual communicates the campaign message by featuring a person enjoying the outdoors, with the Harmonia Sun Shield bottle visible and the eco-friendly packaging and luxurious texture highlighted.",
-    "hero_subject": "A 45-year-old Eco-Conscious Executive, wearing a designer sun hat, applying Harmonia Sun Shield on their face while sitting on a high-end sun lounger, with a lush green garden in the background.",
+    "visual_concept": "A serene, eco-friendly landscape with a person enjoying the outdoors, showcasing the product's natural ingredients and eco-conscious packaging.",
+    "campaign_story": "The visual communicates the campaign message by depicting a person in a natural setting, using Harmonia Sun Shield, which reflects the brand's commitment to sustainability and luxury.",
+    "hero_subject": "A person with sun-kissed skin, standing on a sandy beach, with gentle sea breeze and a clear blue sky in the background, applying Harmonia Sun Shield.",
     "scene_type": "Instagram campaign hero shot",
-    "composition": "The Eco-Conscious Executive is positioned in the center of the frame, with the sun lounger and garden on either side, creating a balanced and harmonious composition.",
-    "product_visibility": "The Harmonia Sun Shield bottle is placed on a small table next to the sun lounger, with a cream smear on the edge of the bottle to show the texture.",
-    "texture_visualization": "The cream smear on the edge of the bottle showcases the luxurious and non-greasy formula.",
+    "composition": "The person is positioned slightly off-center, with the sunscreen bottle in their hand, and a small smear of cream on their finger, showing the product's texture.",
+    "product_visibility": "The sunscreen bottle is visible in the person's hand, and the cream smear on their finger highlights the product's texture.",
+    "texture_visualization": "A small smear of cream on the person's finger showcases the product's texture.",
     "customer_insight_visualization": [
       {
-        "insight": "Concerned about the price point",
-        "visual_solution": "The high-end sun lounger and designer sun hat convey a sense of luxury and premium quality, reassuring the customer of the value for money."
+        "insight": "Concern about price point",
+        "visual_solution": "The person is shown enjoying the outdoors, suggesting value for money in a luxury outdoor experience."
       },
       {
-        "insight": "Wants more information on SPF rating and protection levels",
-        "visual_solution": "The Eco-Conscious Executive's confident and healthy-looking skin, thanks to the product's protection, reassures the customer about the product's effectiveness."
+        "insight": "Concern about packaging aesthetics",
+        "visual_solution": "The eco-friendly packaging of the sunscreen is visible, reflecting the brand's commitment to sustainability."
+      },
+      {
+        "insight": "Concern about product efficacy and scientific backing",
+        "visual_solution": "The person's skin looks healthy and sun-kissed, implying the product's effectiveness."
       }
     ],
     "brand_value_visualization": [
       {
-        "brand_value": "Eco-friendly packaging and biodegradable materials",
-        "visual_solution": "The lush green garden in the background and the eco-friendly packaging of the Harmonia Sun Shield bottle emphasize the brand's commitment to sustainability."
+        "brand_value": "Commitment to sustainability",
+        "visual_solution": "The sandy beach and clear blue sky reflect the brand's eco-friendly practices and the product's natural ingredients."
       },
       {
-        "brand_value": "Inclusion of antioxidants and vitamins",
-        "visual_solution": "The healthy and radiant skin of the Eco-Conscious Executive showcases the nourishing benefits of the product's ingredients."
+        "brand_value": "Luxury experience",
+        "visual_solution": "The person's relaxed and content expression, and the serene landscape, convey a sense of luxury and premium quality."
       }
     ],
     "target_audience_visualization": [
-      "A subtle background of nature and a touch of luxury, such as a designer towel or a high-end sun lounger.",
-      "A sophisticated and elegant atmosphere, reflecting the target audience's preferences."
+      "A serene, eco-friendly landscape that appeals to the environmentally aware consumer.",
+      "A person enjoying the outdoors, which resonates with the luxury lifestyle enthusiast."
     ],
-    "background": "A lush green garden with a few blooming flowers, creating a serene and eco-friendly environment.",
-    "lighting": "Soft, natural sunlight filtering through the trees, creating a warm and inviting atmosphere.",
+    "background": "A sandy beach with clear blue sky and gentle sea breeze.",
+    "lighting": "Soft, natural lighting of the outdoors, suggesting a late afternoon or early evening scene.",
     "color_palette": [
-      "green",
-      "beige",
-      "gold"
+      "blue",
+      "sand",
+      "sun-kissed skin"
     ],
     "material_and_props": [
+      "sandy beach",
       "Harmonia Sun Shield bottle",
-      "designer sun hat",
-      "high-end sun lounger",
-      "lush green garden"
+      "cream smear on finger"
     ],
-    "mood": "Luxurious, eco-friendly, and harmonious.",
+    "mood": "Relaxed, luxurious, and eco-friendly.",
     "things_to_avoid": [
-      "Serum bottles",
-      "droppers",
-      "toner bottles",
-      "transparent liquid bottles"
+      "Serene, eco-friendly landscape with a person enjoying the outdoors, showcasing the product's natural ingredients and eco-conscious packaging."
     ]
   },
   "sns_content": {
-    "post_title": "Harmonia Sun Shield: Where Luxury Meets Nature",
-    "main_copy": "Protect your skin and the planet with Harmonia Sun Shield. Our eco-friendly sunscreen not only shields you from the sun's harsh rays but also nourishes your skin with antioxidants and vitamins. Embrace the luxury of clean beauty and join us in creating a harmonious world where nature and people thrive.",
-    "short_hook": "Experience the perfect balance of luxury and sustainability.",
+    "post_title": "Unveil the Radiance Within 🌞",
+    "main_copy": "Dive into the essence of sun protection with Harmonia Sun Shield. Crafted from nature's finest, our sunscreen shields your skin while nurturing the planet. Embrace the luxury of clean beauty, where every application whispers promises of a harmonious world. 🌿✨",
+    "short_hook": "Elevate your sun care with Harmonia Sun Shield.",
     "hashtags": [
       "#CleanBeauty",
-      "#LuxurySunscreen",
-      "#EcoFriendly",
-      "#HarmoniaBeauty",
       "#SustainableSkincare",
-      "#NaturalProtection"
+      "#LuxurySunCare",
+      "#HarmoniaSunShield",
+      "#NaturalSunscreen"
     ],
-    "image_prompt_for_sdxl": "A 45-year-old Eco-Conscious Executive, wearing a designer sun hat, applies Harmonia Sun Shield sunscreen on their face while sitting on a high-end sun lounger, with a lush green garden in the background. The soft, natural sunlight filters through the trees, creating a warm and inviting atmosphere. The composition is balanced, with the Executive positioned in the center, surrounded by the sun lounger and garden, while the Harmonia Sun Shield bottle is placed on a small table next to the sun lounger, showcasing its eco-friendly packaging and luxurious texture.",
+    "image_prompt_for_sdxl": "A person with sun-kissed skin stands on a sandy beach, the gentle sea breeze tousling their hair as they apply Harmonia Sun Shield, a luxurious, eco-friendly sunscreen. The late afternoon sun casts a warm glow, highlighting the natural textures of the skin and the cream on their finger. The serene landscape, with its clear blue sky and sandy shore, reflects the brand's commitment to sustainability and the product's natural ingredients, creating a scene that feels both relaxed and luxurious.",
     "negative_prompt_for_sdxl": "Serum bottle, dropper bottle, toner bottle, transparent liquid bottle, perfume bottle, plain floating product render, white studio background, crowded flat lay, fake readable text, brand logo, watermark, unreadable characters.",
     "image_width": 640,
     "image_height": 960
