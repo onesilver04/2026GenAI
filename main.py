@@ -6,7 +6,7 @@ from contextlib import contextmanager
 from dataclasses import dataclass, asdict
 from functools import lru_cache
 from typing import List, Dict, Type
-
+from groq import Groq
 
 DEFAULT_MLX_MODEL      = os.getenv("MLX_MODEL", "mlx-community/Dolphin3.0-Llama3.1-8B-MLX-6bit")
 PERSONA_MODEL          = os.getenv("PERSONA_MODEL", "mlx-community/Dolphin3.0-Llama3.1-8B-MLX-6bit")
@@ -80,31 +80,25 @@ def build_mlx_prompt(tokenizer, prompt: str):
     return prompt
 
 
-def call_mlx(
-    prompt: str,
-    model_name: str = DEFAULT_MLX_MODEL,
-    fallback_model_name: str | None = None,
-    max_tokens: int = MLX_MAX_TOKENS,
-) -> str:
-    with without_local_mlx_shadow():
-        from mlx_lm import generate
-        from mlx_lm.sample_utils import make_sampler
-
-    try:
-        model, tokenizer = load_mlx_model(model_name)
-    except ValueError as exc:
-        if fallback_model_name is None:
-            raise
-        print(f"\nFallback: {model_name} → {fallback_model_name} ({str(exc).splitlines()[0]})\n")
-        model, tokenizer = load_mlx_model(fallback_model_name)
-
-    mlx_prompt = build_mlx_prompt(tokenizer, prompt)
-    sampler = make_sampler(temp=0.0)
-    return generate(
-        model, tokenizer, prompt=mlx_prompt,
-        max_tokens=max_tokens, sampler=sampler, verbose=False,
-    ).strip()
-
+def call_mlx(prompt, model_name=DEFAULT_MLX_MODEL, 
+             fallback_model_name=None, max_tokens=MLX_MAX_TOKENS):
+    client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+    
+    # 모델명 매핑 (MLX → Groq)
+    model_map = {
+        "mlx-community/Dolphin3.0-Llama3.1-8B-MLX-6bit": "llama-3.3-70b-versatile",
+        "mlx-community/gemma-4-e2b-it-8bit":              "openai/gpt-oss-120b",
+        "mlx-community/gemma-2-2b-it-4bit":               "openai/gpt-oss-120b",
+    }
+    groq_model = model_map.get(model_name, "llama-3.1-8b-instant")
+    
+    response = client.chat.completions.create(
+        model=groq_model,
+        messages=[{"role": "user", "content": prompt}],
+        max_tokens=max_tokens,
+        temperature=0.0,
+    )
+    return response.choices[0].message.content.strip()
 
 # ─────────────────────────────────────────
 # 에이전트 함수
