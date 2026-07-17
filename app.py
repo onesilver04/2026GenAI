@@ -24,6 +24,8 @@ from generate_image_gateway import build_gateway_prompt, print_marketing_summary
 BASE_URL    = "https://factchat-cloud.mindlogic.ai/v1/gateway"
 IMAGE_MODEL = "gemini-2.5-flash-image"
 OUTPUT_DIR  = Path("generated_content")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
+SMU_API_KEY  = os.getenv("SMU_API_KEY", "")
 
 # ─────────────────────────────────────────────────────────
 st.set_page_config(page_title="AI 마케팅 에이전트", page_icon="🚀", layout="wide")
@@ -32,13 +34,6 @@ st.caption("제품 정보를 입력하면 마케팅 전략 · SNS 카피 · 홍�
 
 # ── 사이드바 ──────────────────────────────────────────────
 with st.sidebar:
-    st.header("🔑 API 키 설정")
-    groq_key = st.text_input("Groq API Key", type="password",
-                              value=os.getenv("GROQ_API_KEY", ""),
-                              help="console.groq.com에서 무료 발급")
-    smu_key  = st.text_input("SMU API Key (이미지 생성용)", type="password",
-                              value=os.getenv("SMU_API_KEY", ""))
-    st.divider()
     st.header("⚙️ 생성 설정")
     platform = st.selectbox("플랫폼", ["Instagram", "TikTok", "YouTube"])
     gen_image = st.toggle("이미지 생성 포함", value=True)
@@ -57,19 +52,16 @@ run_btn = st.button("✨ 마케팅 콘텐츠 생성 시작", type="primary", use
 
 # ── 메인 파이프라인 ───────────────────────────────────────
 if run_btn:
-    # 입력 검증
-    if not groq_key:
-        st.error("Groq API Key를 입력해주세요.")
+    # 서버 API 키 및 입력 검증
+    if not GROQ_API_KEY:
+        st.error("서버의 텍스트 생성 API가 설정되지 않았습니다. 관리자에게 문의해주세요.")
         st.stop()
-    if gen_image and not smu_key:
-        st.error("이미지 생성을 위해 SMU API Key를 입력해주세요.")
+    if gen_image and not SMU_API_KEY:
+        st.error("서버의 이미지 생성 API가 설정되지 않았습니다. 관리자에게 문의해주세요.")
         st.stop()
     if not category or not values or not target or not tone:
         st.error("모든 항목을 입력해주세요.")
         st.stop()
-
-    os.environ["GROQ_API_KEY"] = groq_key
-    os.environ["SMU_API_KEY"]  = smu_key
 
     result_data = {}  # 최종 결과를 메모리에 저장
 
@@ -223,7 +215,7 @@ if run_btn:
         with st.spinner("🎨 이미지 생성 중 (약 20~40초 소요)..."):
             try:
                 with httpx.Client(
-                    headers={"Authorization": f"Bearer {smu_key}"},
+                    headers={"Authorization": f"Bearer {SMU_API_KEY}"},
                     timeout=120.0,
                 ) as client:
                     resp = client.post(f"{BASE_URL}/images/generate/", json=payload)
