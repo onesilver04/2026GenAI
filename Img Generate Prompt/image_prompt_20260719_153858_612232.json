@@ -1,0 +1,55 @@
+{
+  "product_name": "StoryWeave",
+  "selected_campaign_message": "Empowering self-expression through sustainable and functional design",
+  "primary_persona_insight": "Gen Z women value self-expression, sustainability, and individuality",
+  "subject": {
+    "identity": "A 20-year-old Gen Z woman with a minimalist and eclectic style, wearing a pair of sneakers and a casual outfit",
+    "expression": "A thoughtful and creative expression, with a slight smile",
+    "pose": "Sitting comfortably with her back straight, leaning slightly forward",
+    "action": "Writing in the StoryWeave wallet's journal insert with a colorful pen"
+  },
+  "setting": {
+    "location": "A cozy and intimate coffee shop with natural light",
+    "time_of_day": "Late morning, with soft sunlight streaming through the window",
+    "atmosphere": "Relaxed and creative, with a few people working or studying in the background"
+  },
+  "product_integration": {
+    "placement": "On a small wooden table in front of the woman, with the journal insert open",
+    "interaction": "The woman is writing in the journal insert with a pen, with her other hand resting on the wallet",
+    "frame_ratio": "The wallet and journal insert take up about 30% of the frame"
+  },
+  "camera": {
+    "shot_type": "Medium shot",
+    "angle": "Slightly above eye level, looking down at the woman and the wallet",
+    "lens_feel": "A 50mm lens with a natural and intimate feel",
+    "focus": "The woman's face and the wallet are in sharp focus, while the background is softly blurred",
+    "composition": "The woman is placed in the center of the frame, with the wallet and journal insert on the table in front of her"
+  },
+  "lighting": {
+    "source": "Natural light from the window",
+    "direction": "Soft and diffused, coming from the side",
+    "quality": "Soft and warm",
+    "color_temperature": "Warm and inviting",
+    "shadow_behavior": "The shadows are soft and subtle, with a slight gradient on the woman's face and the wallet"
+  },
+  "visual_details": {
+    "human_detail": "The woman's hands are visible, with a few rings and a minimalist watch on her wrist",
+    "product_texture": "The wallet's material is a sustainable and eco-friendly fabric, with a subtle texture and a natural color",
+    "materials": [
+      "wood",
+      "fabric",
+      "paper"
+    ],
+    "foreground": "A small cup of coffee and a few colorful pens and pencils on the table",
+    "background": "A blurred background of the coffee shop, with a few people working or studying",
+    "color_palette": [
+      "earth tones",
+      "pastel colors",
+      "neutral colors"
+    ]
+  },
+  "negative_prompt_for_sdxl": "Avoid a plain floating product render, white studio background, or crowded flat lay. Do not include fake readable text, brand logo, watermark, or unreadable characters. The woman should not have extra fingers, deformed hands, or disconnected objects, and the product should not be floating or have an impossible grip. The shadows should be consistent, and the scale should be realistic. The composition should not be cluttered, and the product should not be duplicated. Avoid inconsistent shadows, unrealistic scale, or duplicate products.",
+  "image_prompt_for_sdxl": "A 20-year-old Gen Z woman with a minimalist and eclectic style is sitting in a cozy coffee shop, writing in the StoryWeave wallet's journal insert with a colorful pen. The wallet is placed on a small wooden table in front of her, with the journal insert open and a few colorful pens and pencils scattered around. The woman has a thoughtful and creative expression, with a slight smile, and is dressed in a casual outfit with a pair of sneakers. The camera is positioned slightly above eye level, looking down at the woman and the wallet, with a 50mm lens and a natural and intimate feel. The lighting is soft and warm, with a warm and inviting color temperature, and the shadows are soft and subtle. The background is a blurred coffee shop, with a few people working or studying, and the overall atmosphere is relaxed and creative. The woman's hands are visible, with a few rings and a minimalist watch on her wrist, and the wallet's material is a sustainable and eco-friendly fabric with a subtle texture and a natural color.",
+  "image_width": 640,
+  "image_height": 960
+}

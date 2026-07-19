@@ -1,0 +1,55 @@
+{
+  "product_name": "StoryWeave",
+  "selected_campaign_message": "Empowering self-expression and sustainability",
+  "primary_persona_insight": "Gen Z women value eco-friendly materials, self-expression, and authenticity",
+  "subject": {
+    "identity": "A young GenZ woman, approximately 20 years old, with a relaxed and eclectic style, wearing a flowy mint green dress and having a messy bun hairstyle",
+    "expression": "A thoughtful and introspective facial expression, with a slight smile",
+    "pose": "Sitting comfortably on a natural stone bench, with her back slightly arched and her legs crossed",
+    "action": "Writing in her StoryWeave journal with a black pen, holding the wallet in her left hand and the journal in her right"
+  },
+  "setting": {
+    "location": "A serene and natural environment, such as a botanical garden or a park, with lush greenery and vibrant flowers",
+    "time_of_day": "Late afternoon, with warm and soft sunlight filtering through the trees",
+    "atmosphere": "Peaceful and calming, with a sense of creativity and self-expression"
+  },
+  "product_integration": {
+    "placement": "The StoryWeave wallet is placed on the woman's left hand, with the journal insert open and visible",
+    "interaction": "The woman is writing in the journal with a pen, with her right hand moving across the page",
+    "frame_ratio": "The product occupies approximately 20% of the frame, with the woman and the environment taking up the rest"
+  },
+  "camera": {
+    "shot_type": "Medium shot, framing the woman from the waist up",
+    "angle": "Slightly above eye level, looking down at the woman with a sense of intimacy",
+    "lens_feel": "A 50mm lens with a shallow depth of field, blurring the background and emphasizing the subject",
+    "focus": "The woman's face and the journal are in sharp focus, while the background is softly blurred",
+    "composition": "The woman is placed in the center of the frame, with the journal and wallet on either side, and the natural environment filling the background"
+  },
+  "lighting": {
+    "source": "Natural sunlight, filtering through the trees and casting a warm glow",
+    "direction": "Soft and diffused, coming from the right side of the frame",
+    "quality": "Soft and gentle, with a warm color temperature",
+    "color_temperature": "Warm, around 2700K-3000K",
+    "shadow_behavior": "The shadows are soft and subtle, with a sense of depth and dimensionality"
+  },
+  "visual_details": {
+    "skin_texture": "The woman's skin has a natural and healthy texture, with a subtle glow and a few subtle freckles",
+    "product_texture": "The StoryWeave wallet has a smooth and eco-friendly texture, with a subtle grain and a natural color",
+    "materials": [
+      "natural stone",
+      "wood",
+      "paper"
+    ],
+    "foreground": "The woman's hands and the journal are in the foreground, with a sense of intimacy and closeness",
+    "background": "The natural environment is in the background, with a sense of depth and distance",
+    "color_palette": [
+      "mint green",
+      "earth brown",
+      "creamy white"
+    ]
+  },
+  "negative_prompt_for_sdxl": "Avoid images with serum bottles, dropper bottles, toner bottles, transparent liquid bottles, or perfume bottles. Do not include plain floating product renders, white studio backgrounds, or crowded flat lays. Avoid fake readable text, brand logos, watermarks, or unreadable characters. Do not depict extra fingers, deformed hands, disconnected objects, impossible grips, or floating products. Inconsistent shadows, unrealistic scales, duplicate products, cluttered compositions, and blurry faces are also to be avoided.",
+  "image_prompt_for_sdxl": "A young GenZ woman, approximately 20 years old, sits on a natural stone bench in a serene botanical garden, writing in her StoryWeave journal with a black pen. The StoryWeave wallet is placed on her left hand, with the journal insert open and visible. She has a thoughtful and introspective facial expression, with a slight smile, and her skin has a natural and healthy texture. The camera is positioned slightly above eye level, looking down at the woman with a sense of intimacy, using a 50mm lens with a shallow depth of field. The lighting is soft and warm, with a natural sunlight filtering through the trees and casting a gentle glow. The background is filled with lush greenery and vibrant flowers, with a sense of depth and distance, and the overall atmosphere is peaceful and calming, with a sense of creativity and self-expression.",
+  "image_width": 640,
+  "image_height": 960
+}

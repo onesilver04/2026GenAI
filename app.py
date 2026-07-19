@@ -141,7 +141,13 @@ if run_btn:
     # ── 결과 출력 ─────────────────────────────────────────
     st.divider()
 
-    tab1, tab2, tab3, tab4 = st.tabs(["📦 제품 컨셉", "📊 마케팅 전략", "📱 SNS 카피", "👥 고객 피드백"])
+    tab1, tab2, tab3, tab4, tab5 = st.tabs([
+        "📦 제품 컨셉",
+        "📊 마케팅 전략",
+        "📱 SNS 카피",
+        "👥 고객 피드백",
+        "🎨 이미지 프롬프트",
+    ])
 
     with tab1:
         st.subheader(product_name)
@@ -173,6 +179,17 @@ if run_btn:
                 st.markdown(f"✅ **긍정:** {fb.get('positive_reaction','')}")
                 st.markdown(f"❌ **부정:** {fb.get('negative_reaction','')}")
                 st.markdown(f"💡 **개선 제안:** {fb.get('improvement_suggestion','')}")
+
+    with tab5:
+        st.markdown("### 최종 이미지 생성 프롬프트")
+        st.caption(image_prompt_data.get("selected_campaign_message", ""))
+        st.code(image_prompt_data.get("image_prompt_for_sdxl", ""), language=None)
+
+        with st.expander("피해야 할 요소 (Negative Prompt)"):
+            st.write(image_prompt_data.get("negative_prompt_for_sdxl", ""))
+
+        with st.expander("전체 프롬프트 상세 JSON"):
+            st.json(image_prompt_data)
 
     # ── JSON 다운로드 ─────────────────────────────────────
     st.download_button(

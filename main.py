@@ -1,19 +1,21 @@
 # marketing_agent/main.py
 import json
 import os
-import sys
-from contextlib import contextmanager
 from dataclasses import dataclass, asdict
-from functools import lru_cache
+from datetime import datetime
+from pathlib import Path
 from typing import List, Dict, Type
+from dotenv import load_dotenv
 from groq import Groq
 
-DEFAULT_MLX_MODEL      = os.getenv("MLX_MODEL", "mlx-community/Dolphin3.0-Llama3.1-8B-MLX-6bit")
-PERSONA_MODEL          = os.getenv("PERSONA_MODEL", "mlx-community/Dolphin3.0-Llama3.1-8B-MLX-6bit")
-STRATEGY_MODEL         = os.getenv("STRATEGY_MODEL", "mlx-community/gemma-4-e2b-it-8bit")
-STRATEGY_FALLBACK_MODEL = os.getenv("STRATEGY_FALLBACK_MODEL", "mlx-community/gemma-2-2b-it-4bit")
-SNS_COPY_MODEL         = os.getenv("SNS_COPY_MODEL", DEFAULT_MLX_MODEL)
-MLX_MAX_TOKENS         = int(os.getenv("MLX_MAX_TOKENS", "2048"))
+load_dotenv()
+
+DEFAULT_MODEL          = os.getenv("GROQ_DEFAULT_MODEL", "llama-3.3-70b-versatile")
+PERSONA_MODEL          = os.getenv("GROQ_PERSONA_MODEL", DEFAULT_MODEL)
+STRATEGY_MODEL         = os.getenv("GROQ_STRATEGY_MODEL", "openai/gpt-oss-120b")
+SNS_COPY_MODEL         = os.getenv("GROQ_SNS_COPY_MODEL", DEFAULT_MODEL)
+MAX_TOKENS             = int(os.getenv("GROQ_MAX_TOKENS", "2048"))
+IMAGE_PROMPT_OUTPUT_DIR = Path("Img Generate Prompt")
 
 
 @dataclass
@@ -27,73 +29,10 @@ class CampaignInput:
     platform: str
 
 
-@dataclass
-class PersonaFeedback:
-    persona_name: str
-    persona_profile: str
-    positive_reaction: str
-    negative_reaction: str
-    purchase_intent: int
-    improvement_suggestion: str
-
-
-@lru_cache(maxsize=4)
-def load_mlx_model(model_name: str = DEFAULT_MLX_MODEL):
-    with without_local_mlx_shadow():
-        from mlx_lm import load
-        return load(model_name)
-
-
-@contextmanager
-def without_local_mlx_shadow():
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    original_path = list(sys.path)
-    local_mlx = sys.modules.get("mlx")
-
-    if getattr(local_mlx, "__file__", None) == os.path.join(script_dir, "mlx.py"):
-        del sys.modules["mlx"]
-
-    sys.path = [
-        path for path in sys.path
-        if os.path.abspath(path or os.curdir) != script_dir
-    ]
-    try:
-        yield
-    finally:
-        sys.path = original_path
-        if local_mlx is not None and "mlx" not in sys.modules:
-            sys.modules["mlx"] = local_mlx
-
-
-def build_mlx_prompt(tokenizer, prompt: str):
-    messages = [{"role": "user", "content": prompt}]
-    if getattr(tokenizer, "has_chat_template", False):
-        try:
-            return tokenizer.apply_chat_template(
-                messages, add_generation_prompt=True,
-                tokenize=True, enable_thinking=False,
-            )
-        except TypeError:
-            return tokenizer.apply_chat_template(
-                messages, add_generation_prompt=True, tokenize=True,
-            )
-    return prompt
-
-
-def call_mlx(prompt, model_name=DEFAULT_MLX_MODEL, 
-             fallback_model_name=None, max_tokens=MLX_MAX_TOKENS):
+def call_groq(prompt: str, model_name: str = DEFAULT_MODEL, max_tokens: int = MAX_TOKENS) -> str:
     client = Groq(api_key=os.getenv("GROQ_API_KEY"))
-    
-    # 모델명 매핑 (MLX → Groq)
-    model_map = {
-        "mlx-community/Dolphin3.0-Llama3.1-8B-MLX-6bit": "llama-3.3-70b-versatile",
-        "mlx-community/gemma-4-e2b-it-8bit":              "openai/gpt-oss-120b",
-        "mlx-community/gemma-2-2b-it-4bit":               "openai/gpt-oss-120b",
-    }
-    groq_model = model_map.get(model_name, "llama-3.1-8b-instant")
-    
     response = client.chat.completions.create(
-        model=groq_model,
+        model=model_name,
         messages=[{"role": "user", "content": prompt}],
         max_tokens=max_tokens,
         temperature=0.0,
@@ -154,7 +93,7 @@ Rules:
 - Do not use generic category names such as "Sunscreen" or "Keyboard".
 - Return JSON only. Do not include markdown. Do not include explanations outside JSON.
 """
-    result = call_mlx(prompt)
+    result = call_groq(prompt)
     return safe_json_loads(result, dict)
 
 
@@ -202,7 +141,7 @@ Rules:
 - Do not include markdown.
 - Do not include explanations outside JSON.
 """
-    result = call_mlx(prompt, PERSONA_MODEL)
+    result = call_groq(prompt, PERSONA_MODEL)
     return safe_json_loads(result, list)
 
 
@@ -248,7 +187,7 @@ Rules:
 - Do not include markdown.
 - Do not include explanations outside JSON.
 """
-    result = call_mlx(prompt, STRATEGY_MODEL, STRATEGY_FALLBACK_MODEL)
+    result = call_groq(prompt, STRATEGY_MODEL)
     return safe_json_loads(result, dict)
 
 
@@ -258,14 +197,19 @@ def generate_campaign_concept(
     strategy: Dict,
 ) -> Dict:
     prompt = f"""
-You are a senior Instagram campaign planner for premium skincare brands.
+You are a senior Instagram campaign planner for premium consumer brands across
+categories such as beauty, fashion accessories, tech gadgets, home goods,
+food & beverage, and other lifestyle products.
 
 Your role:
 - Read customer personas, their positive reactions, concerns, purchase intent, and improvement suggestions.
 - Extract the strongest emotional and strategic campaign message.
-- Translate customer insights into an Instagram campaign concept.
+- Translate customer insights into an Instagram campaign concept that fits the
+  specific product category given below — do not default to beauty/skincare framing
+  unless the product category actually is a beauty or skincare product.
 - Make sure the campaign addresses customer concerns, not only selling points.
-- The campaign should feel emotional, premium, trustworthy, and visually memorable.
+- The campaign should feel emotional, premium, trustworthy, and visually memorable,
+  in a way that is credible for this specific product category.
 
 [Product Category]
 {user_input.product_category}
@@ -307,21 +251,26 @@ Return ONLY a valid JSON object in the following format.
 Rules:
 - Do not write generic product-photo directions.
 - Focus on the campaign story and customer motivation.
-- Reflect customer concerns such as price, SPF clarity, sensitive skin trust, and environmental transparency when relevant.
+- Reflect customer concerns that are actually relevant to the {user_input.product_category}
+  category (for example: durability, craftsmanship, material quality, price/value,
+  comfort, performance, sensitivity/safety, or environmental transparency —
+  choose whichever apply, rather than assuming skincare-specific concerns like SPF).
 - Avoid unsupported claims.
 - Return JSON only. Do not include markdown.
 """
-    result = call_mlx(prompt, SNS_COPY_MODEL, DEFAULT_MLX_MODEL)
+    result = call_groq(prompt, SNS_COPY_MODEL)
     return safe_json_loads(result, dict)
 
 
 def generate_sns_copy(user_input: CampaignInput, strategy: Dict) -> Dict:
     prompt = f"""
-You are an Instagram beauty copywriter specialized in clean beauty and skincare advertising.
+You are an Instagram copywriter specialized in premium lifestyle advertising
+across product categories (beauty, fashion, accessories, tech, home goods,
+food & beverage, etc).
 Your role:
 - Turn marketing strategy into natural Instagram copy.
-- Write like a real beauty brand, not like a corporate report.
-- Use emotionally appealing but realistic language.
+- Write like a real brand in the {user_input.product_category} category, not like a corporate report.
+- Use emotionally appealing but realistic language suited to this category.
 - Avoid exaggerated or unsupported claims.
 
 Generate SNS copy optimized for {user_input.platform}.
@@ -351,15 +300,16 @@ Return ONLY a valid JSON object in the following format.
 }}
 
 Rules:
-- Make it sound like a real Instagram beauty advertisement.
+- Make it sound like a real Instagram advertisement for this specific product category.
 - Do not sound like a corporate introduction.
+- Do not default to beauty/skincare vocabulary unless the product category is beauty/skincare.
 - Use short, natural, emotionally appealing sentences.
 - Emphasize the strongest selling points from the strategy.
 - Reflect the target audience naturally.
 - Avoid unsupported claims.
 - Return JSON only. Do not include markdown.
 """
-    result = call_mlx(prompt, SNS_COPY_MODEL, DEFAULT_MLX_MODEL)
+    result = call_groq(prompt, SNS_COPY_MODEL)
     return safe_json_loads(result, dict)
 
 
@@ -371,14 +321,17 @@ def generate_creative_direction(
     campaign_concept: Dict,
 ) -> Dict:
     prompt = f"""
-You are an advertising creative director for premium Instagram skincare campaigns.
+You are an advertising creative director for premium Instagram campaigns across
+product categories (beauty, fashion accessories, tech gadgets, home goods,
+food & beverage, and other lifestyle products).
 
 Your role:
-- Translate customer research, campaign concept, and marketing strategy into a visual creative brief.
+- Translate customer research, campaign concept, and marketing strategy into a
+  visual creative brief that fits the specific product category given below.
 - Make the image feel like an Instagram campaign, not a plain catalog product photo.
 - Balance product visibility with emotional storytelling.
-- Show the product, its texture, and the feeling of using it.
-- Make customer concerns visible through reassuring visual cues.
+- Show the product, its material/texture/finish, and the feeling of using or owning it.
+- Make customer concerns visible through reassuring visual cues appropriate to this category.
 
 [Product Category]
 {user_input.product_category}
@@ -419,7 +372,7 @@ Return ONLY a valid JSON object in the following format.
   "scene_type": "Instagram campaign hero shot / sensory texture shot / product lifestyle campaign",
   "composition": "How product, subject, props, and background are arranged in the frame",
   "product_visibility": "How the product remains visible without looking like a plain catalog shot",
-  "texture_visualization": "How the product formula or cream texture should be shown",
+  "texture_visualization": "How the product's material, surface finish, or texture should be shown (e.g., fabric weave, leather grain, metal sheen, cream texture — whichever fits this product)",
   "customer_insight_visualization": [
     {{
       "insight": "Customer insight or concern",
@@ -445,15 +398,24 @@ Return ONLY a valid JSON object in the following format.
 }}
 
 Rules:
-- hero_subject must describe a person in a scene, not just the product alone.
+- hero_subject should generally describe a person interacting with, wearing, or using
+  the product in a scene — unless the product category (e.g., furniture, food ingredients,
+  raw materials) is more naturally shown as a still-life/object hero shot. Use judgment
+  based on the {user_input.product_category} category.
 - Do not create a plain floating product render.
-- Use one main hero product; allow one small texture element such as a cream smear.
+- Use one main hero product; allow one small supporting detail shot that reveals its
+  material or texture (e.g., a fabric close-up, a leather grain macro, a metal reflection,
+  a cream smear — whichever genuinely fits this product, not a default assumption).
 - The product should occupy around 45-60% of the frame, not 80-90%.
-- Reflect persona concerns visually: SPF clarity, sensitive skin trust, eco transparency, premium quality.
-- Do not use serum bottles, droppers, toner bottles, or transparent liquid bottles.
+- Reflect persona concerns visually in a way that fits the {user_input.product_category}
+  category (e.g., durability, craftsmanship, comfort, eco transparency, premium quality,
+  sensitivity/safety) rather than assuming skincare-specific concerns like SPF clarity.
+- things_to_avoid must be tailored to this product category. Only mention avoiding
+  items like serum bottles, droppers, or toner bottles if the product actually is a
+  liquid cosmetic; otherwise list clichés relevant to this category instead.
 - Return JSON only. Do not include markdown.
 """
-    result = call_mlx(prompt, SNS_COPY_MODEL, DEFAULT_MLX_MODEL)
+    result = call_groq(prompt, SNS_COPY_MODEL)
     return safe_json_loads(result, dict)
 
 
@@ -465,16 +427,70 @@ def generate_image_prompt(
     creative_direction: Dict,
 ) -> Dict:
     prompt = f"""
-You are an AI image prompt engineer for premium Instagram skincare campaign photography.
+You are an AI image prompt engineer for premium Instagram product campaign
+photography, working across categories such as beauty, fashion accessories,
+tech gadgets, home goods, food & beverage, and other lifestyle products.
 
-Your role:
-- Write a vivid, scene-narrative image prompt optimized for modern AI image generation
-  models (Gemini Image, GPT-image) — NOT SDXL weighted prompts.
-- The prompt should read like a brief to a professional photographer / film director.
-- Describe WHO is in the scene, WHAT they are doing, WHERE they are, and
-  HOW the product is naturally integrated.
-- Include specific sensory details: textures, skin, light quality, colors, expressions.
-- The scene should TELL the campaign story, not just SHOW a product.
+Your mission:
+Create a highly specific image-generation prompt for a modern image model,
+tailored to the {user_input.product_category} category given below.
+Do not write a vague prompt, and do not default to skincare/beauty imagery
+unless the product category actually is skincare or beauty.
+Build the scene carefully like a photographer and art director.
+
+You must internally follow this scene-design workflow before writing the final prompt:
+1. Identify the single most important campaign message.
+2. Choose one primary persona insight to emphasize.
+3. Define one clear hero subject.
+4. Define one natural action involving the product.
+5. Choose a specific setting and time of day.
+6. Decide how the product is physically integrated into the scene.
+7. Specify shot type, camera angle, lens feel, and focus behavior.
+8. Specify lighting direction, softness, color temperature, and shadows.
+9. Add concrete sensory details: relevant human detail (if a person appears), product texture/material, environment.
+10. Make sure every detail supports the campaign message.
+11. Self-check for physical plausibility and remove vague wording.
+
+Important prompt-engineering requirements:
+
+A. Specificity rules
+- Do not use vague phrases such as "beautiful background", "premium mood", "soft lighting", or "natural pose"
+  unless they are explained with observable details.
+- Replace abstract adjectives with visible evidence.
+- Instead of "premium lighting", describe direction, softness, color temperature, and shadow quality.
+- Instead of "eco-friendly atmosphere", describe visible materials, reusable objects, restrained packaging, or natural surfaces.
+- Instead of "young woman", specify approximate age range, styling, expression, posture, and activity
+  (only include a person at all if it fits the {user_input.product_category} category).
+
+B. Translate abstract values into visible evidence
+- Trust → calm expression, realistic texture/finish appropriate to the product, a natural handling or using gesture, restrained packaging, believable light.
+- Sustainability → natural materials, minimal packaging, reusable or recyclable-looking elements, low-clutter composition.
+- Premium quality → intentional composition, refined materials, controlled negative space, elegant light.
+- Safety/comfort reassurance (relevant for categories like skincare, baby products, wellness) → gentle handling gesture, relaxed facial expression, natural healthy appearance, no signs of irritation or discomfort.
+- Craftsmanship/durability (relevant for categories like fashion accessories, leather goods, furniture, tech hardware) → visible stitching, grain, hinge, joinery, or material detail that signals quality construction.
+- Only apply the value-to-evidence mappings above that are actually relevant to {user_input.product_category}; skip the ones that don't fit.
+
+C. Camera direction requirements
+- Specify shot type: close-up, medium close-up, medium shot, or wide shot.
+- Specify camera angle: eye level, slightly above eye level, low angle, or over-the-shoulder.
+- Describe lens feel, such as a 50mm editorial feel or 85mm beauty-campaign feel.
+- State what is in focus and what is softly blurred.
+- Describe foreground, midground, and background relationships.
+- State how much of the frame the product occupies.
+
+D. Physical consistency requirements
+- The hand position must match the way the product is actually held, worn, or used.
+- Any visible texture (cream, fabric, leather grain, metal finish, liquid, wood grain, etc.) must plausibly come from the visible product itself.
+- The product must rest naturally on a hand or surface and must not float.
+- Shadows must follow one consistent light direction.
+- Scale between any person, hand, and product must be realistic.
+- Avoid impossible finger positions or disconnected objects.
+
+E. Output style requirements
+- The final image prompt must be 5-7 flowing English sentences.
+- It must read like a scene direction for a photographer, not a keyword list.
+- It must describe WHO is in the scene (if anyone), WHAT they are doing, WHERE they are, HOW the product appears, and WHY the image feels emotionally persuasive.
+- Do not request text rendering, logos, or brand names on the package.
 
 [Product Category]
 {user_input.product_category}
@@ -491,6 +507,9 @@ Your role:
 [Brand Tone]
 {user_input.brand_tone}
 
+[Brand Values]
+{user_input.brand_values}
+
 [Marketing Strategy]
 {json.dumps(strategy, ensure_ascii=False, indent=2)}
 
@@ -506,30 +525,100 @@ Your role:
 Return ONLY a valid JSON object in the following format.
 
 {{
-  "image_prompt_for_sdxl": "3-5 sentence vivid scene narrative in English",
-  "negative_prompt_for_sdxl": "Detailed negative prompt listing concrete visual errors",
+  "selected_campaign_message": "The single most important message expressed by the image",
+  "primary_persona_insight": "The most important customer insight emphasized visually",
+  "subject": {{
+    "identity": "Approximate age, styling, and relevant visual characteristics (omit or describe as 'no person' if the category is better shown as an object/still-life)",
+    "expression": "Specific facial expression, if a person appears",
+    "pose": "Natural body posture, if a person appears",
+    "action": "One clear physical action involving the product"
+  }},
+  "setting": {{
+    "location": "Specific place",
+    "time_of_day": "Specific time of day",
+    "atmosphere": "Visible environmental condition or mood"
+  }},
+  "product_integration": {{
+    "placement": "Exact product position in the scene",
+    "interaction": "How the subject physically interacts with the product",
+    "frame_ratio": "Approximate visual prominence of the product in the frame"
+  }},
+  "camera": {{
+    "shot_type": "Shot distance",
+    "angle": "Camera angle",
+    "lens_feel": "Lens and editorial feel",
+    "focus": "What is sharp and what is softly blurred",
+    "composition": "Foreground, midground, background arrangement"
+  }},
+  "lighting": {{
+    "source": "Main light source",
+    "direction": "Direction of light",
+    "quality": "Soft or hard light quality",
+    "color_temperature": "Warm, neutral, or cool",
+    "shadow_behavior": "How the shadows appear"
+  }},
+  "visual_details": {{
+    "human_detail": "Observable skin/hand/styling detail if a person is prominent in the scene, otherwise describe the surface or setting the product rests on",
+    "product_texture": "Observable material, surface, or texture detail of the product itself (e.g., leather grain, fabric weave, metal finish, wood grain, cream texture — whichever fits this product)",
+    "materials": ["material 1", "material 2", "material 3"],
+    "foreground": "Foreground detail",
+    "background": "Background detail",
+    "color_palette": ["color1", "color2", "color3"]
+  }},
+  "image_prompt_for_sdxl": "A 5-7 sentence vivid English photographic scene prompt",
+  "negative_prompt_for_sdxl": "A detailed negative prompt listing concrete visual failures to avoid",
   "image_width": 640,
   "image_height": 960
 }}
 
 Rules for image_prompt_for_sdxl:
-- Write as flowing narrative sentences, NOT a bulleted list of attributes.
-- Describe the full scene: person, action, setting, light, product placement, emotion.
-- Do NOT start with "A product photo of..." — start with the scene and subject.
-- The sunscreen tube should appear naturally in the person's hand or on a surface.
-- Convey the campaign emotion and brand values through the scene atmosphere.
-- Mention: lighting quality, color palette, composition feel, skin texture, product texture.
-- Do NOT ask for text rendering, logos, or brand names on the packaging.
-- 3-5 sentences of flowing, vivid description.
+- 5-7 flowing English sentences.
+- Sentence 1: hero subject, setting, and action.
+- Sentence 2: product placement and interaction.
+- Sentence 3: subject appearance, facial expression, and relevant physical/material detail
+  (skin/hand detail if a person is prominent; otherwise product surface/material detail).
+- Sentence 4: camera angle, shot type, lens feel, and focus behavior.
+- Sentence 5: lighting, color temperature, and shadows.
+- Sentence 6: background, props, materials, and environmental texture.
+- Sentence 7 (optional): emotional campaign atmosphere and visual storytelling payoff.
+- Do not begin with "A product photo of...".
+- Do not write in bullet points.
+- Do not include brand names, logos, or text on the packaging.
+- Avoid generic adjectives unless they are explained concretely.
+- Base every detail on what a real {user_input.product_category} product and its
+  typical use context actually look like — do not borrow skincare/beauty imagery
+  (creams, droppers, serums, skin application) unless the category genuinely is
+  skincare or beauty.
 
 Rules for negative_prompt_for_sdxl:
-- List specific visual errors: wrong bottle types, extra products, fake text, blurry areas.
-- Include: "serum bottle, dropper bottle, toner bottle, transparent liquid bottle, perfume bottle"
-- Include: "plain floating product render, white studio background, crowded flat lay"
-- Include: "fake readable text, brand logo, watermark, unreadable characters"
+- Must be concrete and visual, and tailored to what would actually look wrong for
+  the {user_input.product_category} category specifically — do not default to
+  skincare-bottle assumptions for unrelated categories.
+- Include generic product-photography failure modes such as:
+  "plain floating product render, white studio background, crowded flat lay"
+- Include:
+  "fake readable text, brand logo, watermark, unreadable characters"
+- Include the following ONLY if a person appears in the scene:
+  "extra fingers, deformed hands, disconnected objects, impossible grip, floating product, blurry face"
+- Include:
+  "inconsistent shadows, unrealistic scale, duplicate products, cluttered composition"
+- If, and only if, the product category is a liquid cosmetic (serum, toner, sunscreen,
+  perfume, etc.), also include a line excluding generic bottle clichés such as
+  "serum bottle, dropper bottle, toner bottle, transparent liquid bottle, perfume bottle".
+  Do not include this line for unrelated categories such as wallets, bags, electronics,
+  furniture, or food.
 - Return JSON only. Do not include markdown.
-"""
-    result = call_mlx(prompt, SNS_COPY_MODEL, DEFAULT_MLX_MODEL)
+
+Before returning the final JSON, silently self-check:
+- Is the scene specific rather than vague?
+- Is the action physically plausible?
+- Is the product clearly visible but naturally integrated?
+- Are camera and lighting details explicit?
+- Do visual details support the campaign message?
+- Does everything genuinely fit {user_input.product_category}, rather than defaulting to skincare/beauty imagery?
+Do not output the checklist or analysis. Return JSON only.
+"""    
+    result = call_groq(prompt, SNS_COPY_MODEL)
     image_prompt = safe_json_loads(result, dict)
     image_prompt["image_width"]  = normalize_sdxl_dimension(image_prompt.get("image_width",  640))
     image_prompt["image_height"] = normalize_sdxl_dimension(image_prompt.get("image_height", 960))
@@ -575,6 +664,33 @@ def safe_json_loads(text: str, expected_type: Type[dict] | Type[list] | None = N
 
     expected_name = expected_type.__name__ if expected_type is not None else "JSON object or array"
     raise ValueError(f"JSON parsing failed. Expected {expected_name}.\nModel output preview:\n{text[:1000]}")
+
+
+def save_image_prompt_json(product_name: str, image_prompt: Dict) -> Path:
+    """이미지 생성용 프롬프트를 전체 파이프라인 결과와 별도 JSON으로 저장합니다."""
+    IMAGE_PROMPT_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
+    output_path = IMAGE_PROMPT_OUTPUT_DIR / f"image_prompt_{timestamp}.json"
+    
+    prompt_data = {
+        "product_name": product_name,
+        "selected_campaign_message": image_prompt.get("selected_campaign_message", ""),
+        "primary_persona_insight": image_prompt.get("primary_persona_insight", ""),
+        "subject": image_prompt.get("subject", {}),
+        "setting": image_prompt.get("setting", {}),
+        "product_integration": image_prompt.get("product_integration", {}),
+        "camera": image_prompt.get("camera", {}),
+        "lighting": image_prompt.get("lighting", {}),
+        "visual_details": image_prompt.get("visual_details", {}),
+        "negative_prompt_for_sdxl": image_prompt.get("negative_prompt_for_sdxl", ""),
+        "image_prompt_for_sdxl": image_prompt.get("image_prompt_for_sdxl", ""),
+        "image_width": image_prompt.get("image_width", 640),
+        "image_height": image_prompt.get("image_height", 960),
+    }
+    
+    with output_path.open("w", encoding="utf-8") as file:
+        json.dump(prompt_data, file, ensure_ascii=False, indent=2)
+    return output_path
 
 
 # ─────────────────────────────────────────
@@ -707,10 +823,9 @@ def run_pipeline():
 
     final_result = {
         "agent_models": {
-            "product_concept_agent":           DEFAULT_MLX_MODEL,
+            "product_concept_agent":           DEFAULT_MODEL,
             "persona_agent":                   PERSONA_MODEL,
             "strategy_agent":                  STRATEGY_MODEL,
-            "strategy_fallback_agent":         STRATEGY_FALLBACK_MODEL,
             "sns_copy_and_image_prompt_agent": SNS_COPY_MODEL,
         },
         "input":                    asdict(user_input),
@@ -719,12 +834,16 @@ def run_pipeline():
         "sns_copy":                 sns_copy,
         "campaign_concept":         campaign_concept,
         "creative_direction":       creative_direction,
+        "image_prompt_design":      image_prompt,
         "sns_content":              sns_content,
     }
 
     with open("marketing_agent_result.json", "w", encoding="utf-8") as f:
         json.dump(final_result, f, ensure_ascii=False, indent=2)
     print("\n[7] marketing_agent_result.json 저장 완료.")
+
+    image_prompt_path = save_image_prompt_json(user_input.product_name, image_prompt)
+    print(f"    이미지 생성 프롬프트 저장 완료: {image_prompt_path}")
 
     # ── 마케팅 리포트 출력 ──────────────────────────────────────
     print_marketing_report(

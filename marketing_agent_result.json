@@ -1,187 +1,298 @@
 {
+  "agent_models": {
+    "product_concept_agent": "llama-3.3-70b-versatile",
+    "persona_agent": "llama-3.3-70b-versatile",
+    "strategy_agent": "openai/gpt-oss-120b",
+    "sns_copy_and_image_prompt_agent": "llama-3.3-70b-versatile"
+  },
   "input": {
-    "product_category": "sunscreen",
-    "product_name": "Harmonia",
-    "product_description": "Experience the perfect harmony between nature and luxury with Harmonia, a premium sunscreen that embodies our commitment to sustainability and customer satisfaction. Formulated with eco-friendly ingredients and a minimalist approach, Harmonia provides long-lasting protection against UVA and UVB rays while nourishing your skin with antioxidants and natural moisturizers. Our dedication to quality and customer trust is reflected in every aspect of Harmonia, from its sleek, modern packaging to its gentle, non-irritating formula. With Harmonia, you can enjoy the beauty of nature while trusting that you're taking care of your skin and the planet.",
-    "target_group": "Affluent professionals in their 40s and 50s who seek premium skincare and luxury beauty experiences",
-    "brand_tone": "Clean, modern, minimalist, trustworthy"
+    "product_category": "wallet",
+    "brand_values": "“Explore Your Story”는 각자가 지닌 고유한 이야기를 발견하고 솔직하게 표현하도록 이끕니다. 나의 이야기를 세상에 공유하며, 마음을 열고 진실해질 수 있는 용기를 응원합니다.",
+    "product_name": "StoryWeave",
+    "product_description": "StoryWeave is a thoughtfully designed wallet that empowers 2030 GenZ women to express their authentic selves. Made from sustainable, eco-friendly materials, this wallet features a unique storytelling journal insert, where users can record their thoughts, dreams, and inspirations. The sleek, minimalist design and vibrant color palette reflect the brand's values of self-expression and courage, inviting users to 'Carry Your Story, Every Day'. With its spacious card slots, cash compartment, and secure closure, StoryWeave is the perfect companion for daily adventures, encouraging users to share their stories and live truthfully.",
+    "target_group": "2030 GenZ women",
+    "brand_tone": "Carry Your Story, Every Day",
+    "platform": "Instagram"
   },
   "virtual_customer_feedbacks": [
     {
-      "persona_name": "Eco-Conscious Executive",
-      "persona_profile": "45, marketing director, hiking, yoga, prioritizes sustainability and natural ingredients",
-      "positive_reaction": "I love that Harmonia is made with eco-friendly ingredients and has a minimalist approach, it aligns with my values",
-      "negative_reaction": "The price is a bit steep, but I'm willing to pay for quality and sustainability",
-      "purchase_intent": 5,
-      "improvement_suggestion": "Consider offering a loyalty program or refill options to reduce waste"
-    },
-    {
-      "persona_name": "Luxury Lover",
-      "persona_profile": "50, finance manager, traveling, fine dining, seeks high-end products and experiences",
-      "positive_reaction": "The sleek packaging and high-quality ingredients of Harmonia make it feel like a luxury product",
-      "negative_reaction": "I'm not sure if the eco-friendly aspect is worth the extra cost, I just want a good sunscreen",
-      "purchase_intent": 3,
-      "improvement_suggestion": "Emphasize the premium quality and performance of the product in marketing materials"
-    },
-    {
-      "persona_name": "Busy Professional",
-      "persona_profile": "42, lawyer, busy schedule, prioritizes convenience and effectiveness",
-      "positive_reaction": "Harmonia is easy to apply and doesn't irritate my skin, it's perfect for my busy lifestyle",
-      "negative_reaction": "I wish it came in a larger size, I go through sunscreen quickly",
+      "persona_name": "Eco-Conscious Emma",
+      "persona_profile": "20, student, environmental activism, frequent online shopper",
+      "positive_reaction": "I love that StoryWeave is made from sustainable materials and has a unique storytelling journal insert",
+      "negative_reaction": "The price is a bit higher than I'd like to pay",
       "purchase_intent": 4,
-      "improvement_suggestion": "Offer a larger size option or a subscription service for frequent buyers"
+      "improvement_suggestion": "Offer a discount for students or a referral program"
     },
     {
-      "persona_name": "Skin Care Enthusiast",
-      "persona_profile": "48, dermatologist, skin care research, seeks products with natural ingredients and antioxidants",
-      "positive_reaction": "I appreciate the use of antioxidants and natural moisturizers in Harmonia, it's a great addition to my skin care routine",
-      "negative_reaction": "I'd like to see more information about the specific ingredients and their benefits",
-      "purchase_intent": 5,
-      "improvement_suggestion": "Provide more detailed information about the ingredients and their effects on the skin"
+      "persona_name": "Creative Mia",
+      "persona_profile": "22, artist, painting and writing, buys products that inspire her",
+      "positive_reaction": "The vibrant color palette and minimalist design of StoryWeave really speak to me",
+      "negative_reaction": "I'm not sure if the storytelling journal insert is something I'd use regularly",
+      "purchase_intent": 3,
+      "improvement_suggestion": "Collaborate with artists to create limited edition designs"
     },
     {
-      "persona_name": "Skeptical Shopper",
-      "persona_profile": "45, accountant, careful with spending, seeks value and proof of effectiveness",
-      "positive_reaction": "I like that Harmonia has a gentle, non-irritating formula, it's important for my sensitive skin",
-      "negative_reaction": "I'm not convinced that the eco-friendly ingredients make a difference, I need to see more reviews and testimonials",
+      "persona_name": "Practical Sophia",
+      "persona_profile": "21, professional, fitness and wellness, values functionality",
+      "positive_reaction": "StoryWeave has a lot of card slots and a secure closure, which is important to me",
+      "negative_reaction": "I'm not sure if the storytelling journal insert is necessary",
       "purchase_intent": 2,
-      "improvement_suggestion": "Share customer reviews and ratings, and provide more information about the benefits of eco-friendly ingredients"
+      "improvement_suggestion": "Offer a version without the journal insert at a lower price point"
+    },
+    {
+      "persona_name": "Influencer Ava",
+      "persona_profile": "23, social media influencer, fashion and beauty, buys products that are visually appealing",
+      "positive_reaction": "The sleek design and vibrant colors of StoryWeave would look great on my Instagram feed",
+      "negative_reaction": "I'm not sure if the brand's values align with my own personal brand",
+      "purchase_intent": 5,
+      "improvement_suggestion": "Partner with social media influencers to showcase the product"
+    },
+    {
+      "persona_name": "Introverted Olivia",
+      "persona_profile": "20, introvert, reading and writing, values discretion",
+      "positive_reaction": "I like that StoryWeave has a secure closure and a minimalist design",
+      "negative_reaction": "I'm not sure if I'd feel comfortable sharing my stories with others",
+      "purchase_intent": 1,
+      "improvement_suggestion": "Emphasize the privacy and security features of the product"
     }
   ],
   "marketing_strategy": {
-    "main_insight": "Affluent professionals value Harmonia's premium feel, eco‑friendly formulation, and skin‑care benefits, but price sensitivity, desire for more ingredient transparency, proof of sustainability impact, and convenience (size, refill options) influence purchase intent.",
+    "main_insight": "Gen Z women love StoryWeave’s sustainable materials, vibrant minimalist design, and the concept of a personal storytelling journal, but they are hesitant about price, the practical value of the journal, and how the brand aligns with their personal identity and privacy needs.",
     "customer_pain_points": [
-      "High price perception and need for value justification",
-      "Insufficient ingredient detail and proof of eco‑benefits",
-      "Limited size options and lack of refill/loyalty programs"
+      "Price sensitivity, especially for students",
+      "Uncertainty about the everyday usefulness of the storytelling journal",
+      "Privacy concerns about sharing personal stories",
+      "Need for product variants that prioritize pure functionality"
     ],
     "selling_points": [
-      "Luxury packaging and premium sensory experience",
-      "Sustainable, antioxidant‑rich formula that is gentle and non‑irritating",
-      "Convenient, easy‑apply texture designed for busy, high‑performing lifestyles"
+      "Eco‑friendly, responsibly sourced materials",
+      "Unique storytelling journal insert that encourages self‑expression",
+      "Sleek, colorful minimalist design that photographs well",
+      "Functional features: multiple card slots, secure closure, cash compartment"
     ],
-    "marketing_direction": "Position Harmonia as the ultimate convergence of luxury skincare and responsible sustainability, delivering proven performance while offering premium service options (refill, subscription, loyalty) that reinforce long‑term value for discerning professionals.",
-    "message_strategy": "Leverage social platforms (Instagram, LinkedIn, YouTube) with a mix of elegant visual storytelling, ingredient‑spotlight micro‑videos, behind‑the‑scenes sustainability footage, and authentic testimonials from dermatologists and eco‑focused executives. Highlight real‑world impact metrics (e.g., recycled material %, carbon offset) and showcase the convenience of refill kits and subscription bundles.",
-    "recommended_tone": "Sophisticated, confident, and warm—authentic luxury that speaks to both aspirational lifestyle and genuine environmental stewardship.",
+    "marketing_direction": "Position StoryWeave as the go‑to sustainable accessory that empowers Gen Z women to own and share their personal narratives while staying functional and stylish. Offer tiered pricing (student discounts, journal‑free version) and limited‑edition artist collaborations to satisfy both expressive and practical segments. Leverage authentic influencer partnerships and user‑generated story content to build a community around the brand’s ‘Explore Your Story’ values.",
+    "message_strategy": "Create a social‑media narrative that showcases real users writing snippets in their journals, paired with vibrant product visuals. Highlight eco‑credentials with transparent supply‑chain facts, promote student discount codes, and feature influencer reels that demonstrate how the wallet fits into daily fashion and personal storytelling routines. Use hashtags like #CarryYourStory, #EcoChic, #StoryWeaveStories to encourage sharing while emphasizing privacy (e.g., “Your story, your way”).",
+    "recommended_tone": "Authentic, empowering, and inclusive—bright and confident yet respectful of personal privacy. Speak in a conversational, relatable voice that celebrates individuality and sustainability without sounding preachy.",
     "risk_to_avoid": [
-      "Greenwashing or making unsupported sustainability claims",
-      "Overstating performance without clinical or dermatologist validation"
+      "Greenwashing or making unverified eco‑claims",
+      "Overpromising journal usage that may feel gimmicky",
+      "Partnering with influencers whose values clash with the brand’s mission",
+      "Neglecting the functional‑first segment by focusing solely on aesthetics"
     ]
   },
   "sns_copy": {
-    "post_title": "Nourish Your Skin, Naturally",
-    "main_copy": "Indulge in the perfect blend of luxury and sustainability with Harmonia, our premium sunscreen that protects and nourishes your skin. With its gentle, non-irritating formula and eco-friendly ingredients, you can trust that you're taking care of your skin and the planet. Experience the convenience of our easy-apply texture, designed for your busy lifestyle. Join our community of like-minded individuals who value high-quality, sustainable skincare.",
-    "short_hook": "Luxury meets sustainability",
+    "post_title": "Carry Your Story, Every Day",
+    "main_copy": "What's your story? We believe every day is a chance to write a new chapter. With StoryWeave, you can carry your thoughts, dreams, and inspirations with you, while staying true to your values and style. Made from sustainable materials, our wallet is more than just a accessory - it's a symbol of self-expression and courage.",
+    "short_hook": "Write your story, every day",
     "hashtags": [
-      "#CleanBeauty",
-      "#SustainableSkincare",
-      "#LuxurySunscreen",
-      "#EcoFriendly",
-      "#NaturalGlow"
+      "#CarryYourStory",
+      "#EcoChic",
+      "#StoryWeaveStories",
+      "#SustainableFashion",
+      "#SelfExpression"
     ]
   },
   "campaign_concept": {
-    "campaign_big_idea": "Harmonizing Luxury and Sustainability",
-    "campaign_message": "Experience the perfect blend of luxury skincare and eco-friendly responsibility with Harmonia",
-    "primary_persona_insight": "Affluent professionals value premium feel, eco-friendly formulation, and skin-care benefits, but prioritize transparency and convenience",
+    "campaign_big_idea": "Empowering Gen Z women to express their authentic selves through storytelling and sustainable fashion",
+    "campaign_message": "Carry Your Story, Every Day, with a wallet that combines eco-friendly materials, functional design, and a unique storytelling journal",
+    "primary_persona_insight": "Gen Z women value self-expression, sustainability, and individuality, but are hesitant about price and practicality",
     "customer_concerns_to_address": [
       "Price sensitivity",
-      "Ingredient transparency",
+      "Practical value of the storytelling journal",
       "Environmental impact"
     ],
     "selling_points_to_visualize": [
-      "Luxury packaging",
-      "Antioxidant-rich formula",
-      "Refill and subscription options"
+      "Eco-friendly materials",
+      "Unique storytelling journal insert",
+      "Sleek and functional design"
     ],
-    "visual_story": "A serene, natural setting with a busy professional in the background, highlighting the convenience and eco-friendliness of Harmonia, while showcasing the luxury packaging and antioxidant-rich formula in the foreground",
+    "visual_story": "A series of Instagram posts showcasing young women using their StoryWeave wallets in everyday life, with snippets of their personal stories and inspirations shared through the journal insert, highlighting the wallet's durability, craftsmanship, and eco-credentials",
     "emotional_keywords": [
-      "Serenity",
-      "Trust",
-      "Harmony"
+      "Empowerment",
+      "Self-expression",
+      "Sustainability",
+      "Individuality",
+      "Authenticity"
     ],
     "trust_signals": [
-      "Dermatologist endorsement",
-      "Recyclable packaging",
-      "Carbon offset metrics"
+      "Transparent supply-chain facts",
+      "High-quality materials",
+      "Functional design",
+      "Positive customer reviews and testimonials"
     ]
   },
   "creative_direction": {
-    "visual_concept": "A serene, natural setting with a busy professional in the background, highlighting the convenience and eco-friendliness of Harmonia",
-    "campaign_story": "The visual concept communicates the campaign message by showcasing the perfect blend of luxury skincare and eco-friendly responsibility with Harmonia, while addressing customer concerns such as price sensitivity, ingredient transparency, and environmental impact",
-    "hero_subject": "A busy professional, likely in their 40s or 50s, applying Harmonia sunscreen in a natural outdoor setting, such as a park or a mountain trail, with a subtle smile and a sense of serenity",
+    "visual_concept": "Empowering Self-Expression",
+    "campaign_story": "A young woman embracing her individuality and creativity through the StoryWeave wallet, showcasing how the product combines eco-friendly materials, functional design, and a unique storytelling journal to inspire self-expression and sustainability",
+    "hero_subject": "A 20-year-old Gen Z woman, sitting in a cozy, minimalist coffee shop, writing in her StoryWeave wallet's journal insert, with the wallet open on a small wooden table in front of her",
     "scene_type": "Instagram campaign hero shot",
-    "composition": "The hero subject is placed in the center of the frame, with the Harmonia product prominently displayed in their hand, while the natural background and props such as a hiking backpack or a yoga mat are arranged to convey a sense of eco-friendliness and convenience",
-    "product_visibility": "The Harmonia product is visible in the hero subject's hand, with the packaging and label clearly displayed, while the formula or cream texture is shown through a small texture element such as a cream smear on the hero subject's skin",
-    "texture_visualization": "The product formula or cream texture is shown as a smooth, luxurious, and non-irritating cream, with a subtle sheen to convey its high-quality and eco-friendly ingredients",
+    "composition": "The woman is placed in the center of the frame, with the wallet and journal insert taking up about 50% of the frame, surrounded by a few props such as a cup of coffee, a small potted plant, and a book, with a blurred background of the coffee shop",
+    "product_visibility": "The StoryWeave wallet is visible, with the journal insert open, showcasing the woman's writing and the product's eco-friendly materials and functional design",
+    "texture_visualization": "The wallet's material, a sustainable, eco-friendly fabric, is shown with a subtle texture, highlighting its durability and craftsmanship",
     "customer_insight_visualization": [
       {
         "insight": "Price sensitivity",
-        "visual_solution": "A subtle price tag or a 'value' badge on the product packaging to convey its premium quality and justify its price"
+        "visual_solution": "A small, discreet price tag or a student discount sticker on the wallet, emphasizing the brand's commitment to affordability"
       },
       {
-        "insight": "Ingredient transparency",
-        "visual_solution": "A small ingredient list or a 'natural ingredients' badge on the product packaging to convey its eco-friendly and sustainable formulation"
+        "insight": "Practical value of the storytelling journal",
+        "visual_solution": "The woman is shown writing in the journal insert, with a few pages filled with her thoughts, dreams, and inspirations, highlighting the product's unique feature"
       },
       {
-        "insight": "Sensitive skin trust",
-        "visual_solution": "A gentle, soothing color palette and a calm, serene atmosphere to convey the product's gentle and non-irritating formula"
-      },
-      {
-        "insight": "Eco transparency",
-        "visual_solution": "A recyclable packaging or a 'carbon offset' badge on the product packaging to convey the brand's commitment to sustainability and environmental responsibility"
+        "insight": "Environmental impact",
+        "visual_solution": "A few eco-friendly props, such as a reusable coffee cup or a small potted plant, are placed around the woman, emphasizing the brand's commitment to sustainability"
       }
     ],
     "brand_value_visualization": [
       {
-        "brand_value": "Luxury",
-        "visual_solution": "A sleek, modern, and minimalist product design, with a high-end packaging and a premium sensory experience"
+        "brand_value": "Self-expression",
+        "visual_solution": "The woman's writing in the journal insert, with a few colorful pens and pencils scattered around her, highlighting the brand's emphasis on creativity and individuality"
       },
       {
         "brand_value": "Sustainability",
-        "visual_solution": "A natural, eco-friendly background and props, with a subtle emphasis on recyclable packaging and carbon offset metrics"
-      },
-      {
-        "brand_value": "Trust",
-        "visual_solution": "A dermatologist endorsement or a 'clinically tested' badge on the product packaging to convey the brand's commitment to quality and customer satisfaction"
+        "visual_solution": "The eco-friendly materials and minimal packaging of the wallet, with a few natural elements, such as a small potted plant or a wooden table, emphasizing the brand's commitment to the environment"
       }
     ],
     "target_audience_visualization": [
-      "A busy professional in their 40s or 50s, with a subtle emphasis on luxury and sustainability",
-      "A person engaging in outdoor activities such as hiking or yoga, with a subtle emphasis on eco-friendliness and convenience"
+      "A few subtle, trendy accessories, such as a pair of sneakers or a minimalist watch, to appeal to the Gen Z audience",
+      "A book or a magazine, highlighting the target audience's interest in reading and writing"
     ],
-    "background": "A natural outdoor setting, such as a park or a mountain trail, with a subtle emphasis on eco-friendliness and sustainability",
-    "lighting": "Soft, natural light, with a warm and inviting atmosphere, to convey a sense of serenity and trust",
+    "background": "A cozy, minimalist coffee shop with a few natural elements, such as a small potted plant or a wooden table, and a blurred background of people working or studying",
+    "lighting": "Soft, natural light, with a warm and inviting atmosphere, emphasizing the comfort and creativity of the scene",
     "color_palette": [
-      "#8B9467",
-      "#C9E4CA",
-      "#F7F7F7"
+      "Earth tones, such as beige and brown",
+      "Pastel colors, such as pale pink and baby blue",
+      "Neutral colors, such as white and gray"
     ],
     "material_and_props": [
-      "Hiking backpack",
-      "Yoga mat",
-      "Recyclable packaging"
+      "Sustainable, eco-friendly fabric",
+      "Wooden table",
+      "Small potted plant",
+      "Book or magazine",
+      "Colorful pens and pencils"
     ],
-    "mood": "Serenity, trust, and harmony, with a subtle emphasis on luxury and sustainability",
+    "mood": "Empowering, creative, and sustainable, with a sense of comfort and individuality",
     "things_to_avoid": [
-      "Plain floating product render",
-      "Serum bottles, droppers, toner bottles, or transparent liquid bottles",
-      "Overly dramatic or sensational lighting"
+      "Clichéd or overused props, such as a laptop or a smartphone",
+      "Overly dramatic or staged lighting, emphasizing the natural and inviting atmosphere of the scene",
+      "Too much branding or logos, focusing on the product's features and the woman's interaction with it"
     ]
   },
+  "image_prompt_design": {
+    "selected_campaign_message": "Empowering self-expression through sustainable and functional design",
+    "primary_persona_insight": "Gen Z women value self-expression, sustainability, and individuality",
+    "subject": {
+      "identity": "A 20-year-old Gen Z woman with a minimalist and eclectic style, wearing a pair of sneakers and a casual outfit",
+      "expression": "A thoughtful and creative expression, with a slight smile",
+      "pose": "Sitting comfortably with her back straight, leaning slightly forward",
+      "action": "Writing in the StoryWeave wallet's journal insert with a colorful pen"
+    },
+    "setting": {
+      "location": "A cozy and intimate coffee shop with natural light",
+      "time_of_day": "Late morning, with soft sunlight streaming through the window",
+      "atmosphere": "Relaxed and creative, with a few people working or studying in the background"
+    },
+    "product_integration": {
+      "placement": "On a small wooden table in front of the woman, with the journal insert open",
+      "interaction": "The woman is writing in the journal insert with a pen, with her other hand resting on the wallet",
+      "frame_ratio": "The wallet and journal insert take up about 30% of the frame"
+    },
+    "camera": {
+      "shot_type": "Medium shot",
+      "angle": "Slightly above eye level, looking down at the woman and the wallet",
+      "lens_feel": "A 50mm lens with a natural and intimate feel",
+      "focus": "The woman's face and the wallet are in sharp focus, while the background is softly blurred",
+      "composition": "The woman is placed in the center of the frame, with the wallet and journal insert on the table in front of her"
+    },
+    "lighting": {
+      "source": "Natural light from the window",
+      "direction": "Soft and diffused, coming from the side",
+      "quality": "Soft and warm",
+      "color_temperature": "Warm and inviting",
+      "shadow_behavior": "The shadows are soft and subtle, with a slight gradient on the woman's face and the wallet"
+    },
+    "visual_details": {
+      "human_detail": "The woman's hands are visible, with a few rings and a minimalist watch on her wrist",
+      "product_texture": "The wallet's material is a sustainable and eco-friendly fabric, with a subtle texture and a natural color",
+      "materials": [
+        "wood",
+        "fabric",
+        "paper"
+      ],
+      "foreground": "A small cup of coffee and a few colorful pens and pencils on the table",
+      "background": "A blurred background of the coffee shop, with a few people working or studying",
+      "color_palette": [
+        "earth tones",
+        "pastel colors",
+        "neutral colors"
+      ]
+    },
+    "image_prompt_for_sdxl": "A 20-year-old Gen Z woman with a minimalist and eclectic style is sitting in a cozy coffee shop, writing in the StoryWeave wallet's journal insert with a colorful pen. The wallet is placed on a small wooden table in front of her, with the journal insert open and a few colorful pens and pencils scattered around. The woman has a thoughtful and creative expression, with a slight smile, and is dressed in a casual outfit with a pair of sneakers. The camera is positioned slightly above eye level, looking down at the woman and the wallet, with a 50mm lens and a natural and intimate feel. The lighting is soft and warm, with a warm and inviting color temperature, and the shadows are soft and subtle. The background is a blurred coffee shop, with a few people working or studying, and the overall atmosphere is relaxed and creative. The woman's hands are visible, with a few rings and a minimalist watch on her wrist, and the wallet's material is a sustainable and eco-friendly fabric with a subtle texture and a natural color.",
+    "negative_prompt_for_sdxl": "Avoid a plain floating product render, white studio background, or crowded flat lay. Do not include fake readable text, brand logo, watermark, or unreadable characters. The woman should not have extra fingers, deformed hands, or disconnected objects, and the product should not be floating or have an impossible grip. The shadows should be consistent, and the scale should be realistic. The composition should not be cluttered, and the product should not be duplicated. Avoid inconsistent shadows, unrealistic scale, or duplicate products.",
+    "image_width": 640,
+    "image_height": 960
+  },
   "sns_content": {
-    "post_title": "Nourish Your Skin, Naturally",
-    "main_copy": "Indulge in the perfect blend of luxury and sustainability with Harmonia, our premium sunscreen that protects and nourishes your skin. With its gentle, non-irritating formula and eco-friendly ingredients, you can trust that you're taking care of your skin and the planet. Experience the convenience of our easy-apply texture, designed for your busy lifestyle. Join our community of like-minded individuals who value high-quality, sustainable skincare.",
-    "short_hook": "Luxury meets sustainability",
+    "post_title": "Carry Your Story, Every Day",
+    "main_copy": "What's your story? We believe every day is a chance to write a new chapter. With StoryWeave, you can carry your thoughts, dreams, and inspirations with you, while staying true to your values and style. Made from sustainable materials, our wallet is more than just a accessory - it's a symbol of self-expression and courage.",
+    "short_hook": "Write your story, every day",
     "hashtags": [
-      "#CleanBeauty",
-      "#SustainableSkincare",
-      "#LuxurySunscreen",
-      "#EcoFriendly",
-      "#NaturalGlow"
+      "#CarryYourStory",
+      "#EcoChic",
+      "#StoryWeaveStories",
+      "#SustainableFashion",
+      "#SelfExpression"
     ],
-    "image_prompt_for_sdxl": "In a serene natural setting, a busy professional in their 40s, with a subtle smile and a sense of serenity, applies Harmonia sunscreen from a sleek, modern tube, gently rubbing it into their skin as they prepare for a hike, surrounded by lush greenery and warm, soft light that casts a gentle glow on their face, with the tube placed naturally in their hand, showcasing the product's smooth, luxurious texture and the person's healthy, glowing skin. The atmosphere is peaceful, with a color palette of muted greens and earthy tones, and a composition that feels effortless and organic. The lighting is warm and inviting, with a subtle sheen on the product and the person's skin, conveying a sense of trust and harmony. The scene is set against a backdrop of a mountain trail, with a hiking backpack and a yoga mat subtly integrated into the scene, emphasizing the product's convenience and eco-friendliness.",
-    "negative_prompt_for_sdxl": "serum bottle, dropper bottle, toner bottle, transparent liquid bottle, perfume bottle, plain floating product render, white studio background, crowded flat lay, fake readable text, brand logo, watermark, unreadable characters, blurry areas, overly dramatic or sensational lighting, incorrect product packaging, wrong color palette, messy or cluttered composition",
+    "selected_campaign_message": "Empowering self-expression through sustainable and functional design",
+    "primary_persona_insight": "Gen Z women value self-expression, sustainability, and individuality",
+    "subject": {
+      "identity": "A 20-year-old Gen Z woman with a minimalist and eclectic style, wearing a pair of sneakers and a casual outfit",
+      "expression": "A thoughtful and creative expression, with a slight smile",
+      "pose": "Sitting comfortably with her back straight, leaning slightly forward",
+      "action": "Writing in the StoryWeave wallet's journal insert with a colorful pen"
+    },
+    "setting": {
+      "location": "A cozy and intimate coffee shop with natural light",
+      "time_of_day": "Late morning, with soft sunlight streaming through the window",
+      "atmosphere": "Relaxed and creative, with a few people working or studying in the background"
+    },
+    "product_integration": {
+      "placement": "On a small wooden table in front of the woman, with the journal insert open",
+      "interaction": "The woman is writing in the journal insert with a pen, with her other hand resting on the wallet",
+      "frame_ratio": "The wallet and journal insert take up about 30% of the frame"
+    },
+    "camera": {
+      "shot_type": "Medium shot",
+      "angle": "Slightly above eye level, looking down at the woman and the wallet",
+      "lens_feel": "A 50mm lens with a natural and intimate feel",
+      "focus": "The woman's face and the wallet are in sharp focus, while the background is softly blurred",
+      "composition": "The woman is placed in the center of the frame, with the wallet and journal insert on the table in front of her"
+    },
+    "lighting": {
+      "source": "Natural light from the window",
+      "direction": "Soft and diffused, coming from the side",
+      "quality": "Soft and warm",
+      "color_temperature": "Warm and inviting",
+      "shadow_behavior": "The shadows are soft and subtle, with a slight gradient on the woman's face and the wallet"
+    },
+    "visual_details": {
+      "human_detail": "The woman's hands are visible, with a few rings and a minimalist watch on her wrist",
+      "product_texture": "The wallet's material is a sustainable and eco-friendly fabric, with a subtle texture and a natural color",
+      "materials": [
+        "wood",
+        "fabric",
+        "paper"
+      ],
+      "foreground": "A small cup of coffee and a few colorful pens and pencils on the table",
+      "background": "A blurred background of the coffee shop, with a few people working or studying",
+      "color_palette": [
+        "earth tones",
+        "pastel colors",
+        "neutral colors"
+      ]
+    },
+    "image_prompt_for_sdxl": "A 20-year-old Gen Z woman with a minimalist and eclectic style is sitting in a cozy coffee shop, writing in the StoryWeave wallet's journal insert with a colorful pen. The wallet is placed on a small wooden table in front of her, with the journal insert open and a few colorful pens and pencils scattered around. The woman has a thoughtful and creative expression, with a slight smile, and is dressed in a casual outfit with a pair of sneakers. The camera is positioned slightly above eye level, looking down at the woman and the wallet, with a 50mm lens and a natural and intimate feel. The lighting is soft and warm, with a warm and inviting color temperature, and the shadows are soft and subtle. The background is a blurred coffee shop, with a few people working or studying, and the overall atmosphere is relaxed and creative. The woman's hands are visible, with a few rings and a minimalist watch on her wrist, and the wallet's material is a sustainable and eco-friendly fabric with a subtle texture and a natural color.",
+    "negative_prompt_for_sdxl": "Avoid a plain floating product render, white studio background, or crowded flat lay. Do not include fake readable text, brand logo, watermark, or unreadable characters. The woman should not have extra fingers, deformed hands, or disconnected objects, and the product should not be floating or have an impossible grip. The shadows should be consistent, and the scale should be realistic. The composition should not be cluttered, and the product should not be duplicated. Avoid inconsistent shadows, unrealistic scale, or duplicate products.",
     "image_width": 640,
     "image_height": 960
   }

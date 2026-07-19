@@ -1,0 +1,55 @@
+{
+  "product_name": "PureShield",
+  "selected_campaign_message": "PureShield sunscreen provides gentle and effective protection for sensitive skin while promoting sustainability and transparency",
+  "primary_persona_insight": "Customers value transparency, sustainability, and gentle, non-irritating formulas, but are held back by price concerns and limited proof of effectiveness",
+  "subject": {
+    "identity": "A young woman in her early 20s with a relaxed, natural hairstyle and minimal makeup, wearing outdoor enthusiast attire",
+    "expression": "A calm and confident facial expression with a subtle smile",
+    "pose": "Standing with a slight lean forward, weight on one leg, and the other leg slightly bent",
+    "action": "Gently applying PureShield sunscreen to her face with her fingertips"
+  },
+  "setting": {
+    "location": "A serene hiking trail surrounded by lush greenery and trees, with a clear blue sky in the background",
+    "time_of_day": "Late morning, with the sun shining down at a 45-degree angle",
+    "atmosphere": "A peaceful and natural environment with a gentle breeze"
+  },
+  "product_integration": {
+    "placement": "In the subject's hand, with the label facing the camera",
+    "interaction": "The subject is applying the sunscreen to her face using a gentle, sweeping motion",
+    "frame_ratio": "The product occupies approximately 10% of the frame, with the subject's face and the outdoor scenery taking up more space"
+  },
+  "camera": {
+    "shot_type": "Medium shot, framing the subject from the waist up",
+    "angle": "Slightly above eye level, looking down at the subject with a subtle tilt",
+    "lens_feel": "A 50mm lens with a natural, editorial feel",
+    "focus": "The subject's face and the product are in sharp focus, while the background is softly blurred",
+    "composition": "The subject is placed in the center of the frame, with the product in her hand and the outdoor scenery in the background, creating a sense of depth and context"
+  },
+  "lighting": {
+    "source": "Natural sunlight",
+    "direction": "Coming from a 45-degree angle above and to the side of the subject",
+    "quality": "Soft and warm, with a gentle glow",
+    "color_temperature": "Warm, around 5600K",
+    "shadow_behavior": "Subtle shadows on the subject's face and the product, with a soft gradient of light to dark"
+  },
+  "visual_details": {
+    "skin_texture": "The subject's skin appears healthy and radiant, with a subtle, natural glow",
+    "product_texture": "The sunscreen has a creamy, non-greasy texture, visible on the subject's fingertips",
+    "materials": [
+      "bamboo",
+      "recycled paper",
+      "reusable water bottle"
+    ],
+    "foreground": "A few leaves and twigs on the ground in the foreground, adding depth and texture to the scene",
+    "background": "The lush greenery and trees of the hiking trail, with a clear blue sky above",
+    "color_palette": [
+      "#8B9467",
+      "#3E8E41",
+      "#66D9EF"
+    ]
+  },
+  "negative_prompt_for_sdxl": "Avoid images with serum bottles, dropper bottles, toner bottles, transparent liquid bottles, or perfume bottles, and avoid plain floating product renders, white studio backgrounds, or crowded flat lays. Do not include fake readable text, brand logos, watermarks, or unreadable characters, and avoid extra fingers, deformed hands, disconnected objects, impossible grips, or floating products. Also, avoid inconsistent shadows, unrealistic scales, duplicate products, cluttered compositions, or blurry faces, and do not depict the product in a way that is not physically plausible or naturally integrated into the scene.",
+  "image_prompt_for_sdxl": "A young woman in her early 20s, dressed in outdoor enthusiast attire, stands on a serene hiking trail surrounded by lush greenery and trees, gently applying PureShield sunscreen to her face with her fingertips. The product is in her hand, with the label facing the camera, and she is applying it using a gentle, sweeping motion. Her face is calm and confident, with a subtle smile, and her skin appears healthy and radiant, with a subtle, natural glow. The camera is positioned slightly above eye level, looking down at the subject with a subtle tilt, using a 50mm lens with a natural, editorial feel, and the subject's face and the product are in sharp focus, while the background is softly blurred. The natural sunlight is coming from a 45-degree angle above and to the side of the subject, casting subtle shadows on the subject's face and the product, with a soft gradient of light to dark. The scene is set against a peaceful and natural environment, with a gentle breeze, and the subject's attire and the outdoor scenery evoke a sense of freedom and adventure, emphasizing the product's gentle and effective formula for sensitive skin and its commitment to sustainability and transparency.",
+  "image_width": 640,
+  "image_height": 960
+}

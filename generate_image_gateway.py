@@ -54,121 +54,15 @@ def load_prompt_from_json(json_path: Path) -> dict:
 
 
 def build_gateway_prompt(prompt_data: dict) -> str:
-    cd = prompt_data.get("creative_direction", {})
-    cc = prompt_data.get("campaign_concept", {})
-    strategy = prompt_data.get("marketing_strategy", {})
-    sns = prompt_data.get("sns_copy", {})
+    base_prompt = str(prompt_data.get("base_prompt", "")).strip()
+    if not base_prompt:
+        raise ValueError("image_prompt_for_sdxl이 비어 있습니다.")
 
-    # --- 씬 기본 요소 ---
-    hero_subject    = cd.get("hero_subject", "")
-    scene_type      = cd.get("scene_type", "Instagram campaign hero shot")
-    visual_concept  = cd.get("visual_concept", "")
-    campaign_story  = cd.get("campaign_story", "")
-    composition     = cd.get("composition", "")
-    background      = cd.get("background", "")
-    lighting        = cd.get("lighting", "soft natural light")
-    texture_viz     = cd.get("texture_visualization", "")
-    mood            = cd.get("mood", "premium, clean, trustworthy")
-    color_palette   = ", ".join(cd.get("color_palette", []))
-    props           = ", ".join(cd.get("material_and_props", []))
+    negative_prompt = str(prompt_data.get("negative_prompt", "")).strip()
+    if not negative_prompt:
+        return base_prompt
 
-    # --- 캠페인 컨셉 ---
-    big_idea            = cc.get("campaign_big_idea", "")
-    campaign_message    = cc.get("campaign_message", "")
-    visual_story        = cc.get("visual_story", visual_concept)
-    emotional_keywords  = ", ".join(cc.get("emotional_keywords", []))
-    trust_signals       = cc.get("trust_signals", [])
-    selling_points_viz  = cc.get("selling_points_to_visualize",
-                                  strategy.get("selling_points", []))
-
-    # --- 고객 인사이트 → 비주얼 솔루션 ---
-    insight_lines = [
-        f"  - [{iv.get('insight','')}] → {iv.get('visual_solution','')}"
-        for iv in cd.get("customer_insight_visualization", [])
-    ]
-    # --- 브랜드 가치 → 비주얼 솔루션 ---
-    brand_lines = [
-        f"  - [{bv.get('brand_value','')}] → {bv.get('visual_solution','')}"
-        for bv in cd.get("brand_value_visualization", [])
-    ]
-    # --- 타겟 오디언스 시각 단서 ---
-    audience_cues = cd.get("target_audience_visualization", [])
-    if isinstance(audience_cues, list):
-        audience_cues_str = " / ".join(audience_cues)
-    else:
-        audience_cues_str = str(audience_cues)
-
-    # --- 회피 항목 (creative_direction 기준) ---
-    things_to_avoid = cd.get("things_to_avoid", [])
-    avoid_str = "\n- ".join(things_to_avoid) if things_to_avoid else ""
-
-    trust_str = (
-        "\n".join(f"  • {t}" for t in trust_signals)
-        if isinstance(trust_signals, list)
-        else str(trust_signals)
-    )
-    selling_str = "\n".join(f"  • {s}" for s in selling_points_viz)
-
-    prompt = f"""Professional Instagram skincare campaign photograph.
-
-━━━ CAMPAIGN BRIEF ━━━
-Big Idea: {big_idea}
-Core Message: {campaign_message}
-Emotional Keywords: {emotional_keywords}
-
-━━━ SCENE DIRECTION ━━━
-{hero_subject}
-{visual_story}
-{campaign_story}
-
-Composition: {composition}
-Background: {background}
-Lighting: {lighting}
-Mood: {mood}
-Color palette: {color_palette}
-Props & materials: {props}
-Product texture: {texture_viz}
-
-━━━ PRODUCT IN SCENE ━━━
-Category: {prompt_data["product_category"]}
-Packaging: sunscreen tube or sun care cream tube (NOT serum bottle, dropper, toner, or transparent bottle)
-Placement: naturally integrated into the scene, label visible but not forced
-Occupies approximately 45–60% of the visual weight — scene tells the story, product is the anchor
-
-━━━ WHAT TO VISUALLY COMMUNICATE ━━━
-Selling points:
-{selling_str}
-
-Trust signals:
-{trust_str}
-
-Customer concerns → visual solutions:
-{chr(10).join(insight_lines)}
-
-Brand values → visual solutions:
-{chr(10).join(brand_lines)}
-
-Target audience cues: {audience_cues_str}
-Target group: {prompt_data["target_group"]}
-Brand tone: {prompt_data["brand_tone"]}
-
-━━━ TECHNICAL SPECS ━━━
-Style: {scene_type}, editorial beauty photography, commercial skincare Instagram ad
-Depth of field: shallow (soft bokeh background)
-Detail: high-detail on product packaging and cream texture
-Skin: natural, healthy skin tones — not heavily retouched
-Format: 2:3 portrait (Instagram)
-
-━━━ DO NOT INCLUDE ━━━
-- {avoid_str}
-- Readable text overlays, fake brand logos, or watermarks
-- Extra unrelated skincare products as prominent objects
-- Serum bottles, dropper bottles, perfume bottles, transparent liquid bottles
-- Overly busy or cluttered backgrounds that compete with the product
-- Plain white/grey studio floating product render
-""".strip()
-
-    return prompt
+    return f"{base_prompt}\n\nDo not include: {negative_prompt}".strip()
 
 
 def print_marketing_summary(prompt_data: dict) -> None:
