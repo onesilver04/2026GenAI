@@ -18,7 +18,7 @@ BASE_URL = "https://factchat-cloud.mindlogic.ai/v1/gateway"
 JSON_PATH = Path("marketing_agent_result.json")
 OUTPUT_DIR = Path("generated_content")
 
-IMAGE_MODEL = "gemini-2.5-flash-image"
+IMAGE_MODEL = "gemini-3.1-flash-lite"
 # IMAGE_MODEL = "gpt-image-1-mini"
 # IMAGE_MODEL = "gpt-image-1.5"
 
