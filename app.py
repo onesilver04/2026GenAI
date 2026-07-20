@@ -35,8 +35,6 @@ st.caption("제품 정보를 입력하면 마케팅 전략 · SNS 카피 · 홍�
 
 # ── 사이드바 ──────────────────────────────────────────────
 with st.sidebar:
-    st.header("⚙️ 생성 설정")
-    platform = st.selectbox("플랫폼", ["Instagram", "TikTok", "YouTube"])
     gen_image = st.toggle("이미지 생성 포함", value=True)
 
 # ── 입력 폼 ───────────────────────────────────────────────
@@ -82,7 +80,7 @@ if run_btn:
             product_description=product_desc,
             target_group=target,
             brand_tone=tone,
-            platform=platform,
+            platform="Instagram",
         )
 
         # ── Step 1: 가상 고객 피드백 ─────────────────────
