@@ -1,0 +1,55 @@
+{
+  "product_name": "Liberty Belle",
+  "selected_campaign_message": "Experience the perfect blend of American heritage craftsmanship and modern sophistication with the Liberty Belle leather crossbody bag",
+  "primary_persona_insight": "Customers value classic American style, quality craftsmanship, and understated luxury, and are looking for a bag that makes them feel confident and put-together",
+  "subject": {
+    "identity": "A woman in her 30s, dressed in a professional outfit with a mix of modern and classic elements",
+    "expression": "Confident and put-together, with a subtle smile",
+    "pose": "Walking out of a city office building, with a natural stride",
+    "action": "Slipping her hand into the Liberty Belle bag, adjusting its strap"
+  },
+  "setting": {
+    "location": "A bustling city street, with a mix of modern and classic buildings in the background",
+    "time_of_day": "Late afternoon, with a warm golden light",
+    "atmosphere": "Urban sophistication, with a sense of energy and movement"
+  },
+  "product_integration": {
+    "placement": "On the woman's shoulder, with the bag's leather grain and stitching details visible",
+    "interaction": "The woman's hand slipping into the bag, with her fingers wrapping around the strap",
+    "frame_ratio": "The product occupies about 30% of the frame, with the woman and the cityscape filling the rest"
+  },
+  "camera": {
+    "shot_type": "Medium shot, with the woman and the bag as the main focus",
+    "angle": "Slightly above eye level, looking down on the woman and the bag",
+    "lens_feel": "A 50mm lens, with a shallow depth of field and a sense of intimacy",
+    "focus": "The woman's face and the Liberty Belle bag are sharp, while the background is softly blurred",
+    "composition": "The woman is placed in the center of the frame, with the bag on her shoulder and the cityscape behind her"
+  },
+  "lighting": {
+    "source": "Natural light, with the sun shining down on the woman and the bag",
+    "direction": "Coming from the side, with a warm glow on the woman's face and the bag",
+    "quality": "Soft and warm, with a sense of depth and dimension",
+    "color_temperature": "Warm, with a golden hour glow",
+    "shadow_behavior": "The shadows are soft and subtle, with a sense of depth and volume"
+  },
+  "visual_details": {
+    "human_detail": "The woman's skin has a natural glow, with a subtle sheen on her lips and a few loose strands of hair framing her face",
+    "product_texture": "The Liberty Belle bag's leather grain is visible, with a sense of texture and depth",
+    "materials": [
+      "leather",
+      "wood",
+      "metal"
+    ],
+    "foreground": "The woman's hand and the bag's strap are in the foreground, with a sense of depth and dimension",
+    "background": "The cityscape is blurred, with a sense of energy and movement",
+    "color_palette": [
+      "neutral beige",
+      "rich brown",
+      "deep blue"
+    ]
+  },
+  "negative_prompt_for_sdxl": "Avoid a plain floating product render, white studio background, or crowded flat lay. Do not include fake readable text, brand logos, watermarks, or unreadable characters. The woman's hands and fingers should be naturally posed, without extra fingers, deformed hands, or disconnected objects. The product should not be blurry or out of focus, and the shadows should be consistent and realistic. The composition should not be cluttered, with a clear sense of depth and dimension. Avoid inconsistent shadows, unrealistic scale, or duplicate products.",
+  "image_prompt_for_sdxl": "A woman in her 30s, dressed in a professional outfit, walks out of a city office building, slipping her hand into the Liberty Belle leather crossbody bag and adjusting its strap. The bag is placed on her shoulder, with its leather grain and stitching details visible. The woman's face is confident and put-together, with a subtle smile, and her skin has a natural glow. The camera is positioned slightly above eye level, looking down on the woman and the bag, with a 50mm lens and a shallow depth of field. The lighting is soft and warm, with a warm glow on the woman's face and the bag, and the shadows are soft and subtle. The background is a blurred cityscape, with a sense of energy and movement, and the color palette is a mix of neutral beige, rich brown, and deep blue. The overall atmosphere is one of urban sophistication, with a sense of confidence and elegance.",
+  "image_width": 640,
+  "image_height": 960
+}

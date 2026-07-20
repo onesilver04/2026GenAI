@@ -1,0 +1,55 @@
+{
+  "product_name": "Liberty Belle",
+  "selected_campaign_message": "Empowering the Modern Woman through Timeless American Craftsmanship",
+  "primary_persona_insight": "Customers value classic American style, quality craftsmanship, and understated luxury",
+  "subject": {
+    "identity": "A woman in her 30s, with a professional and polished style, wearing a classic outfit with a modern twist",
+    "expression": "Confident and self-assured, with a subtle smile",
+    "pose": "Walking down a city street, with a relaxed and natural stride",
+    "action": "Carrying the Liberty Belle bag on her shoulder, with her hand resting on the bag's strap"
+  },
+  "setting": {
+    "location": "A bustling city street, with a mix of modern and classic architecture",
+    "time_of_day": "Late morning, with soft and warm natural light",
+    "atmosphere": "Vibrant and energetic, with a sense of urban sophistication"
+  },
+  "product_integration": {
+    "placement": "On the subject's shoulder, with the bag's strap resting comfortably on her arm",
+    "interaction": "The subject's hand is resting on the bag's strap, with her fingers gently grasping the leather",
+    "frame_ratio": "The product occupies approximately 20-30% of the frame, with the subject and background filling the rest"
+  },
+  "camera": {
+    "shot_type": "Medium shot, with the subject and product prominently displayed",
+    "angle": "Slightly above eye level, with a subtle tilt to emphasize the subject's confidence",
+    "lens_feel": "A 50mm lens, with a natural and editorial feel",
+    "focus": "The subject and product are in sharp focus, with the background softly blurred",
+    "composition": "The subject is placed in the center of the frame, with the product and background balanced around her"
+  },
+  "lighting": {
+    "source": "Natural light, with the sun shining down on the subject and product",
+    "direction": "Soft and diffused, with a warm and inviting tone",
+    "quality": "Soft and gentle, with a subtle gradient of light and shadow",
+    "color_temperature": "Warm and neutral, with a slight golden tone",
+    "shadow_behavior": "The shadows are soft and subtle, with a natural and realistic appearance"
+  },
+  "visual_details": {
+    "human_detail": "The subject's skin has a natural and healthy glow, with a subtle sheen on her hair and clothing",
+    "product_texture": "The Liberty Belle bag's leather has a rich and supple texture, with a subtle grain and natural patina",
+    "materials": [
+      "leather",
+      "metal",
+      "fabric"
+    ],
+    "foreground": "The subject's hand and arm are prominently displayed, with a subtle blur to emphasize the product",
+    "background": "The city street is blurred, with a mix of modern and classic architecture visible in the distance",
+    "color_palette": [
+      "neutral beige",
+      "rich brown",
+      "deep blue"
+    ]
+  },
+  "negative_prompt_for_sdxl": "Avoid plain floating product render, white studio background, crowded flat lay, fake readable text, brand logo, watermark, unreadable characters, extra fingers, deformed hands, disconnected objects, impossible grip, floating product, blurry face, inconsistent shadows, unrealistic scale, duplicate products, cluttered composition.",
+  "image_prompt_for_sdxl": "A woman in her 30s, with a professional and polished style, walks down a bustling city street, carrying the Liberty Belle bag on her shoulder. The bag is placed comfortably on her shoulder, with her hand resting on the strap. She exudes confidence and self-assurance, with a subtle smile and a relaxed stride. The camera captures the scene from a slightly above eye level, with a 50mm lens and a natural editorial feel. The lighting is soft and warm, with a subtle gradient of light and shadow. The background is blurred, with a mix of modern and classic architecture visible in the distance, and the subject and product are prominently displayed in the foreground. The overall atmosphere is vibrant and energetic, with a sense of urban sophistication and timeless elegance.",
+  "image_width": 640,
+  "image_height": 960
+}

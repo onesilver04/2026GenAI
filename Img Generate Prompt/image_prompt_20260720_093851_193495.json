@@ -1,0 +1,55 @@
+{
+  "product_name": "Liberty Belle",
+  "selected_campaign_message": "Experience the perfect blend of American heritage craftsmanship and modern sophistication with the Liberty Belle leather crossbody bag",
+  "primary_persona_insight": "Customers value classic American style, quality craftsmanship, and understated luxury, but are concerned about price and desire transparency around sustainability and manufacturing",
+  "subject": {
+    "identity": "A confident, urban professional woman in her 30s, with a stylish and modern outfit",
+    "expression": "A calm and self-assured facial expression",
+    "pose": "A natural, relaxed posture while walking",
+    "action": "Gently touching the Liberty Belle bag with her hand as she walks down a city street"
+  },
+  "setting": {
+    "location": "A bustling city street with a mix of modern and classic architectural elements",
+    "time_of_day": "Late afternoon, with soft, warm natural light",
+    "atmosphere": "A lively, yet sophisticated urban atmosphere"
+  },
+  "product_integration": {
+    "placement": "Securely in place across the woman's body, with the bag's front slightly turned to show its high-quality leather texture",
+    "interaction": "The woman's hand gently touching the bag, with her fingers wrapped around the strap",
+    "frame_ratio": "The product occupies about 30% of the frame, with the woman and the city street scene making up the rest"
+  },
+  "camera": {
+    "shot_type": "Medium shot",
+    "angle": "Slightly above eye level, looking down at the woman and the bag",
+    "lens_feel": "A 50mm lens with a natural, editorial feel",
+    "focus": "The woman and the bag are in sharp focus, while the city street scene is softly blurred in the background",
+    "composition": "The woman is placed in the center of the frame, with the bag prominently displayed and the city street scene providing context"
+  },
+  "lighting": {
+    "source": "Soft, natural light from the late afternoon sun",
+    "direction": "Coming from the side, with a slight warmth to the tone",
+    "quality": "Soft, with a gentle glow",
+    "color_temperature": "Warm, around 5500K",
+    "shadow_behavior": "Shadows are soft and subtle, with a slight depth to the scene"
+  },
+  "visual_details": {
+    "human_detail": "The woman's stylish outfit, with a mix of modern and classic pieces, and her calm, self-assured expression",
+    "product_texture": "The high-quality, full-grain leather texture of the Liberty Belle bag, with visible stitching and hardware",
+    "materials": [
+      "leather",
+      "metal",
+      "fabric"
+    ],
+    "foreground": "The woman's hand and the bag's strap, with a few subtle props such as a coffee cup or a book",
+    "background": "The blurred city street scene, with a mix of modern and classic architectural elements",
+    "color_palette": [
+      "neutral beige",
+      "rich brown",
+      "deep blue"
+    ]
+  },
+  "negative_prompt_for_sdxl": "Avoid a plain floating product render, white studio background, or crowded flat lay. Do not include fake readable text, brand logos, watermarks, or unreadable characters. The woman's hands and fingers should be naturally posed, without extra fingers, deformed hands, or disconnected objects. The product should not be blurry, and the scene should not have inconsistent shadows, unrealistic scale, or duplicate products. The composition should be clean and uncluttered, without unnecessary props or distractions.",
+  "image_prompt_for_sdxl": "A confident, urban professional woman in her 30s walks down a bustling city street, gently touching the Liberty Belle leather crossbody bag with her hand as she goes. The bag is securely in place across her body, with its front slightly turned to show its high-quality leather texture. The woman's stylish outfit and calm, self-assured expression reflect her appreciation for classic American style and quality craftsmanship. The camera looks down at the woman and the bag from a slightly above eye level angle, using a 50mm lens with a natural, editorial feel. The soft, warm light of the late afternoon sun casts a gentle glow over the scene, with shadows that are soft and subtle. The city street scene provides a lively, yet sophisticated background, with a mix of modern and classic architectural elements and a few subtle props such as a coffee cup or a book.",
+  "image_width": 640,
+  "image_height": 960
+}

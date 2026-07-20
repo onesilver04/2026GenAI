@@ -16,6 +16,8 @@ STRATEGY_MODEL         = os.getenv("GROQ_STRATEGY_MODEL", "openai/gpt-oss-120b")
 SNS_COPY_MODEL         = os.getenv("GROQ_SNS_COPY_MODEL", DEFAULT_MODEL)
 MAX_TOKENS             = int(os.getenv("GROQ_MAX_TOKENS", "2048"))
 IMAGE_PROMPT_OUTPUT_DIR = Path("Img Generate Prompt")
+MARKETING_RESULT_PATH = Path("marketing_agent_result.json")
+MARKETING_RESULT_ARCHIVE_DIR = Path("marketing_agent_results")
 
 
 @dataclass
@@ -693,6 +695,22 @@ def save_image_prompt_json(product_name: str, image_prompt: Dict) -> Path:
     return output_path
 
 
+def save_marketing_result_json(result: Dict) -> Path:
+    """최신 결과를 gateway용 파일에 쓰고 실행별 결과를 별도로 보관합니다."""
+    MARKETING_RESULT_ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
+    archive_path = (
+        MARKETING_RESULT_ARCHIVE_DIR
+        / f"marketing_agent_result_{timestamp}.json"
+    )
+
+    for output_path in (MARKETING_RESULT_PATH, archive_path):
+        with output_path.open("w", encoding="utf-8") as file:
+            json.dump(result, file, ensure_ascii=False, indent=2)
+
+    return archive_path
+
+
 # ─────────────────────────────────────────
 # 마케팅 리포트 출력
 # ─────────────────────────────────────────
@@ -838,9 +856,9 @@ def run_pipeline():
         "sns_content":              sns_content,
     }
 
-    with open("marketing_agent_result.json", "w", encoding="utf-8") as f:
-        json.dump(final_result, f, ensure_ascii=False, indent=2)
+    marketing_result_path = save_marketing_result_json(final_result)
     print("\n[7] marketing_agent_result.json 저장 완료.")
+    print(f"    실행별 결과 저장 완료: {marketing_result_path}")
 
     image_prompt_path = save_image_prompt_json(user_input.product_name, image_prompt)
     print(f"    이미지 생성 프롬프트 저장 완료: {image_prompt_path}")

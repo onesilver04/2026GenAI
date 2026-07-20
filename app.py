@@ -16,6 +16,7 @@ from main import (
     generate_campaign_concept,
     generate_creative_direction,
     generate_image_prompt,
+    save_marketing_result_json,
 )
 # ── generate_image_gateway.py 함수 import ────────────────
 from generate_image_gateway import build_gateway_prompt, print_marketing_summary
@@ -132,9 +133,8 @@ if run_btn:
             "sns_content": sns_content,
         }
 
-        # JSON 파일도 함께 저장 (선택)
-        with open("marketing_agent_result.json", "w", encoding="utf-8") as f:
-            json.dump(result_data, f, ensure_ascii=False, indent=2)
+        # gateway용 최신 결과와 실행별 결과를 함께 저장
+        save_marketing_result_json(result_data)
 
         status.update(label="✅ 텍스트 생성 완료!", state="complete")
 

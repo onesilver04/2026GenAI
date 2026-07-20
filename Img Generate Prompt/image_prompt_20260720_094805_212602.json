@@ -1,0 +1,55 @@
+{
+  "product_name": "Liberty Belle",
+  "selected_campaign_message": "Experience the perfect blend of American heritage craftsmanship and modern sophistication with the Liberty Belle leather crossbody bag",
+  "primary_persona_insight": "Women value the Liberty Belle's heritage craftsmanship, full-grain leather, and timeless design",
+  "subject": {
+    "identity": "A confident, urban professional woman in her 30s, with a subtle hint of a family or personal life",
+    "expression": "A calm and assured facial expression",
+    "pose": "Walking down a city street with a natural stride",
+    "action": "Adjusting the strap of the Liberty Belle crossbody bag slung over her shoulder"
+  },
+  "setting": {
+    "location": "A bustling city street with a blurred background of people and buildings",
+    "time_of_day": "Late morning with soft, natural light",
+    "atmosphere": "A sense of urban sophistication and sustainability"
+  },
+  "product_integration": {
+    "placement": "Slung over the subject's shoulder, with the bag's classic silhouette visible from the side",
+    "interaction": "The subject's hand gently adjusting the strap",
+    "frame_ratio": "The product occupies approximately 30% of the frame"
+  },
+  "camera": {
+    "shot_type": "Medium shot",
+    "angle": "Slightly above eye level",
+    "lens_feel": "A 50mm editorial feel with a subtle sense of depth",
+    "focus": "The subject and the Liberty Belle bag are sharp, while the background is softly blurred",
+    "composition": "The subject is placed in the center of the frame, with the bag prominently displayed and the city environment subtly visible in the background"
+  },
+  "lighting": {
+    "source": "Soft, natural light from the left side",
+    "direction": "45-degree angle, casting a subtle shadow on the subject's face",
+    "quality": "Soft and warm",
+    "color_temperature": "Neutral with a hint of warmth",
+    "shadow_behavior": "Subtle shadows on the subject's face and the bag, with a sense of depth and dimension"
+  },
+  "visual_details": {
+    "human_detail": "The subject's hand and arm, with a subtle hint of a watch and quality clothing",
+    "product_texture": "The leather grain of the Liberty Belle bag, with a subtle sheen",
+    "materials": [
+      "High-quality leather",
+      "Classic watch",
+      "Quality clothing"
+    ],
+    "foreground": "The subject's hand and the Liberty Belle bag",
+    "background": "A blurred city street with hints of a park or a green wall",
+    "color_palette": [
+      "Neutral beige",
+      "Rich brown",
+      "Deep blue"
+    ]
+  },
+  "negative_prompt_for_sdxl": "Avoid plain floating product render, white studio background, crowded flat lay, fake readable text, brand logo, watermark, unreadable characters, extra fingers, deformed hands, disconnected objects, impossible grip, floating product, blurry face, inconsistent shadows, unrealistic scale, duplicate products, cluttered composition",
+  "image_prompt_for_sdxl": "A confident, urban professional woman in her 30s walks down a bustling city street, adjusting the strap of the Liberty Belle crossbody bag slung over her shoulder. The bag's classic silhouette is visible from the side, with the subject's hand gently interacting with the leather. The woman's calm and assured facial expression reflects her confidence and sense of style, with a subtle hint of a watch and quality clothing. The camera captures the scene from a slightly above eye-level angle, with a 50mm editorial feel and a subtle sense of depth, focusing on the subject and the bag while blurring the background. Soft, natural light from the left side casts a subtle shadow on the subject's face, with a neutral color temperature and a sense of warmth. The background is a blurred city street with hints of a park or a green wall, conveying a sense of urban sophistication and sustainability, with the Liberty Belle bag's leather grain and subtle sheen taking center stage.",
+  "image_width": 640,
+  "image_height": 960
+}

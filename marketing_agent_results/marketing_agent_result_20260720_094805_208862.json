@@ -1,0 +1,300 @@
+{
+  "agent_models": {
+    "product_concept_agent": "llama-3.3-70b-versatile",
+    "persona_agent": "llama-3.3-70b-versatile",
+    "strategy_agent": "openai/gpt-oss-120b",
+    "sns_copy_and_image_prompt_agent": "llama-3.3-70b-versatile"
+  },
+  "input": {
+    "product_category": "leather crossbody bag",
+    "brand_values": "American heritage craftsmanship, timeless yet modern design,  high-quality full-grain leather, accessible luxury,attention to detail in stitching and hardware,  confidence and self-expression for the modern woman",
+    "product_name": "Liberty Belle",
+    "product_description": "Experience the perfect blend of American heritage craftsmanship and modern sophistication with the Liberty Belle leather crossbody bag. Made from high-quality, full-grain leather, this timeless design features meticulous attention to detail in its stitching and hardware. The Liberty Belle is designed for the confident, urban professional woman who values understated luxury and self-expression. With its classic, elegant silhouette and versatile size, this bag is perfect for everyday use, from work to weekend adventures. The Liberty Belle embodies the spirit of accessible luxury, offering a premium product that is both refined and approachable, allowing you to express your personal style with poise and confidence.",
+    "target_group": "Women in their late 20s to 40s who value classic American style,   quality craftsmanship, and understated luxury, urban professional lifestyle",
+    "brand_tone": "Confident, warm, timeless, sophisticated but approachable, heritage-driven yet modern",
+    "platform": "Instagram"
+  },
+  "virtual_customer_feedbacks": [
+    {
+      "persona_name": "Emily",
+      "persona_profile": "32, marketing manager, fashion, travel, and reading, frequent online shopper",
+      "positive_reaction": "I love the classic design and high-quality leather of the Liberty Belle, it's perfect for my urban lifestyle",
+      "negative_reaction": "The price is a bit higher than I expected, but the quality seems worth it",
+      "purchase_intent": 4,
+      "improvement_suggestion": "Offer more color options to match different personal styles"
+    },
+    {
+      "persona_name": "Sarah",
+      "persona_profile": "28, lawyer, fitness, and art, values luxury and quality, buys from high-end brands",
+      "positive_reaction": "The Liberty Belle embodies the spirit of American heritage craftsmanship, I appreciate the attention to detail",
+      "negative_reaction": "The size is a bit smaller than I expected, I wish it had more compartments",
+      "purchase_intent": 5,
+      "improvement_suggestion": "Add more functional features like a phone charger or a laptop sleeve"
+    },
+    {
+      "persona_name": "Rachel",
+      "persona_profile": "39, entrepreneur, family, and community, values practicality and durability, buys from brands that support social causes",
+      "positive_reaction": "I love that the Liberty Belle is made from high-quality, full-grain leather, it's a timeless investment piece",
+      "negative_reaction": "I'm not sure if the brand's values align with mine, I'd like to know more about their social responsibility initiatives",
+      "purchase_intent": 3,
+      "improvement_suggestion": "Highlight the brand's commitment to social and environmental responsibility"
+    },
+    {
+      "persona_name": "Jessica",
+      "persona_profile": "25, student, music, and social media, values affordability and trendiness, buys from fast-fashion brands",
+      "positive_reaction": "The Liberty Belle is a beautiful, classic design, but it's a bit out of my budget",
+      "negative_reaction": "The price is too high for me, I can find similar bags at a lower price point",
+      "purchase_intent": 1,
+      "improvement_suggestion": "Offer more affordable options or a student discount"
+    },
+    {
+      "persona_name": "Laura",
+      "persona_profile": "35, executive, travel, and food, values sophistication and elegance, buys from luxury brands",
+      "positive_reaction": "The Liberty Belle is a stunning example of American heritage craftsmanship, it's perfect for my professional and personal life",
+      "negative_reaction": "I wish the brand had more physical stores, I prefer to try on bags before buying",
+      "purchase_intent": 5,
+      "improvement_suggestion": "Expand the brand's retail presence to more locations"
+    }
+  ],
+  "marketing_strategy": {
+    "main_insight": "Women value the Liberty Belle’s heritage craftsmanship, full‑grain leather, and timeless design, but price sensitivity, limited color/functional options, and unclear brand purpose (social responsibility, physical retail) hinder higher purchase intent.",
+    "customer_pain_points": [
+      "Perceived high price and limited affordability for younger or budget‑conscious shoppers",
+      "Lack of color variety and functional features (extra compartments, tech integration)",
+      "Insufficient communication of the brand’s social and environmental responsibility",
+      "Limited physical retail presence for tactile experience"
+    ],
+    "selling_points": [
+      "American heritage craftsmanship with meticulous stitching and hardware",
+      "Premium full‑grain leather that ages beautifully, offering lasting value",
+      "Timeless yet modern silhouette that fits both professional and weekend settings",
+      "Brand promise of confident self‑expression and accessible luxury"
+    ],
+    "marketing_direction": "Position Liberty Belle as the go‑to heritage‑luxury crossbody for the modern professional woman by highlighting authentic craftsmanship, durability, and the brand’s emerging social responsibility initiatives, while introducing limited‑edition color drops and functional add‑ons to broaden appeal and justify price.",
+    "message_strategy": "Leverage Instagram, Pinterest, LinkedIn, and TikTok with a storytelling mix: behind‑the‑scenes artisan videos, real‑life “day‑in‑the‑life” reels of professional women using the bag, limited‑edition color reveals, and micro‑influencer collaborations that showcase functional upgrades (e.g., tech pocket). Pair each visual with short copy that ties the bag’s heritage to the wearer’s confidence and purpose, and include occasional “insider” offers (student discount code, early‑access pre‑order) to address price concerns.",
+    "recommended_tone": "Confident, sophisticated, yet warm and inclusive – authentic storytelling that feels aspirational without being elitist.",
+    "risk_to_avoid": [
+      "Greenwashing or making unsupported ESG claims",
+      "Over‑promising functional features that aren’t delivered",
+      "Ignoring price sensitivity by only emphasizing luxury",
+      "Creating an exclusive image that alienates the broader target audience"
+    ]
+  },
+  "sns_copy": {
+    "post_title": "Timeless Elegance for the Modern Woman",
+    "main_copy": "Meet the Liberty Belle, where American heritage craftsmanship meets modern sophistication. Made from high-quality, full-grain leather, this crossbody bag is designed for the confident, urban professional woman. With its classic silhouette and versatile size, it's perfect for everyday use, from work to weekend adventures. Experience the perfect blend of luxury and accessibility.",
+    "short_hook": "Elevate your everyday with a timeless classic",
+    "hashtags": [
+      "#LibertyBelle",
+      "#LeatherCrossbodyBag",
+      "#AmericanHeritageCraftsmanship",
+      "#TimelessElegance",
+      "#AccessibleLuxury"
+    ]
+  },
+  "campaign_concept": {
+    "campaign_big_idea": "Empowering women to express their confident selves through timeless, high-quality craftsmanship",
+    "campaign_message": "Experience the perfect blend of American heritage and modern sophistication with the Liberty Belle, where every stitch tells a story of confidence and self-expression",
+    "primary_persona_insight": "Women value the Liberty Belle's heritage craftsmanship, full-grain leather, and timeless design, but are hindered by price sensitivity and limited options",
+    "customer_concerns_to_address": [
+      "Perceived high price",
+      "Limited color and functional options",
+      "Unclear brand purpose and social responsibility"
+    ],
+    "selling_points_to_visualize": [
+      "American heritage craftsmanship",
+      "Premium full-grain leather",
+      "Timeless yet modern silhouette"
+    ],
+    "visual_story": "Show a busy, professional woman effortlessly navigating her day with the Liberty Belle, highlighting the bag's durability, versatility, and classic design, with subtle nods to the brand's social responsibility initiatives",
+    "emotional_keywords": [
+      "Confidence",
+      "Timeless",
+      "Sophistication",
+      "Empowerment",
+      "Authenticity"
+    ],
+    "trust_signals": [
+      "High-quality materials",
+      "Attention to detail",
+      "Transparent brand values",
+      "Sustainable practices"
+    ]
+  },
+  "creative_direction": {
+    "visual_concept": "Empowered Elegance",
+    "campaign_story": "A busy, professional woman effortlessly navigating her day with the Liberty Belle, highlighting the bag's durability, versatility, and classic design",
+    "hero_subject": "A confident, urban professional woman in her 30s, walking down a city street, with the Liberty Belle crossbody bag slung over her shoulder, interacting with her surroundings",
+    "scene_type": "Instagram campaign hero shot",
+    "composition": "The woman is placed in the center of the frame, with the Liberty Belle bag prominently displayed, surrounded by subtle hints of the city environment, such as a blurred street sign or a passerby",
+    "product_visibility": "The Liberty Belle bag is visible from the side, showcasing its classic silhouette and premium leather material, with a subtle reflection of light on the hardware",
+    "texture_visualization": "The leather grain of the Liberty Belle bag is visible, with a subtle sheen that hints at its high-quality material",
+    "customer_insight_visualization": [
+      {
+        "insight": "Perceived high price",
+        "visual_solution": "A subtle hint of the woman's professional attire, such as a watch or a quality pair of shoes, to convey that the Liberty Belle is an investment piece"
+      },
+      {
+        "insight": "Limited color and functional options",
+        "visual_solution": "A blurred background with a hint of a city street, with people of different styles and ages walking by, to convey that the Liberty Belle is versatile and can fit into various lifestyles"
+      },
+      {
+        "insight": "Unclear brand purpose and social responsibility",
+        "visual_solution": "A subtle hint of a sustainable or eco-friendly element in the scene, such as a park or a green wall, to convey the brand's commitment to social responsibility"
+      }
+    ],
+    "brand_value_visualization": [
+      {
+        "brand_value": "American heritage craftsmanship",
+        "visual_solution": "A subtle hint of a classic American architectural element in the background, such as a brick building or a vintage street sign"
+      },
+      {
+        "brand_value": "Timeless yet modern design",
+        "visual_solution": "The woman's attire, which blends classic and modern pieces, to convey that the Liberty Belle is a timeless yet modern accessory"
+      },
+      {
+        "brand_value": "High-quality full-grain leather",
+        "visual_solution": "A close-up shot of the Liberty Belle's leather grain, to highlight its premium quality"
+      }
+    ],
+    "target_audience_visualization": [
+      "A confident and professional woman in her 30s, with a subtle hint of a family or personal life, to convey that the Liberty Belle is for the modern woman who values versatility and elegance"
+    ],
+    "background": "A blurred city street, with hints of a park or a green wall, to convey a sense of urban sophistication and sustainability",
+    "lighting": "Soft, natural light, with a subtle warmth, to convey a sense of approachability and elegance",
+    "color_palette": [
+      "Neutral beige",
+      "Rich brown",
+      "Deep blue"
+    ],
+    "material_and_props": [
+      "High-quality leather",
+      "Classic watch",
+      "Quality pair of shoes"
+    ],
+    "mood": "Confident, sophisticated, and approachable",
+    "things_to_avoid": [
+      "Overly flashy or trendy elements",
+      "Clichéd luxury symbols, such as gold or diamonds",
+      "Unrealistic or staged scenarios"
+    ]
+  },
+  "image_prompt_design": {
+    "selected_campaign_message": "Experience the perfect blend of American heritage craftsmanship and modern sophistication with the Liberty Belle leather crossbody bag",
+    "primary_persona_insight": "Women value the Liberty Belle's heritage craftsmanship, full-grain leather, and timeless design",
+    "subject": {
+      "identity": "A confident, urban professional woman in her 30s, with a subtle hint of a family or personal life",
+      "expression": "A calm and assured facial expression",
+      "pose": "Walking down a city street with a natural stride",
+      "action": "Adjusting the strap of the Liberty Belle crossbody bag slung over her shoulder"
+    },
+    "setting": {
+      "location": "A bustling city street with a blurred background of people and buildings",
+      "time_of_day": "Late morning with soft, natural light",
+      "atmosphere": "A sense of urban sophistication and sustainability"
+    },
+    "product_integration": {
+      "placement": "Slung over the subject's shoulder, with the bag's classic silhouette visible from the side",
+      "interaction": "The subject's hand gently adjusting the strap",
+      "frame_ratio": "The product occupies approximately 30% of the frame"
+    },
+    "camera": {
+      "shot_type": "Medium shot",
+      "angle": "Slightly above eye level",
+      "lens_feel": "A 50mm editorial feel with a subtle sense of depth",
+      "focus": "The subject and the Liberty Belle bag are sharp, while the background is softly blurred",
+      "composition": "The subject is placed in the center of the frame, with the bag prominently displayed and the city environment subtly visible in the background"
+    },
+    "lighting": {
+      "source": "Soft, natural light from the left side",
+      "direction": "45-degree angle, casting a subtle shadow on the subject's face",
+      "quality": "Soft and warm",
+      "color_temperature": "Neutral with a hint of warmth",
+      "shadow_behavior": "Subtle shadows on the subject's face and the bag, with a sense of depth and dimension"
+    },
+    "visual_details": {
+      "human_detail": "The subject's hand and arm, with a subtle hint of a watch and quality clothing",
+      "product_texture": "The leather grain of the Liberty Belle bag, with a subtle sheen",
+      "materials": [
+        "High-quality leather",
+        "Classic watch",
+        "Quality clothing"
+      ],
+      "foreground": "The subject's hand and the Liberty Belle bag",
+      "background": "A blurred city street with hints of a park or a green wall",
+      "color_palette": [
+        "Neutral beige",
+        "Rich brown",
+        "Deep blue"
+      ]
+    },
+    "image_prompt_for_sdxl": "A confident, urban professional woman in her 30s walks down a bustling city street, adjusting the strap of the Liberty Belle crossbody bag slung over her shoulder. The bag's classic silhouette is visible from the side, with the subject's hand gently interacting with the leather. The woman's calm and assured facial expression reflects her confidence and sense of style, with a subtle hint of a watch and quality clothing. The camera captures the scene from a slightly above eye-level angle, with a 50mm editorial feel and a subtle sense of depth, focusing on the subject and the bag while blurring the background. Soft, natural light from the left side casts a subtle shadow on the subject's face, with a neutral color temperature and a sense of warmth. The background is a blurred city street with hints of a park or a green wall, conveying a sense of urban sophistication and sustainability, with the Liberty Belle bag's leather grain and subtle sheen taking center stage.",
+    "negative_prompt_for_sdxl": "Avoid plain floating product render, white studio background, crowded flat lay, fake readable text, brand logo, watermark, unreadable characters, extra fingers, deformed hands, disconnected objects, impossible grip, floating product, blurry face, inconsistent shadows, unrealistic scale, duplicate products, cluttered composition",
+    "image_width": 640,
+    "image_height": 960
+  },
+  "sns_content": {
+    "post_title": "Timeless Elegance for the Modern Woman",
+    "main_copy": "Meet the Liberty Belle, where American heritage craftsmanship meets modern sophistication. Made from high-quality, full-grain leather, this crossbody bag is designed for the confident, urban professional woman. With its classic silhouette and versatile size, it's perfect for everyday use, from work to weekend adventures. Experience the perfect blend of luxury and accessibility.",
+    "short_hook": "Elevate your everyday with a timeless classic",
+    "hashtags": [
+      "#LibertyBelle",
+      "#LeatherCrossbodyBag",
+      "#AmericanHeritageCraftsmanship",
+      "#TimelessElegance",
+      "#AccessibleLuxury"
+    ],
+    "selected_campaign_message": "Experience the perfect blend of American heritage craftsmanship and modern sophistication with the Liberty Belle leather crossbody bag",
+    "primary_persona_insight": "Women value the Liberty Belle's heritage craftsmanship, full-grain leather, and timeless design",
+    "subject": {
+      "identity": "A confident, urban professional woman in her 30s, with a subtle hint of a family or personal life",
+      "expression": "A calm and assured facial expression",
+      "pose": "Walking down a city street with a natural stride",
+      "action": "Adjusting the strap of the Liberty Belle crossbody bag slung over her shoulder"
+    },
+    "setting": {
+      "location": "A bustling city street with a blurred background of people and buildings",
+      "time_of_day": "Late morning with soft, natural light",
+      "atmosphere": "A sense of urban sophistication and sustainability"
+    },
+    "product_integration": {
+      "placement": "Slung over the subject's shoulder, with the bag's classic silhouette visible from the side",
+      "interaction": "The subject's hand gently adjusting the strap",
+      "frame_ratio": "The product occupies approximately 30% of the frame"
+    },
+    "camera": {
+      "shot_type": "Medium shot",
+      "angle": "Slightly above eye level",
+      "lens_feel": "A 50mm editorial feel with a subtle sense of depth",
+      "focus": "The subject and the Liberty Belle bag are sharp, while the background is softly blurred",
+      "composition": "The subject is placed in the center of the frame, with the bag prominently displayed and the city environment subtly visible in the background"
+    },
+    "lighting": {
+      "source": "Soft, natural light from the left side",
+      "direction": "45-degree angle, casting a subtle shadow on the subject's face",
+      "quality": "Soft and warm",
+      "color_temperature": "Neutral with a hint of warmth",
+      "shadow_behavior": "Subtle shadows on the subject's face and the bag, with a sense of depth and dimension"
+    },
+    "visual_details": {
+      "human_detail": "The subject's hand and arm, with a subtle hint of a watch and quality clothing",
+      "product_texture": "The leather grain of the Liberty Belle bag, with a subtle sheen",
+      "materials": [
+        "High-quality leather",
+        "Classic watch",
+        "Quality clothing"
+      ],
+      "foreground": "The subject's hand and the Liberty Belle bag",
+      "background": "A blurred city street with hints of a park or a green wall",
+      "color_palette": [
+        "Neutral beige",
+        "Rich brown",
+        "Deep blue"
+      ]
+    },
+    "image_prompt_for_sdxl": "A confident, urban professional woman in her 30s walks down a bustling city street, adjusting the strap of the Liberty Belle crossbody bag slung over her shoulder. The bag's classic silhouette is visible from the side, with the subject's hand gently interacting with the leather. The woman's calm and assured facial expression reflects her confidence and sense of style, with a subtle hint of a watch and quality clothing. The camera captures the scene from a slightly above eye-level angle, with a 50mm editorial feel and a subtle sense of depth, focusing on the subject and the bag while blurring the background. Soft, natural light from the left side casts a subtle shadow on the subject's face, with a neutral color temperature and a sense of warmth. The background is a blurred city street with hints of a park or a green wall, conveying a sense of urban sophistication and sustainability, with the Liberty Belle bag's leather grain and subtle sheen taking center stage.",
+    "negative_prompt_for_sdxl": "Avoid plain floating product render, white studio background, crowded flat lay, fake readable text, brand logo, watermark, unreadable characters, extra fingers, deformed hands, disconnected objects, impossible grip, floating product, blurry face, inconsistent shadows, unrealistic scale, duplicate products, cluttered composition",
+    "image_width": 640,
+    "image_height": 960
+  }
+}
