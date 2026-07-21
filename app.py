@@ -41,11 +41,11 @@ with st.sidebar:
 st.subheader("📋 제품 정보 입력")
 col1, col2 = st.columns(2)
 with col1:
-    category = st.text_input("제품 카테고리", placeholder="sunscreen, keyboard, tumbler...")
-    target   = st.text_input("타겟 고객",     placeholder="20-30대 직장 여성, 환경에 관심 있는 MZ세대...")
+    category = st.text_input("제품 카테고리", placeholder="sunscreen, leather crossbody bag, ...")
+    target   = st.text_input("타겟 고객",     placeholder="Women in their late 20s to 40s who value classic American style,   quality craftsmanship, and understated luxury, urban professional lifestyle")
 with col2:
-    tone     = st.text_input("브랜드 톤앤매너", placeholder="전문적이고 신뢰감 있는, 친근하고 유머러스한...")
-    values   = st.text_area("브랜드 가치 (홈페이지 경영철학/ESG 등 붙여넣기)", height=100)
+    tone     = st.text_input("브랜드 톤앤매너(추구미)", placeholder="American heritage craftsmanship, timeless yet modern design,  high-quality full-grain leather, accessible luxury,attention to detail in stitching and hardware,  confidence and self-expression for the modern woman")
+    values   = st.text_area("브랜드 가치 (홈페이지 경영철학/ESG 등)", placeholder="Confident, warm, timeless, sophisticated but approachable, heritage-driven yet modern", height=100)
 
 run_btn = st.button("✨ 마케팅 콘텐츠 생성 시작", type="primary", use_container_width=True)
 
